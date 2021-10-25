@@ -21,13 +21,17 @@ Versie 3.0 van https://bladmineerders.nl
   - gebruik van ACF
   - gebruik van wpDataTables
   - links met Post Object (geen URL)
+- overzicht van hosts en verschillende determinaties verbeteren
 - vernacular names als apart veld
   - opbouw NL en EN lijst met hosts vanuit database
+- heeft soort een plaatje
+
 
 ## Backlog
 
 - Google Analytics 4
 - structured data (kan pas als ACF goed werkt)
+- verspreidingskaart koppelen aan PESI (?)
 
 ## Changelog
 
