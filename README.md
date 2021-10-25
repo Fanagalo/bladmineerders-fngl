@@ -6,6 +6,7 @@ Versie 3.0 van https://bladmineerders.nl
 
 - invoer vereenvoudigen
 - overzicht backend vergroten
+- informatie architectuur frontend verbeteren
 - performance verbeteren
 
 ## Features
