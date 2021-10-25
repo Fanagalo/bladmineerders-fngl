@@ -2,6 +2,12 @@
 
 Versie 3.0 van https://bladmineerders.nl
 
+## Doelen
+
+- invoer vereenvoudigen
+- overzicht backend vergroten
+- performance verbeteren
+
 ## Features
 
 - Custom Post Types
