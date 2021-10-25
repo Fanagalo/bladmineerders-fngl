@@ -1,6 +1,6 @@
 # bladmineerders
 
-Volgende versie van https://bladmineerders.nl
+Versie 3.0 van https://bladmineerders.nl
 
 ## Features
 
@@ -12,9 +12,18 @@ Volgende versie van https://bladmineerders.nl
   - relations 
 - relaties tussen hosts en parasites 
   - aparte database tabel
-  - 
+  - gebruik van ACF
+  - gebruik van wpDataTables
+  - links met Post Object (geen URL)
+- vernacular names als apart veld
+  - opbouw NL en EN lijst met hosts vanuit database
 
-## Change log
+## Backlog
+
+- Google Analytics 4
+- structured data (kan pas als ACF goed werkt)
+
+## Changelog
 
 ### versie 2.1
 nieuw theme zonder child theme
