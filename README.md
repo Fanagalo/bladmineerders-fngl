@@ -40,4 +40,5 @@ Versie 3.0 van https://bladmineerders.nl
 **2007** gebruik van CSS
 
 **2017** ombouw naar WordPress, theme gebaseerd op Stone
+
 **2020** theme gebaseerd op fngl_s-core
