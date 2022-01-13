@@ -1,0 +1,67 @@
+/* heading om parasite pages, mainly h3-level */
+
+.head-references,
+.head-hostplant,
+.head-phenology,
+.head-distribution,
+.head-larva,
+.head-pupa,
+.head-remark,
+.head-synonym,
+.head-mine,
+.head-gall,
+.topic {
+    font-size: var(--font-size-reduced);
+    font-weight: var(--font-weight-heavy);
+    text-transform: uppercase;
+    margin: 2rem 0 0 0;
+    letter-spacing: 1px;
+}
+
+p.references {
+    font-size: var(--font-size-reduced);
+    font-weight: var(--font-weight-light);
+}
+
+.latinnames {
+    font-style: italic;
+}
+
+
+/* headings with scientific and author name in one tag */
+
+.page-template-parasite-species .entry-content h1 {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-big);
+    line-height: var(--line-height-title);
+}
+
+.page-template-parasite-species .entry-content h1 em {
+    font-weight: var(--font-weight-bold);
+    font-style: italic;
+    font-size: var(--font-size-title);
+    display: block; // forces line break for next part
+}
+
+@media screen and (min-width: $mq-medium) {
+    .page-template-parasite-species .entry-content h1 em {
+        font-size: var(--font-size-title-desktop);
+    }
+    .page-template-parasite-species .entry-content h1 {
+        font-size: var(--font-size-big-desktop);
+    }
+}
+
+.page-template-parasite-species .entry-title,
+.page-template-page-parent .entry-title {
+    display: none;
+}
+
+.page-template-parasite-parent .entry-content h1,
+.page-template-parasite-stadia .entry-content h1 {
+    display: none; // prevents display of two H1 headings; should ultimately be solved in content
+}
+
+.page-template-parasite-species .entry-title {
+    display: none; // prevents display of two H1 headings; should ultimately be solved in content
+}

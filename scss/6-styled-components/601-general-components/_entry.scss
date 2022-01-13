@@ -1,0 +1,155 @@
+.main-area-full {
+    background-color: var(--main-area-full-bg);
+}
+
+.main-area {
+    background-color: var(--main-area-bg);
+    grid-area: main;
+    padding: 1rem;
+}
+
+.sticky {
+    display: block;
+}
+
+.hentry {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0;
+    margin: 1.5em 0;
+}
+
+
+/*
+@media screen and (min-width: $mq-medium) {
+    .page-content,
+    .entry-content,
+    .entry-summary {
+        margin: 1.5em 0;
+    }
+}
+*/
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+.category-wrapper,
+.page main article,
+.single main article {
+    margin: 0 auto;
+    max-width: var(--text-max-width);
+}
+
+@media screen and (max-width: $mq-medium) {
+    .category-wrapper,
+    .page main article,
+    .single main article {
+        width: calc(100vw - 2rem);
+    }
+}
+
+.category-wrapper ul,
+.category-wrapper ol,
+.category-wrapper p,
+.entry-content ul,
+.entry-content ol,
+.entry-content p {
+    font-size: var(--font-size-normal);
+    line-height: var(--line-height-paragraph);
+    font-weight: var(--font-weight-normal);
+    overflow-wrap: break-word;
+}
+
+.entry-content p {
+    margin: 0 0 1.6875rem 0;
+}
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+    margin: 1.6875rem 0 0 0;
+    overflow-wrap: break-word;
+}
+
+.category-wrapper a,
+.entry-content a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--a-color);
+}
+
+.entry-footer {
+    clear: both;
+}
+
+.category-wrapper img,
+.entry-content img {
+    display: block;
+    border: 1px solid var(--menu-bg);
+    margin: 1.6875rem auto 0 auto;
+}
+
+.category-wrapper .nl-bijschrift,
+.category-wrapper .en-bijschrift,
+.entry-content .nl-bijschrift,
+.entry-content .en-bijschrift {
+    text-align: center;
+    margin: -1.1rem auto 1.6875rem auto;
+    margin: 0.25rem auto 1.6875rem auto;
+    font-size: var(--font-size-reduced);
+    font-weight: var(--font-weight-sub);
+}
+
+
+/* supporting code for wide and full width */
+
+.entry-content .alignwide {
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+.entry-content .alignfull {
+    margin-left: calc( -100vw / 2 + 100% / 2);
+    margin-right: calc( -100vw / 2 + 100% / 2);
+    max-width: 100vw;
+}
+
+.alignfull img {
+    width: 100vw;
+}
+
+
+/* multiple images in one row */
+
+div.images-one-row {
+    margin-top: 4em;
+    text-align: center;
+}
+
+div.images-one-row img {
+    margin: 0 10px 0 10px;
+    display: inline-block;
+}
+
+p:empty {
+    display: none;
+}

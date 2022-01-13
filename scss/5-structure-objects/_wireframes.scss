@@ -1,0 +1,18 @@
+body {
+    display: grid;
+    grid-template-areas: "nav" "header" "language-search" "breadcrumb" "main" "footer";
+}
+
+@media screen and (min-width: $mq-medium) {
+    body {
+        grid-template-columns: auto 800px auto;
+        grid-template-areas: " header  header  header " "language-search language-search language-search" " nav nav nav " "breadcrumb breadcrumb breadcrumb" " main    main    main   " " footer  footer  footer ";
+    }
+}
+
+@media screen and (min-width: $mq-large) {
+    body {
+        grid-template-columns: auto 120px 800px 120px auto;
+        grid-template-areas: " . header  header  header . " " . language-search language-search language-search . " " . nav nav nav . " " . breadcrumb breadcrumb breadcrumb . " " . main    main    main   . " " . footer  footer  footer . ";
+    }
+}

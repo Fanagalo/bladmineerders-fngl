@@ -1,0 +1,39 @@
+/* 
+ * Custom CSS for plugin Breadcrumb NavXT
+ * https://wordpress.org/plugins/breadcrumb-navxt/
+ * version 7.0.2
+*/
+
+.breadcrumb-full {
+    background-color: var(--general-bg);
+}
+
+.breadcrumb-area {
+    background-color: var(--general-bg);
+    width: 100%;
+    min-height: 36px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-reduced);
+    font-style: italic;
+    grid-area: breadcrumb;
+}
+
+.breadcrumb-area a {
+    color: var(--p-color);
+    text-decoration: none;
+}
+
+.breadcrumb-area a:hover,
+.breadcrumb-area a:focus {
+    background-color: var(--menu-bg-hover);
+}
+
+.breadcrumb-area span span {
+    display: inline-block; // prevents hyphenation in breadcrumb
+}
+
+.breadcrumb-area span:last-child span {
+    font-weight: var(--font-weight-sub);
+}

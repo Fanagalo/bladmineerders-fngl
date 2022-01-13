@@ -1,0 +1,12 @@
+/* Core CSS variables don't work, so use SCSS variables instead */
+
+/*
+:root {
+    --mq-small: 450px;
+    --mq-medium: 800px;
+}
+*/
+
+$mq-small: 450px;
+$mq-medium: 800px;
+$mq-large: 1040px;

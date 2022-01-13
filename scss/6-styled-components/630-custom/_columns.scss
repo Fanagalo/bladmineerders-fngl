@@ -1,0 +1,22 @@
+.wp-block-columns {
+    display: grid;
+    margin: 1em auto 0 auto;
+    max-width: var(--container-max-width);
+    padding: 0 1em;
+}
+
+.wp-block-column {
+    align-self: center;
+}
+
+.wp-block-columns.has-2-columns {
+    column-gap: 2%;
+}
+
+.has-2-columns {
+    grid-template-columns: 49% 49%;
+}
+
+.has-3-columns {
+    grid-template-columns: 32% 32% 32%;
+}

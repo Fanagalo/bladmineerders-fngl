@@ -1,0 +1,67 @@
+.footer-area-full {
+    background-color: var(--footer-area-full-bg);
+}
+
+.footer-area {
+    background-color: var(--footer-area-bg);
+    grid-area: footer;
+    padding: 4rem 1rem 2rem 1rem;
+    width: 100%;
+    display: grid;
+    column-gap: .5rem;
+    row-gap: 2rem;
+    align-items: start;
+}
+
+.colophon-credits p {
+    margin: 0;
+}
+
+.colophon-credits,
+.colophon-credits a,
+.bm-logos,
+.fanagalo-me-fecit {
+    color: var(--p-soft-color);
+    font-size: var(--font-size-small);
+}
+
+.colophon-credits strong,
+.colophon-credits a {
+    font-weight: var(--font-weight-sub);
+    text-decoration: none;
+}
+
+.bm-logos,
+.fanagalo-me-fecit {
+    font-weight: var(--font-weight-sub);
+    letter-spacing: 1px;
+    //    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.bm-logos img[src*="naturalis.png"] {
+    margin: 10px 10px 20px 0;
+}
+
+.bm-logos img[src*="eis.png"] {
+    margin: 10px 0 0 0;
+}
+
+.fanagalo-me-fecit img {
+    height: 60px;
+    margin: 10px 0 0 0;
+    width: auto;
+}
+
+@media screen and (min-width: $mq-medium) {
+    .footer-area {
+        grid-template-columns: auto 260px 240px;
+        justify-content: space-between;
+    }
+    .bm-logos {
+        text-align: center;
+    }
+    .fanagalo-me-fecit {
+        text-align: right;
+    }
+}

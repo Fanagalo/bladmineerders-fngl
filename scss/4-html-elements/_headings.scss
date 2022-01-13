@@ -1,0 +1,49 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--h-color);
+    clear: both;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    margin: 0;
+}
+
+h2 {
+    font-size: var(--font-size-big);
+    line-height: var(--line-height-title);
+}
+
+h3 {
+    font-size: 170%;
+    font-weight: var(--font-weight-bold);
+}
+
+h4 {
+    font-size: 145%;
+}
+
+h5 {
+    font-size: 125%;
+}
+
+h6 {
+    font-size: 110%;
+}
+
+@media screen and (min-width: $mq-medium) {
+    h1 {
+        font-size: var(--font-size-title-desktop);
+        margin-top: 1.5rem;
+    }
+    h2 {
+        font-size: var(--font-size-big-desktop);
+    }
+}

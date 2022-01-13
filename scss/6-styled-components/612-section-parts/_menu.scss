@@ -1,0 +1,201 @@
+.nav-area-full {
+    background-color: var(--nav-area-full-bg);
+}
+
+.nav-area {
+    grid-area: nav;
+    position: relative;
+}
+
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+#site-navigation {
+    background-color: var(--menu-bg);
+    border: none;
+    height: auto;
+    margin: 0;
+}
+
+#site-navigation a {
+    color: var(--p-color);
+    text-decoration: none;
+}
+
+#site-navigation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-item {
+    font-weight: var(--font-weight-sub);
+}
+
+.menu>.menu-item>a {
+    font-weight: var(--font-weight-sub);
+    font-size: var(--font-size-menu);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.menu .current-menu-item>a,
+.menu .current-page-ancestor>a,
+.menu .current-menu-ancestor>a,
+.menu .current-menu-parent>a,
+.menu .current-page-parent>a,
+.menu .current_page_parent>a,
+.menu .current_page_ancestor>a {
+    font-weight: var(--font-weight-heavy);
+}
+
+
+/*--------------------------------------------------------------
+### Menu mobile
+
+Consider different media-query with "only"
+@media only screen and (max-width: $mq-medium) {
+
+--------------------------------------------------------------*/
+
+@media screen and (max-width: $mq-medium) {
+    #site-navigation {
+        display: none;
+    }
+    .menu,
+    .sub-menu {
+        margin: 0;
+    }
+    .menu {
+        border-bottom: 1px solid var(--menu-border);
+    }
+    .menu-item {
+        background-color: var(--menu-bg-hover);
+        border-top: 1px solid var(--menu-border);
+        padding: .5em 0 .5em 1em;
+    }
+    .menu>.menu-item:first-of-type {
+        border-top: none;
+    }
+    .sub-menu {
+        display: none;
+        margin: .5em 0 -.5em 0; // essential code
+    }
+    .menu-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        color: var(--p-color);
+        display: block;
+        font-family: "FontAwesome";
+        font-size: 32px;
+        outline: none;
+        padding: 12px 15px 12px 17px;
+        text-align: right;
+        z-index: 999
+    }
+    .menu-toggle::before {
+        content: "\f0c9";
+    }
+    .menu-toggle.activated::before {
+        content: "\f077";
+    }
+    .sub-menu-toggle {
+        background-color: transparent;
+        border: none;
+        float: right;
+        font-family: "FontAwesome";
+        font-size: 27px;
+        outline: none;
+        padding: 0 .5em 0 0;
+        width: 50px;
+        text-align: center;
+        z-index: 999
+    }
+    .sub-menu-toggle::before {
+        content: "\f104";
+    }
+    .sub-menu-toggle.activated::before {
+        content: "\f107";
+    }
+}
+
+
+/*--------------------------------------------------------------
+### Menu desktop
+--------------------------------------------------------------*/
+
+@media only screen and (min-width: $mq-medium) {
+    .menu-toggle,
+    .sub-menu-toggle {
+        display: none;
+    }
+    #site-navigation {
+        width: 100%;
+    }
+    .menu {
+        margin: 0 auto;
+        max-width: var(--container-max-width);
+    }
+    .menu>.menu-item {
+        display: inline-block;
+    }
+    .menu-item {
+        display: block;
+    }
+    .menu-item a {
+        color: var(--p-color);
+        display: inline-block;
+        padding: .5em 1em .5em 1em;
+    }
+    .menu-item:hover,
+    .menu-item a:hover,
+    .menu-item a:active {
+        background-color: var(--menu-bg-hover);
+        color: var(--menu-text-hover) !important;
+    }
+    .menu>.menu-item-has-children>a::after {
+        content: " \f107";
+        font-family: FontAwesome;
+    }
+    .sub-menu {
+        display: none;
+    }
+    .sub-menu a {
+        color: var(--p-color);
+        font-size: var(--font-size-reduced);
+        padding: .5em 1em .5em 1em;
+    }
+    .menu>.menu-item-has-children:hover>.sub-menu {
+        background: var(--menu-bg-hover);
+        display: block;
+        margin-left: 0;
+        position: absolute;
+        width: 250px;
+        border-bottom: 1px solid var(--menu-border);
+        z-index: 2;
+    }
+    .sub-menu .menu-item,
+    .sub-menu .sub-menu {
+        display: block;
+    }
+    .sub-menu .menu-item,
+    .sub-menu .sub-menu {
+        border-top: 1px solid var(--menu-border);
+    }
+    .sub-menu .menu-item:first-of-type {
+        border-top: none;
+    }
+    .sub-menu a:hover {
+        color: var(--diap-color)
+    }
+    .sub-menu .menu-item a:hover,
+    .sub-menu .menu-item a:active {
+        background-color: var(--menu-bg-hover);
+        color: var(--menu-text-hover);
+    }
+}

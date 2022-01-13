@@ -1,0 +1,15 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid;
+    border-color: var(--diap-color);
+    border-radius: 0;
+    background: var(--language-search-bg-color);
+    color: var(--diap-color);
+    font-size: var(--font-size-menu);
+    font-weight: var(--font-weight-sub);
+    line-height: var(--line-height-narrow);
+    padding: 0.4em .7em 0.4em;
+    text-transform: uppercase;
+}

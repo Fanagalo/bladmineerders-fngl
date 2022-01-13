@@ -1,0 +1,35 @@
+:root {
+    /* basic typography */
+    --font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
+    --font-mono: 'Consolas', Courier, monospace;
+    /* font size */
+    --font-size-small: 0.75rem;
+    --font-size-menu: 0.875rem;
+    --font-size-reduced: 1rem;
+    --font-size-normal: 1.125rem;
+    --font-size-medium: 1.3rem;
+    --font-size-big: 1.7rem;
+    --font-size-big-desktop: 2rem;
+    --font-size-title: 2.2rem;
+    --font-size-title-desktop: 3rem;
+    /* line height */
+    --line-height-narrow: 1;
+    --line-height-title: 1.25;
+    --line-height-paragraph: 1.5;
+    --line-height-wide: 2;
+    /* font weight */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-sub: 600;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+}
+
+
+/*
+declarion of rem-valua in paragraph.scss
+
+html {
+    font-size: 16px; // defines value of rem 
+}
+*/

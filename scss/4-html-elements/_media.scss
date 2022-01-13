@@ -1,0 +1,29 @@
+/* Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
+    vertical-align: middle;
+}
+
+figure {
+    margin: 1em 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+figcaption {
+    color: var(--p-color);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-reduced);
+    margin: 1em auto;
+    max-width: 600px;
+    text-align: center;
+}

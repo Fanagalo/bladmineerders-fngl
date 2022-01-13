@@ -1,0 +1,23 @@
+html {
+    font-size: 16px; // defines value of rem 
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: var(--p-color);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-normal);
+    line-height: var(--line-height-paragraph);
+}
+
+body {
+    background: var(--general-bg); // fallback if no custom background color is defined
+}
+
+.home .entry-title {
+    display: none;
+}

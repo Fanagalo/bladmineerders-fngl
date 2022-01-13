@@ -1,0 +1,15 @@
+/* same level as .full */
+
+.comments-area {
+    background-color: var(--comments-area-bg);
+}
+
+.comments-form-area {
+    background-color: var(--comments-form-area-bg);
+    padding: 1rem;
+}
+
+.site-comments {
+    margin: 0 auto;
+    max-width: var(--text-max-width);
+}

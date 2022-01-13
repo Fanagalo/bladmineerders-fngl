@@ -1,0 +1,19 @@
+cite {
+    color: var(--p-color);
+}
+
+blockquote {
+    border-left: 0.25rem solid;
+    font-style: italic;
+    margin: 0 1.5em;
+    padding-left: 5rem;
+    p {
+        font-size: var(--font-size-medium);
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+    cite {
+        display: block;
+    }
+}

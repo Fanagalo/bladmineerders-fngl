@@ -1,0 +1,47 @@
+:root {
+    /* layouts */
+    --general-bg: #fff;
+    /* header */
+    --header-area-full-bg: transparant;
+    --header-area-bg: transparant;
+    /* menu */
+    --nav-area-full-bg: #d8d7d0;
+    --menu-bg: #d8d7d0;
+    --menu-bg-hover: #bc7;
+    --menu-text-hover: #fff;
+    --menu-border: #9a5;
+    --language-search-bg-color: #a8a7a0;
+    /* main content and comments */
+    --main-area-full-bg: transparent;
+    --main-area-bg: #fff;
+    --comments-area-bg: #eee;
+    --comments-form-area-bg: #d9d9d9;
+    /* sidebar */
+    --sidebar-area-full-bg: #f8f7f0;
+    --sidebar-area-bg: #f8f7f0;
+    --widget-bg: #ddd;
+    /* footer */
+    --footer-area-full-bg: #f8f7f0;
+    --footer-area-bg: #f8f7f0;
+    --archive-article-bg: #eee;
+    /* hyperlinks */
+    --a-color: #249;
+    --a-hover-color: #48f;
+    /* text colors */
+    --site-title-color: #780;
+    --p-color: #333;
+    --h-color: #444;
+    --p-soft-color: #595959;
+    --error-color: #d00;
+    --warning-color: #f90;
+    --mark-color: #fd0;
+    --success-color: #0b0;
+    --diap-color: #fff;
+    /* table backgrounds */
+    --dichotomous-table-color: #d8d7d0;
+    --row-even-color: #f0f0ec;
+    --row-head-color: #b8b7b0;
+    --row-dark-line-color: #ddd;
+    --row-light-line-color: #eee;
+    --head-sort-color: #48f;
+}

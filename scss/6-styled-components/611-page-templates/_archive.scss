@@ -1,0 +1,36 @@
+.archive .breadcrumb-area {
+    color: var(--diap-color); // made invisible due to useless breadcrumb
+}
+
+.archive .entry-title {
+    margin: 0 0 .25rem 0;
+}
+
+.archive .entry-title a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--a-color);
+}
+
+.search-cat-links,
+.search-cat-links a {
+    font-size: var(--font-size-reduced);
+    font-weight: var(--font-weight-normal);
+    text-transform: uppercase;
+    border-bottom-width: 0 !important;
+}
+
+.archive article {
+    padding: 0.5rem 1rem;
+    background-color: var(--row-even-color);
+}
+
+.archive .entry-summary,
+.archive .entry-summary p {
+    font-size: var( --font-size-reduced);
+    line-height: var(--line-height-paragraph);
+    margin: 0;
+}
+
+.archive .entry-summary span {
+    background-color: var(--mark-color) !important;
+}

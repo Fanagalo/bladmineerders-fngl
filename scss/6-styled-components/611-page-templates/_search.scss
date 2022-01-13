@@ -1,0 +1,58 @@
+.no-results .page-title,
+.no-results .page-content {
+    max-width: var(--text-max-width);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.search-results .page-title {
+    font-size: var(--font-size-big);
+    font-weight: var(--font-weight-normal);
+    margin: 0.84375rem 0;
+}
+
+.search-results .page-title span {
+    font-weight: var(--font-weight-bold);
+}
+
+.search-results .page-title span::before {
+    content: open-quote;
+}
+
+.search-results .page-title span::after {
+    content: close-quote;
+}
+
+.search-results .entry-title {
+    margin: 0 0 .25rem 0;
+}
+
+.search-results .entry-title a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--a-color);
+}
+
+.search-cat-links,
+.search-cat-links a {
+    font-size: var(--font-size-reduced);
+    font-weight: var(--font-weight-normal);
+    text-transform: uppercase;
+    border-bottom-width: 0 !important;
+    display: inline-block;
+}
+
+.search-results article {
+    padding: 0.5rem 1rem;
+    background-color: var(--row-even-color);
+}
+
+.search-results .entry-summary,
+.search-results .entry-summary p {
+    font-size: var( --font-size-reduced);
+    line-height: var(--line-height-paragraph);
+    margin: 0;
+}
+
+.search-results .entry-summary span {
+    background-color: var(--mark-color) !important;
+}

@@ -1,0 +1,33 @@
+.item-edit-link a,
+.edit-link a {
+    background-color: #f3f5f6;
+    border: 1px #0071a1 solid;
+    border-radius: 3px;
+    color: #0071a1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0.25em .75em;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+}
+
+.edit-link a:hover {
+    box-shadow: 0px 0px 4px 1px #08f;
+}
+
+.edit-link {
+    position: fixed; // default option, located at top left position on page
+    left: 30px;
+    top: 50px;
+    z-index: 999;
+}
+
+.item-edit-link {
+    position: absolute;
+    margin: 3rem 0 0 -105px; // located left of section
+    width: 100px;
+    text-align: center;
+}

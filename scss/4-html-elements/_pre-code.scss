@@ -1,0 +1,18 @@
+pre {
+    background: #eee;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-reduced);
+}

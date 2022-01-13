@@ -1,0 +1,13 @@
+/* hides full width elements in smaller viewports */
+
+@media screen and (max-width: $mq-large) {
+    .header-area-full,
+    .language-search-full,
+    .breadcrumb-full,
+    .nav-area-full,
+    .main-area-full,
+    .sidebar-area-full,
+    .footer-area-full {
+        display: none;
+    }
+}
