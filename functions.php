@@ -6,6 +6,10 @@
  * @since version 0.75
  */
 
+// Disable use XML-RPC
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+
 if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -104,43 +108,38 @@ function bladmineerders_fngl_widgets_init() {
 }
 add_action( 'widgets_init', 'bladmineerders_fngl_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
+
 function bladmineerders_fngl_scripts() {
 	wp_enqueue_style( 'bladmineerders-fngl-style', get_stylesheet_uri() );
 
-	/* https://www.customyou.nl/responsive-menu-wordpress-clean-tutorial/ */
+	// Script for responsive mobile menu
+	// source: https://www.customyou.nl/responsive-menu-wordpress-clean-tutorial/
 	wp_enqueue_script( 'nav-menu.js', get_template_directory_uri() . '/js/nav-menu.js', array('jquery'), '20151111', true );
-	/* tot hier */
 
-
+	// Helps with accessibility for keyboard only users. Original from _s
 	wp_enqueue_script( 'bladmineerders-fngl-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	// Makes threads in comments. Original from _s
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
 }
 add_action( 'wp_enqueue_scripts', 'bladmineerders_fngl_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-require get_template_directory() . '/inc/cpts.php';
-
+/* Add functions from directory "inc" */ 
+require get_template_directory() . '/inc/template-tags.php';             // Custom template tags for this theme.
+require get_template_directory() . '/inc/template-functions.php';        // Functions which enhance the theme by hooking into WordPress.
+require get_template_directory() . '/inc/custom-header.php';             // Custom Header
+// require get_template_directory() . '/inc/customizer.php';                // Customizer
+// require get_template_directory() . '/inc/custom-block-styling.php';      // Custom styling of the frontend and backend of the block editor 
+// require get_template_directory() . '/inc/custom-color-font-blocks.php';  // Custom colors and font sizes for block editor
+// require get_template_directory() . '/inc/fngl-recent-posts-shortcode.php';  // Shortcode to display overview of pages, posts of CPT using a shortcode
+require get_template_directory() . '/inc/cpts.php';                      // Custom Post Types
 
 
 // limiet voor aantal zoekresultaten per pagina

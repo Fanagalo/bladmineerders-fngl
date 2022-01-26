@@ -21,59 +21,62 @@
 
 @charset "UTF-8";
 
-@import "1-global-variables/_media-queries";
-@import "1-global-variables/_colors";
-@import "1-global-variables/_max-width";
-@import "1-global-variables/_typography";
+@import "1-global-variables/media-queries";
+@import "1-global-variables/colors";
+@import "1-global-variables/max-width";
+@import "1-global-variables/typography";
 
-@import "3-resets/_normalize";
-@import "3-resets/_box-sizing";
+@import "3-resets/normalize";
+@import "3-resets/box-sizing";
 
-@import "4-html-elements/_page";
-@import "4-html-elements/_blockquote";
-@import "4-html-elements/_buttons";
-@import "4-html-elements/_forms";
-@import "4-html-elements/_headings";
-@import "4-html-elements/_hr";
-@import "4-html-elements/_links";
-@import "4-html-elements/_lists";
-@import "4-html-elements/_media";
-@import "4-html-elements/_misc";
-@import "4-html-elements/_paragraph";
-@import "4-html-elements/_pre-code";
-@import "4-html-elements/_tables";
+@import "4-html-elements/page";
+@import "4-html-elements/blockquote";
+@import "4-html-elements/buttons";
+@import "4-html-elements/forms";
+@import "4-html-elements/headings";
+@import "4-html-elements/hr";
+@import "4-html-elements/links";
+@import "4-html-elements/lists";
+@import "4-html-elements/media";
+@import "4-html-elements/misc";
+@import "4-html-elements/paragraph";
+@import "4-html-elements/pre-code";
+@import "4-html-elements/tables";
 
 @import "5-structure-objects/wireframes";
 
-@import "6-styled-components/601-general-components/_entry";
-@import "6-styled-components/601-general-components/_gallery";
-@import "6-styled-components/601-general-components/_pagination";
-@import "6-styled-components/601-general-components/_wp-media";
+@import "6-styled-components/601-general-components/entry";
+@import "6-styled-components/601-general-components/gallery";
+@import "6-styled-components/601-general-components/pagination";
+@import "6-styled-components/601-general-components/wp-media";
 
-@import "6-styled-components/602-widgets/_widget";
+@import "6-styled-components/602-widgets/widget";
 
-@import "6-styled-components/611-page-templates/_archive";
-@import "6-styled-components/611-page-templates/_categories";
-@import "6-styled-components/611-page-templates/_hosts";
-@import "6-styled-components/611-page-templates/_parasite";
-@import "6-styled-components/611-page-templates/_search";
+@import "6-styled-components/611-page-templates/archive";
+@import "6-styled-components/611-page-templates/archive-glossary";
+@import "6-styled-components/611-page-templates/archive-reference";
+@import "6-styled-components/611-page-templates/categories";
+@import "6-styled-components/611-page-templates/glossary-reference.scss";
+@import "6-styled-components/611-page-templates/hosts";
+@import "6-styled-components/611-page-templates/parasite";
+@import "6-styled-components/611-page-templates/search";
 
-@import "6-styled-components/612-section-parts/_comments";
-@import "6-styled-components/612-section-parts/_footer";
-@import "6-styled-components/612-section-parts/_header";
-@import "6-styled-components/612-section-parts/_menu";
-@import "6-styled-components/612-section-parts/_language-search";
+@import "6-styled-components/612-section-parts/comments";
+@import "6-styled-components/612-section-parts/footer";
+@import "6-styled-components/612-section-parts/header";
+@import "6-styled-components/612-section-parts/menu";
+@import "6-styled-components/612-section-parts/language-search";
 
-@import "6-styled-components/630-custom/_caption";
-@import "6-styled-components/630-custom/_columns";
-@import "6-styled-components/630-custom/_edit-link";
-@import "6-styled-components/630-custom/_hierarchy-tree";
-@import "6-styled-components/630-custom/_letterbox";
-@import "6-styled-components/630-custom/_modification-date";
+@import "6-styled-components/630-custom/caption";
+@import "6-styled-components/630-custom/columns";
+@import "6-styled-components/630-custom/edit-link";
+@import "6-styled-components/630-custom/hierarchy-tree";
+@import "6-styled-components/630-custom/letterbox";
+@import "6-styled-components/630-custom/modification-date";
 
-@import "6-styled-components/650-vendor/_breadcrumb";
+@import "6-styled-components/650-vendor/breadcrumb";
 
-@import "7-overrides/_accessibility";
-@import "7-overrides/_alignments";
-@import "7-overrides/_hide-full-elements";
-@import "7-overrides/_hide-obsolete";
+@import "7-overrides/accessibility";
+@import "7-overrides/alignments";
+@import "7-overrides/hide-full-elements";
+@import "7-overrides/hide-obsolete";

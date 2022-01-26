@@ -1,8 +1,8 @@
 <?php
 
-/* custom post type "references" declareren */
+/* Declaration of custom post type "reference" */
 
-function bladmineerders_fngl_cpt_references() {
+function bladmineerders_fngl_cpt_reference() {
 
 	$labels = array(
 		'name'               => _x( 'References', 'post type general name', 'bladmineerders-fngl' ),
@@ -16,7 +16,7 @@ function bladmineerders_fngl_cpt_references() {
 		'view_item'          => __( 'View Reference', 'bladmineerders-fngl' ),
 		'all_items'          => __( 'All References', 'bladmineerders-fngl' ),
 		'search_items'       => __( 'Search References', 'bladmineerders-fngl' ),
-		'parent_item_colon'  => __( 'Parent References:', 'bladmineerders-fngl' ),
+		// 'parent_item_colon'  => __( 'Parent References:', 'bladmineerders-fngl' ),
 		'not_found'          => __( 'No references found.', 'bladmineerders-fngl' ),
 		'not_found_in_trash' => __( 'No references found in Trash.', 'bladmineerders-fngl' ),
 	);
@@ -24,37 +24,38 @@ function bladmineerders_fngl_cpt_references() {
 	$support = array(
 		'title',
 		'editor',
-		'thumbnail',
-		'excerpt',
-		'custom-fields',
+		// 'thumbnail',
+		// 'excerpt',
+		// 'custom-fields',
 		'revisions',
-		'page-attributes',
+		// 'page-attributes',
 	);
 
 	$args = array(
-		'label'               => _x( 'References', 'post type general name', 'bladmineerders-fngl' ),
+		// 'label'               => _x( 'References', 'post type general name', 'bladmineerders-fngl' ),
 		'labels'              => $labels,
-		'menu_position'       => 2,
+		'menu_position'       => 31,
 		'supports'            => $support,
 		'public'              => true,
 		'capability_type'     => 'page',
-		'show_in_rest'        => true,
-		'taxonomies'          => array( 'category', 'post_tag' ),
-		'hierarchical'        => true,
+		// 'show_in_rest'        => true,
+		// 'taxonomies'          => array( 'category', 'post_tag' ),
+		// 'hierarchical'        => true,
         'has_archive'         => true,
 	);
 
-    register_post_type( 'references', $args );
+    register_post_type( 'reference', $args );
 }
-add_action( 'init', 'bladmineerders_fngl_cpt_references' );
+add_action( 'init', 'bladmineerders_fngl_cpt_reference' );
 
-/* custom post type "glosscpt" declareren */
 
-function bladmineerders_fngl_cpt_glosscpt()
+/* Declaration of custom post type "glossary" */
+
+function bladmineerders_fngl_cpt_glossary()
 {
 
 	$labels = array(
-		'name'               => _x('glosscpt', 'post type general name', 'bladmineerders-fngl'),
+		'name'               => _x('Glossary', 'post type general name', 'bladmineerders-fngl'),
 		'singular_name'      => _x('Glossary Item', 'post type singular name', 'bladmineerders-fngl'),
 		'menu_name'          => _x('Glossary', 'admin menu', 'bladmineerders-fngl'),
 		'name_admin_bar'     => _x('Glossary', 'add new on admin bar', 'bladmineerders-fngl'),
@@ -65,7 +66,7 @@ function bladmineerders_fngl_cpt_glosscpt()
 		'view_item'          => __('View Item', 'bladmineerders-fngl'),
 		'all_items'          => __('All Items', 'bladmineerders-fngl'),
 		'search_items'       => __('Search Items', 'bladmineerders-fngl'),
-		'parent_item_colon'  => __('Parent glossary:', 'bladmineerders-fngl'),
+		// 'parent_item_colon'  => __('Parent glossary:', 'bladmineerders-fngl'),
 		'not_found'          => __('No items found.', 'bladmineerders-fngl'),
 		'not_found_in_trash' => __('No items found in Trash.', 'bladmineerders-fngl'),
 	);
@@ -73,26 +74,35 @@ function bladmineerders_fngl_cpt_glosscpt()
 	$support = array(
 		'title',
 		'editor',
-		'thumbnail',
-		'excerpt',
-		'custom-fields',
+		// 'thumbnail',
+		// 'excerpt',
+		// 'custom-fields',
 		'revisions',
-		'page-attributes',
+		// 'page-attributes',
 	);
 
 	$args = array(
-		'label'               => _x('glosscpt', 'post type general name', 'bladmineerders-fngl'),
+		// 'label'               => _x('glossary', 'post type general name', 'bladmineerders-fngl'),
 		'labels'              => $labels,
-		'menu_position'       => 2,
+		'menu_position'       => 32,
 		'supports'            => $support,
 		'public'              => true,
 		'capability_type'     => 'page',
-		'show_in_rest'        => true,
-		'taxonomies'          => array('category', 'post_tag'),
-		'hierarchical'        => true,
+		// 'show_in_rest'        => true,
+		// 'taxonomies'          => array('category', 'post_tag'),
+		// 'hierarchical'        => true,
         'has_archive'         => true,
 	);
 
-	register_post_type('glosscpt', $args);
+	register_post_type('glossary', $args);
 }
-add_action('init', 'bladmineerders_fngl_cpt_glosscpt');
+add_action('init', 'bladmineerders_fngl_cpt_glossary');
+
+function fngl_get_all_glossary_posts( $query ) {
+	if( !is_admin() && $query->is_main_query() && is_post_type_archive( 'glossary' ) ) {
+		$query->set( 'posts_per_page', '-1' );
+//		$query->set( 'orderby', 'title' ); // doesn't work due to multilingual titles
+//		$query->set( 'order', 'ASC' );
+	}
+}
+add_action( 'pre_get_posts', 'fngl_get_all_glossary_posts' );

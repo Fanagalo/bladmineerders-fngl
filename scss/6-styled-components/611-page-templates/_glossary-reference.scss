@@ -1,0 +1,33 @@
+/* 
+  Used in:
+  - archive-glossary.php
+  - archive-reference.php
+
+  Previously used in:
+  - category-new-glossary.php 
+  - category-new-references.php 
+*/
+
+dl.references,
+dl.glossary-item {
+    margin-block-start: 0; // override browser settings
+    margin-block-end: 0; // override browser settings
+}
+
+.references dt,
+.glossary-item dt {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    padding-bottom: 0;
+    margin: 1.16875rem 0 0 0;
+}
+
+.references dd,
+.glossary-item dd {
+    font-size: var(--font-size-normal);
+    margin: 0; // override browser settings
+}
+
+.glossary-item p {
+    margin: 0 0 1.16875rem 0;
+}

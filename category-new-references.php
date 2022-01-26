@@ -14,7 +14,7 @@ get_header();
 
 <div class="main-area-full"></div>
 <main id="main" class="main-area">
-    <div class="category-wrapper">
+    <div class="entry-content">
 
         <header class="page-header">
             <?php the_title('<h1>','</h1>'); ?>
@@ -54,7 +54,7 @@ get_header();
             wp_reset_postdata(); 
             ?>
 
-    </div><!-- .category-wrapper -->
+    </div><!-- .entry-content -->
 
 </main>
 <div class="main-area-full"></div>
