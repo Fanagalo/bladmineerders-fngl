@@ -16,7 +16,7 @@ get_header();
 
 <div class="main-area-full"></div>
 <main id="main" class="main-area">
-    <div class="category-wrapper">
+    <div class="entry-content">
 
         <?php
         /*
@@ -84,7 +84,7 @@ get_header();
 
         wp_reset_postdata(); ?>
 
-    </div><!-- .category-wrapper -->
+    </div><!-- .entry-content -->
 
 </main>
 
