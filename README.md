@@ -2,6 +2,8 @@
 
 Versie 3.0 van https://bladmineerders.nl
 
+Current theme version 1.03
+
 ## Doelen
 
 -   invoer vereenvoudigen
