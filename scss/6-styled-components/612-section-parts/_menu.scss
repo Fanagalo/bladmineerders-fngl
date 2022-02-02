@@ -7,7 +7,6 @@
     position: relative;
 }
 
-
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -33,23 +32,22 @@
     font-weight: var(--font-weight-sub);
 }
 
-.menu>.menu-item>a {
+.menu > .menu-item > a {
     font-weight: var(--font-weight-sub);
     font-size: var(--font-size-menu);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.menu .current-menu-item>a,
-.menu .current-page-ancestor>a,
-.menu .current-menu-ancestor>a,
-.menu .current-menu-parent>a,
-.menu .current-page-parent>a,
-.menu .current_page_parent>a,
-.menu .current_page_ancestor>a {
+.menu .current-menu-item > a,
+.menu .current-page-ancestor > a,
+.menu .current-menu-ancestor > a,
+.menu .current-menu-parent > a,
+.menu .current-page-parent > a,
+.menu .current_page_parent > a,
+.menu .current_page_ancestor > a {
     font-weight: var(--font-weight-heavy);
 }
-
 
 /*--------------------------------------------------------------
 ### Menu mobile
@@ -73,14 +71,14 @@ Consider different media-query with "only"
     .menu-item {
         background-color: var(--menu-bg-hover);
         border-top: 1px solid var(--menu-border);
-        padding: .5em 0 .5em 1em;
+        padding: 0.5em 0 0.5em 1em;
     }
-    .menu>.menu-item:first-of-type {
+    .menu > .menu-item:first-of-type {
         border-top: none;
     }
     .sub-menu {
         display: none;
-        margin: .5em 0 -.5em 0; // essential code
+        margin: 0.5em 0 -0.5em 0; // essential code
     }
     .menu-toggle {
         position: absolute;
@@ -96,7 +94,7 @@ Consider different media-query with "only"
         outline: none;
         padding: 12px 15px 12px 17px;
         text-align: right;
-        z-index: 999
+        z-index: 999;
     }
     .menu-toggle::before {
         content: "\f0c9";
@@ -111,10 +109,10 @@ Consider different media-query with "only"
         font-family: "FontAwesome";
         font-size: 27px;
         outline: none;
-        padding: 0 .5em 0 0;
+        padding: 0 0.5em 0 0;
         width: 50px;
         text-align: center;
-        z-index: 999
+        z-index: 999;
     }
     .sub-menu-toggle::before {
         content: "\f104";
@@ -123,7 +121,6 @@ Consider different media-query with "only"
         content: "\f107";
     }
 }
-
 
 /*--------------------------------------------------------------
 ### Menu desktop
@@ -141,7 +138,7 @@ Consider different media-query with "only"
         margin: 0 auto;
         max-width: var(--container-max-width);
     }
-    .menu>.menu-item {
+    .menu > .menu-item {
         display: inline-block;
     }
     .menu-item {
@@ -150,7 +147,7 @@ Consider different media-query with "only"
     .menu-item a {
         color: var(--p-color);
         display: inline-block;
-        padding: .5em 1em .5em 1em;
+        padding: 0.5em 1em 0.5em 1em;
     }
     .menu-item:hover,
     .menu-item a:hover,
@@ -158,7 +155,7 @@ Consider different media-query with "only"
         background-color: var(--menu-bg-hover);
         color: var(--menu-text-hover) !important;
     }
-    .menu>.menu-item-has-children>a::after {
+    .menu > .menu-item-has-children > a::after {
         content: " \f107";
         font-family: FontAwesome;
     }
@@ -168,16 +165,16 @@ Consider different media-query with "only"
     .sub-menu a {
         color: var(--p-color);
         font-size: var(--font-size-reduced);
-        padding: .5em 1em .5em 1em;
+        padding: 0.5em 1em 0.5em 1em;
     }
-    .menu>.menu-item-has-children:hover>.sub-menu {
+    .menu > .menu-item-has-children:hover > .sub-menu {
         background: var(--menu-bg-hover);
         display: block;
         margin-left: 0;
         position: absolute;
         width: 250px;
         border-bottom: 1px solid var(--menu-border);
-        z-index: 2;
+        z-index: 9;
     }
     .sub-menu .menu-item,
     .sub-menu .sub-menu {
@@ -191,7 +188,7 @@ Consider different media-query with "only"
         border-top: none;
     }
     .sub-menu a:hover {
-        color: var(--diap-color)
+        color: var(--diap-color);
     }
     .sub-menu .menu-item a:hover,
     .sub-menu .menu-item a:active {

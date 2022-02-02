@@ -28,9 +28,9 @@ get_header();
 
 	?>
 
-	<link rel="stylesheet" href="https:////cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+	<script type="text/javascript"  src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 		$(document).ready( function () 
 			{

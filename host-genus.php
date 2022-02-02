@@ -35,26 +35,7 @@ get_header();
 
 		<?php
 			wp_list_pages( array( 'title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3, ) ); 
-
-
-/* vervangende functie voor wp_list_pages?
-echo '<ul>';
-	$mypages = get_pages( array( 
-		'child_of' => $post->ID, 
-		'hierarchical' => false, 
-		'sort_column' => menu_order, 
-		'meta_key' => '',
-		'meta_value' => 'host-genus-determination.php',) 
-	);
-	
-	foreach( $mypages as $page ) {   
-		echo '<li><a href="' . get_page_link( $page->ID ) . '">' . $page->post_title . $page->meta_value . '</a></li>';
-	}   
-echo '</ul>';
-// tot hier 
-*/
-
-?>
+		?>
 	</div>
 
 	<?php get_template_part( 'inc/modification-date' ); ?>

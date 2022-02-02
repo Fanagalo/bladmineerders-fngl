@@ -29,20 +29,8 @@ get_header();
 	?>
 
 	<div class="lower-taxon">
-		<?php
-		// wp_list_pages(array('title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3));
-
-		$my_wp_query = new WP_Query();
-		$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => -1));
-		$childrenpages = get_page_children($post->ID, $all_wp_pages);
-		$n = 0;
-		foreach ($childrenpages as $postnummer) {
-			echo $n . ". " . $postnummer->ID . '<br/>';
-			++$n;
-		}
-
-
-
+		<?php 
+			wp_list_pages( array( 'title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3 ) ); 
 		?>
 	</div>
 

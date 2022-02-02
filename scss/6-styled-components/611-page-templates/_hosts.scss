@@ -6,7 +6,6 @@
  * - host-species-determination.php
  */
 
-
 /* the classes synonymous-name and vernacular-name are also present in the parasites */
 
 h2.synonymous-name,
@@ -21,9 +20,8 @@ h2.synonymous-name {
 }
 
 .page-template-host-species-determination h2.vernacular-name {
-    margin-top: -1.6875rem;
+    // margin-top: -1.6875rem;
 }
-
 
 /* groups of questions in dichotomous table */
 
@@ -64,12 +62,11 @@ h2.synonymous-name {
     }
 }
 
-
 /* determination tables */
 
 .page-template-host-genus-determination h1,
 .page-template-host-species-determination h1 {
-    max-width: var( --text-max-width);
+    max-width: var(--text-max-width);
     margin-left: auto;
     margin-right: auto;
     font-style: italic;
@@ -78,7 +75,7 @@ h2.synonymous-name {
 .page-template-errata-table main article,
 .page-template-host-genus-determination main article,
 .page-template-host-species-determination main article {
-    max-width: var( --container-max-width);
+    max-width: var(--container-max-width);
     font-size: var(--font-size-reduced);
 }
 
@@ -106,46 +103,51 @@ h2.table-all-species a {
     text-decoration: none;
 }
 
-
 /* implementatie van DataTables.js */
 
-.page-template-errata-table th,
-.page-template-host-genus-determination th,
-.page-template-host-species-determination th {
-    background: var(--row-head-color);
-    border-right: 1px solid var(--row-light-line-color);
-    padding-right: 1.5em;
+#DeterminationTable_wrapper {
+    margin-bottom: 1rem;
 }
 
-.page-template-errata-table th:last-of-type,
-.page-template-host-genus-determination th:last-of-type,
-.page-template-host-species-determination th:last-of-type {
-    border-right: none;
-}
-
-table.dataTable thead th {
-    border-bottom: none !important;
-    font-size: var(--font-size-menu);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: var(--font-weight-sub);
-    text-align: left;
-    padding: 10px 8px !important;
-}
-
-table.dataTable thead th:hover {
-    color: var(--head-sort-color);
-}
-
-table.dataTable.no-footer {
-    border-bottom: 1px var(--row-dark-line-color) solid !important;
+.page-template-errata-table,
+.page-template-host-genus-determination,
+.page-template-host-species-determination {
+    .entry-content,
+    main article {
+        max-width: var(--container-max-width);
+    }
+    table.dataTable {
+        thead th {
+            border-bottom: none !important;
+            font-size: var(--font-size-menu);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: var(--font-weight-sub);
+            text-align: left;
+            padding: 10px 8px !important;
+            &:hover {
+                color: var(--head-sort-color);
+            }
+        }
+        &.no-footer {
+            border-bottom: 1px var(--row-dark-line-color) solid;
+        }
+    }
+    th {
+        background: var(--row-head-color);
+        border-right: 1px solid var(--row-light-line-color);
+        padding-right: 1.5em;
+        &:last-of-type {
+            border-right: none;
+        }
+    }
 }
 
 .dataTables_filter {
     background: var(--row-head-color);
     width: 100%;
     border-bottom: 1px solid #eee;
-    padding: .5em 1em;
+    padding: 0.5em 1em;
 }
 
 .dataTables_filter label {
@@ -154,12 +156,11 @@ table.dataTable.no-footer {
 
 .dataTables_filter input[type="search"] {
     width: inherit;
-    font-size: .9em !important;
+    font-size: 0.9em !important;
     border-radius: 0 !important;
     // border: 1px solid var(--p-soft-color) !important;
     background-color: var(--general-bg) !important;
 }
-
 
 /* Errata Table column width */
 
@@ -179,7 +180,6 @@ table.dataTable.no-footer {
     width: 12%;
 }
 
-
 /* responsive tabellen */
 
 @media screen and (max-width: $mq-medium) {
@@ -187,7 +187,7 @@ table.dataTable.no-footer {
     #DeterminationTable_filter {
         margin: 0 !important;
         text-align: left !important;
-        padding: .25rem 0 .25rem 9px;
+        padding: 0.25rem 0 0.25rem 9px;
         margin-right: 1px;
     }
     #ErrataTable *,
@@ -223,60 +223,59 @@ table.dataTable.no-footer {
         width: 10%;
         padding-right: 10px;
         white-space: nowrap;
-        font-size: .9em;
+        font-size: 0.9em;
         font-weight: 300;
-        line-height: .9;
+        line-height: 0.9;
     }
     #ErrataTable td:nth-of-type(1):before {
-        content: "page"
+        content: "page";
     }
     #ErrataTable td:nth-of-type(2):before {
-        content: "erratum"
+        content: "erratum";
     }
     #ErrataTable td:nth-of-type(3):before {
-        content: "note"
+        content: "note";
     }
     #ErrataTable td:nth-of-type(4):before {
-        content: "date"
+        content: "date";
     }
     html[lang="en-US"] #DeterminationTable td:nth-of-type(1):before {
-        content: "organ"
+        content: "organ";
     }
     html[lang="en-US"] #DeterminationTable td:nth-of-type(2):before {
-        content: "parasitic mode"
+        content: "parasitic mode";
     }
     html[lang="en-US"] #DeterminationTable td:nth-of-type(3):before {
-        content: "stage"
+        content: "stage";
     }
     html[lang="en-US"] #DeterminationTable td:nth-of-type(4):before {
-        content: "note"
+        content: "note";
     }
     html[lang="en-US"] #DeterminationTable td:nth-of-type(5):before {
-        content: "tax. group"
+        content: "tax. group";
     }
     html[lang="en-US"] #DeterminationTable td:nth-of-type(6):before {
-        content: "parasite"
+        content: "parasite";
     }
     html[lang="nl"] #DeterminationTable td:nth-of-type(1):before {
-        content: "orgaan"
+        content: "orgaan";
     }
     html[lang="nl"] #DeterminationTable td:nth-of-type(2):before {
-        content: "parasiteerwijze"
+        content: "parasiteerwijze";
     }
     html[lang="nl"] #DeterminationTable td:nth-of-type(3):before {
-        content: "stadium"
+        content: "stadium";
     }
     html[lang="nl"] #DeterminationTable td:nth-of-type(4):before {
-        content: "opmerking"
+        content: "opmerking";
     }
     html[lang="nl"] #DeterminationTable td:nth-of-type(5):before {
-        content: "tax. groep"
+        content: "tax. groep";
     }
     html[lang="nl"] #DeterminationTable td:nth-of-type(6):before {
-        content: "parasiet"
+        content: "parasiet";
     }
 }
-
 
 /* legend of table */
 
@@ -302,13 +301,12 @@ table.dataTable.no-footer {
 }
 
 .table-legend-column {
-    margin-bottom: -.5em;
+    margin-bottom: -0.5em;
 }
-
 
 /* cursieve parasietnamen */
 
-#DeterminationTable td>a {
+#DeterminationTable td > a {
     font-style: italic;
 }
 
