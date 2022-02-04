@@ -1,0 +1,17 @@
+.panel {
+    max-width: var(--container-max-width);
+    margin: 2rem auto;
+    padding: 1em 1em 1em 1em;
+    h2 {
+        margin-top: 0;
+        font-size: var(--font-size-medium);
+    }
+    p {
+        margin-bottom: 0;
+        font-size: var(--font-size-reduced);
+    }
+}
+
+.light-bg {
+    background-color: var(--row-even-color);
+}
