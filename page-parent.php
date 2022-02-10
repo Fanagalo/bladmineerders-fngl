@@ -25,15 +25,26 @@ get_header();
 
 	endwhile; // End of the loop.
 ?>
-	<div class="lower-taxon">
+
+	<div class="lower-taxa">
+		<?php
+			$templates = array('page-parent.php','default');
+			fngl_template_lower_taxa_tree(3,$templates);
+		?>
+	</div><!-- .lower-taxa -->
+
+
+
+
+<div class="lower-taxon">
 	<?php
-		wp_list_pages( 
-			array( 
-				'title_li' => $post->post_title, 
-				'child_of' => $post->ID, 
-				'depth' => 3 
-				) 
-			); 
+		// wp_list_pages( 
+		// 	array( 
+		// 		'title_li' => $post->post_title, 
+		// 		'child_of' => $post->ID, 
+		// 		'depth' => 3 
+		// 		) 
+		// 	); 
 	?>
 	</div>
 
