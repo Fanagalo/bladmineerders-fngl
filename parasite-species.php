@@ -26,9 +26,18 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
+
+	<div class="lower-taxa">
+		<?php
+			$templates = array('parasite-species.php','parasite-stadia.php');
+			fngl_template_lower_taxa_tree(2,$templates);
+		?>
+	</div><!-- .lower-taxa -->
+
+
 	<div class="lower-taxon">
 		<?php
-			wp_list_pages( array( 'title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3 ) ); 
+			// wp_list_pages( array( 'title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3 ) ); 
 		?>
 	</div>
 

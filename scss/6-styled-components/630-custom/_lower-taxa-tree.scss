@@ -1,15 +1,15 @@
-.lower-taxon {
+.lower-taxa {
     margin: 0 auto 2rem auto;
     max-width: var(--text-max-width);
     width: calc(100vw - 2rem);
 }
 
-.lower-taxon li {
+.lower-taxa li {
     list-style: none;
 }
 
-.lower-taxon li,
-.lower-taxon a {
+.lower-taxa li,
+.lower-taxa a {
     font-size: var(--font-size-normal);
     line-height: var(--line-height-paragraph);
     font-weight: var(--font-weight-normal);
@@ -17,41 +17,41 @@
     text-decoration: none;
 }
 
-.lower-taxon a:hover {
+.lower-taxa a:hover {
     background-color: var(--menu-bg-hover);
 }
 
-.lower-taxon,
-.lower-taxon ul,
-.lower-taxon li {
+.lower-taxa,
+.lower-taxa ul,
+.lower-taxa li {
     position: relative;
 }
 
-.lower-taxon ul {
+.lower-taxa ul {
     padding-left: 15px;
 }
 
-.lower-taxon ul li::before,
-.lower-taxon ul li::after {
+.lower-taxa ul li::before,
+.lower-taxa ul li::after {
     content: "";
     position: absolute;
     left: -35px;
 }
 
-.lower-taxon ul li::before {
+.lower-taxa ul li::before {
     border-top: 1px solid var(--menu-bg-hover);
     top: 14px;
     width: 28px;
     height: 0;
 }
 
-.lower-taxon ul li::after {
+.lower-taxa ul li::after {
     border-left: 1px solid var(--menu-bg-hover);
     height: 100%;
     width: 0;
     top: 2px;
 }
 
-.lower-taxon ul>li:last-child::after {
+.lower-taxa ul > li:last-child::after {
     height: 12px;
 }

@@ -19,9 +19,9 @@ h2.synonymous-name {
     font-size: var(--font-size-medium);
 }
 
-.page-template-host-species-determination h2.vernacular-name {
-    // margin-top: -1.6875rem;
-}
+// .page-template-host-species-determination h2.vernacular-name {
+//     margin-top: -1.6875rem;
+// }
 
 /* groups of questions in dichotomous table */
 
@@ -106,7 +106,7 @@ h2.table-all-species a {
 /* implementatie van DataTables.js */
 
 #DeterminationTable_wrapper {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .page-template-errata-table,

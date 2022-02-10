@@ -28,15 +28,16 @@ get_header();
 
 	?>
 
-	<div class="lower-taxon">
+	<div class="lower-taxa">
 		<?php printf( __( '[:nl]<h2 class="table-all-species"><a name="all"></a>Tabellen voor alle parasieten per soort</h2>[:]
 						   [:en]<h2 class="table-all-species"><a name="all"></a>Tables for all parasites per species</h2>[:]'
 		) ); ?>
 
 		<?php
-			wp_list_pages( array( 'title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3, ) ); 
+			$templates = array('host-genus.php','host-genus-determination.php','host-species-determination.php');
+			fngl_template_lower_taxa_tree(2,$templates);
 		?>
-	</div>
+	</div><!-- .lower-taxa -->
 
 	<?php get_template_part( 'inc/modification-date' ); ?>
 
