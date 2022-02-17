@@ -25,13 +25,17 @@ function fngl_template_lower_taxa_tree($depth,$templates) {
     $query = call_user_func_array(array($wpdb, 'prepare'), array_merge(array($sql), $templates));
     $results = $wpdb->get_results($query);
 
-    $r= array( 'walker' => '' );
+    $r = array( 'walker' => '' );
     $current_page = get_the_ID();
     $children = get_page_children( $current_page, $results );  
 
-    $output = '<li class="pagenav">' . get_the_title() . '<ul>';
-    $output .= walk_page_tree( $children, $depth, $current_page, $r );
-    $output .= '</ul>';
-
-    print($output);
+    if (empty($children)) {
+        return;
+    } 
+    else {
+        $pre_output = '<li class="pagenav">' . get_the_title() . '<ul>';
+        $output = walk_page_tree( $children, $depth, $current_page, $r );
+        $post_output = '</ul>';
+        echo "{$pre_output}{$output}{$post_output}"; 
+    }
 }
