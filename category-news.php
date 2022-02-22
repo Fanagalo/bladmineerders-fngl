@@ -43,44 +43,44 @@ get_header();
             ) );
 
     
-            if ( $my_query ->have_posts() ):
-                while ( $my_query->have_posts() ): $my_query->the_post(); ?>
-            
-                    <div class="entry-meta">
-                        <?php bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); ?>
+        if ( $my_query ->have_posts() ):
+            while ( $my_query->have_posts() ): $my_query->the_post(); ?>
+        
+                <div class="entry-meta">
+                    <?php bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); ?>
+                </div>
+
+                <div class="news-article">
+                    <h2 <?php post_class(); ?>><?php the_title(); ?> </h2>
+
+                    <div class="moddate-line">
+                        <?php printf( __( '[:nl]Laatste bewerking[:en]Last modified[:] ' ) ); ?>
+                        <?php echo get_the_modified_date('j');?>.<?php echo MonthRoman( get_the_modified_date('n') ); ?>.<?php echo get_the_modified_date('Y');?>
+                        <?php echo get_post_modified_time('G:i'); ?>
                     </div>
-    
-                    <div class="news-article">
-                        <h2 <?php post_class(); ?>><?php the_title(); ?> </h2>
 
-                        <div class="moddate-line">
-                            <?php printf( __( '[:nl]Laatste bewerking[:en]Last modified[:] ' ) ); ?>
-                            <?php echo get_the_modified_date('j');?>.<?php echo MonthRoman( get_the_modified_date('n') ); ?>.<?php echo get_the_modified_date('Y');?>
-                            <?php echo get_post_modified_time('G:i'); ?>
-                        </div>
+                    <?php the_content( '', '' ); ?>
+                </div><!-- .news-article -->
 
-                        <?php the_content( '', '' ); ?>
-                    </div><!-- .news-article -->
+            <?php endwhile; ?>
 
-                <?php endwhile; ?>
+            <div class="list-pagination-full">
+                <div class="list-pagination-area">
+                <?php 
+                    echo paginate_links( array(
+                        'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                        'total'        => $my_query->max_num_pages,
+                        'mid_size'     => 1,
+                        'current'      => max( 1, get_query_var( 'paged' ) ),
+                        'format'       => '?paged=%#%',
+                        'prev_text'    => '«', // default '« Previous' translates
+                        'next_text'    => '»', // default 'Next »' translates
+                    ) );
+                ?>
+                </div><!-- .list-pagination-area -->
+            </div><!-- .list-pagination-full -->
 
-                <div class="list-pagination-full">
-                    <div class="list-pagination-area">
-                    <?php 
-                        echo paginate_links( array(
-                            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-                            'total'        => $my_query->max_num_pages,
-                            'mid_size'     => 1,
-                            'current'      => max( 1, get_query_var( 'paged' ) ),
-                            'format'       => '?paged=%#%',
-                            'prev_text'    => '«', // default '« Previous' translates
-                            'next_text'    => '»', // default 'Next »' translates
-                        ) );
-                    ?>
-                    </div><!-- .list-pagination-area -->
-                </div><!-- .list-pagination-full -->
-
-            <?php endif; 
+        <?php endif; 
 
         wp_reset_postdata(); ?>
 

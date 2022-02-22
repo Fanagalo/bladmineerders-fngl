@@ -1,0 +1,28 @@
+.little-history {
+    background-color: var(--dichotomous-table-color);
+    border-spacing: 0;
+    tr {
+        &:nth-child(2n) {
+            background-color: var(--row-even-color);
+        }
+    }
+    td {
+        vertical-align: top;
+        padding: 0.5rem 1rem;
+        &:first-child {
+            font-size: 2rem;
+            padding-right: 2rem;
+        }
+    }
+    ul {
+        margin: auto auto 0 0;
+        padding: 0;
+        ul {
+            margin-left: 2rem;
+            list-style-type: circle;
+        }
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+}
