@@ -1,0 +1,34 @@
+:root {
+    --widget-bg: transparent;
+    --widget-text-color: var(--primary-lightest);
+}
+
+.widget {
+    background-color: var(--widget-bg);
+    // border: var(--primary-lighter) 1px solid;
+    // padding: 1rem;
+    * {
+        color: var(--widget-text-color);
+    }
+    p {
+        margin: .5rem 0;
+    }
+    a {
+        color: var(--white);
+    }
+    select {
+        max-width: 100%;
+    }
+    ol,
+    ul {
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+}
+
+.widgettitle, // keep this, typo in WP_Widget_Recent_Posts
+.widget-title {
+    font-size: var(--fs-m);
+    color: var(--white);
+    margin: 0;
+}

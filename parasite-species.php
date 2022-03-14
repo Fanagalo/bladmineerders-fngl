@@ -26,7 +26,6 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
-
 	<div class="lower-taxa">
 		<?php
 			$templates = array('parasite-species.php','parasite-stadia.php');
@@ -34,19 +33,10 @@ get_header();
 		?>
 	</div><!-- .lower-taxa -->
 
-
-	<div class="lower-taxon">
-		<?php
-			// wp_list_pages( array( 'title_li' => $post->post_title, 'child_of' => $post->ID, 'depth' => 3 ) ); 
-		?>
-	</div>
-
-
-	<?php get_template_part( 'inc/modification-date' ); ?>
-
 </main>
 <div class="main-area-full"></div>
 
 <?php
-
+get_template_part( 'inc/modification-date' );
+get_sidebar();
 get_footer();

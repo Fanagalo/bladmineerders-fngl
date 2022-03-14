@@ -33,11 +33,10 @@ get_header();
 		?>
 	</div><!-- .lower-taxa -->
 
-	<?php get_template_part( 'inc/modification-date' ); ?>
-
 </main>
 <div class="main-area-full"></div>
 
 <?php
-
+get_template_part( 'inc/modification-date' );
+get_sidebar();
 get_footer();

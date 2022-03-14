@@ -19,13 +19,12 @@ get_header();
 <main id="main" class="main-area">
 
 	<?php
-	while ( have_posts() ) :
-		the_post();
+		while ( have_posts() ) :
+			the_post();
 
-		get_template_part( 'template-parts/content', 'page' );
+			get_template_part( 'template-parts/content', 'page' );
 
-	endwhile; // End of the loop.
-
+		endwhile; // End of the loop.
 	?>
 
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
@@ -113,7 +112,7 @@ get_header();
 					<strong>film:</strong> very thin cover of fungal tussue<br/> 
 					<strong>gall:</strong> swelling and/or malformation<br/> 
 					<strong>grazer:</strong> feeding at the outside of the plant<br/> 
-					<strong>leaf spot</strong> discoloured, often ± necrotic, generally not galled, sign of a fungus infection<br/> 
+					<strong>leaf spot:</strong> discoloured, often ± necrotic, generally not galled, sign of a fungus infection<br/> 
 					<strong>miner-borer:</strong> larve initially makes a mine, lives as a borer later<br/> 
 					<strong>pustule:</strong> plug of fungal tissue, generally brown-black and < 2 mm<br/> 
 					<strong>stripe:</strong> longitudinal line of fungal tissue in a grass leaf<br/> 
@@ -136,11 +135,10 @@ get_header();
 		<p style="clear:both">&nbsp;</p>
 	</div>
 
-	<?php get_template_part( 'inc/modification-date' ); ?>
-
 </main>
 <div class="main-area-full"></div>
 
 <?php
-
+get_template_part( 'inc/modification-date' );
+get_sidebar();
 get_footer();

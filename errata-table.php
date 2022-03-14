@@ -19,18 +19,15 @@ get_header();
 <main id="main" class="main-area">
 
 	<?php
-	while ( have_posts() ) :
-		the_post();
-
-		get_template_part( 'template-parts/content', 'page' );
-
-	endwhile; // End of the loop.
-
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'template-parts/content', 'page' );
+		endwhile; // End of the loop.
 	?>
 
-	<link rel="stylesheet" href="https:////cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+	<script type="text/javascript"  src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 		$(document).ready( function () 
 			{
@@ -63,11 +60,11 @@ get_header();
 		<p style="clear:both">&nbsp;</p>
 	</div>
 
-	<?php get_template_part( 'inc/modification-date' ); ?>
 
 </main>
 <div class="main-area-full"></div>
 
 <?php
-
+get_template_part( 'inc/modification-date' );
+get_sidebar();
 get_footer();

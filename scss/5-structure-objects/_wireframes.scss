@@ -1,18 +1,43 @@
 body {
+    min-height: 100vh;
     display: grid;
-    grid-template-areas: "nav" "header" "language-search" "breadcrumb" "main" "footer";
+    grid-template-areas:
+        "nav"
+        "header"
+        "language-search"
+        "breadcrumb"
+        "main"
+        "sidebar"
+        "footer";
+    grid-template-rows: auto auto auto auto 1fr auto auto;
 }
 
 @media screen and (min-width: $mq-medium) {
     body {
         grid-template-columns: auto 800px auto;
-        grid-template-areas: " header  header  header " "language-search language-search language-search" " nav nav nav " "breadcrumb breadcrumb breadcrumb" " main    main    main   " " footer  footer  footer ";
+        grid-template-areas:
+            " header  header  header "
+            " language-search language-search language-search"
+            " nav nav nav "
+            " breadcrumb breadcrumb breadcrumb"
+            " main    main    main   "
+            " moddate moddate moddate "
+            " sidebar sidebar sidebar "
+            " footer  footer  footer ";
     }
 }
 
 @media screen and (min-width: $mq-large) {
     body {
         grid-template-columns: auto 120px 800px 120px auto;
-        grid-template-areas: " . header  header  header . " " . language-search language-search language-search . " " . nav nav nav . " " . breadcrumb breadcrumb breadcrumb . " " . main    main    main   . " " . footer  footer  footer . ";
+        grid-template-areas:
+            " . header  header  header . "
+            " . language-search language-search language-search . "
+            " . nav nav nav . "
+            " . breadcrumb breadcrumb breadcrumb . "
+            " . main    main    main   . "
+            " . moddate moddate moddate . "
+            " . sidebar sidebar sidebar . "
+            " . footer  footer  footer . ";
     }
 }

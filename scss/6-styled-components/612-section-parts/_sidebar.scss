@@ -1,0 +1,17 @@
+.sidebar-area-full {
+    background-color: var(--footer-area-full-bg);
+}
+
+.sidebar-area {
+    background-color: var(--footer-area-bg);
+    grid-area: sidebar;
+    padding: 4rem 1rem 2rem 1rem;
+    width: 100%;
+    display: grid;
+    column-gap: 0.5rem;
+    row-gap: 2rem;
+    align-items: start;
+}
+
+@media screen and (min-width: $mq-medium) {
+}

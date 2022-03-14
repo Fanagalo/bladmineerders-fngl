@@ -39,7 +39,7 @@ add_shortcode('statistics_posts_by_type', 'fngl_statistics_posts_by_type_shortco
  * @return string   HTML code with a class
  */
 
-function fngl_statistics_images_shortcode() {
+function fngl_statistics_images_shortcode( $atts ) {
 
     extract( shortcode_atts( array(
         'offset' => 10270,   // default, this is number of images in folder wp-content/uploads/beeld
@@ -59,3 +59,23 @@ function fngl_statistics_images_shortcode() {
 }
 add_shortcode('statistics_images', 'fngl_statistics_images_shortcode');
 
+
+/**
+ * Shortcode to display current date and time in Dutch or English, 
+ * Usage  [date-time-now]
+ * 
+ * @since bladmineerders-fngl version 1.0.11
+ * @return string
+ */
+
+function fngl_current_date_time_shortcode() {
+
+    if (qtranxf_getLanguage() == 'nl') {
+        $current_date_time = date_i18n('j F Y \o\m G:i');
+    } else {
+        $current_date_time = date_i18n('F j, Y, g:i A','',true) . ' UTC';
+    }
+
+    return $current_date_time;
+} 
+add_shortcode('date-time-now','fngl_current_date_time_shortcode'); 

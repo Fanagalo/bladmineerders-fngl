@@ -16,37 +16,37 @@
     border: none;
     height: auto;
     margin: 0;
-}
 
-#site-navigation a {
-    color: var(--p-color);
-    text-decoration: none;
-}
+    a {
+        color: var(--p-color);
+        text-decoration: none;
+    }
 
-#site-navigation ul {
-    list-style-type: none;
-    padding: 0;
-}
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-.menu-item {
-    font-weight: var(--font-weight-sub);
-}
+    .menu-item {
+        font-weight: var(--font-weight-sub);
+    }
 
-.menu > .menu-item > a {
-    font-weight: var(--font-weight-sub);
-    font-size: var(--font-size-menu);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+    .menu > .menu-item > a {
+        font-weight: var(--font-weight-sub);
+        font-size: var(--font-size-menu);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
 
-.menu .current-menu-item > a,
-.menu .current-page-ancestor > a,
-.menu .current-menu-ancestor > a,
-.menu .current-menu-parent > a,
-.menu .current-page-parent > a,
-.menu .current_page_parent > a,
-.menu .current_page_ancestor > a {
-    font-weight: var(--font-weight-heavy);
+    .menu .current-menu-item > a,
+    .menu .current-page-ancestor > a,
+    .menu .current-menu-ancestor > a,
+    .menu .current-menu-parent > a,
+    .menu .current-page-parent > a,
+    .menu .current_page_parent > a,
+    .menu .current_page_ancestor > a {
+        font-weight: var(--font-weight-heavy);
+    }
 }
 
 /*--------------------------------------------------------------
@@ -58,28 +58,6 @@ Consider different media-query with "only"
 --------------------------------------------------------------*/
 
 @media screen and (max-width: $mq-medium) {
-    #site-navigation {
-        display: none;
-    }
-    .menu,
-    .sub-menu {
-        margin: 0;
-    }
-    .menu {
-        border-bottom: 1px solid var(--menu-border);
-    }
-    .menu-item {
-        background-color: var(--menu-bg-hover);
-        border-top: 1px solid var(--menu-border);
-        padding: 0.5em 0 0.5em 1em;
-    }
-    .menu > .menu-item:first-of-type {
-        border-top: none;
-    }
-    .sub-menu {
-        display: none;
-        margin: 0.5em 0 -0.5em 0; // essential code
-    }
     .menu-toggle {
         position: absolute;
         top: 0;
@@ -120,6 +98,29 @@ Consider different media-query with "only"
     .sub-menu-toggle.activated::before {
         content: "\f107";
     }
+    #site-navigation {
+        display: none;
+
+        .menu,
+        .sub-menu {
+            margin: 0;
+        }
+        .menu {
+            border-bottom: 1px solid var(--menu-border);
+        }
+        .menu-item {
+            background-color: var(--menu-bg-hover);
+            border-top: 1px solid var(--menu-border);
+            padding: 0.5em 0 0.5em 1em;
+        }
+        .menu > .menu-item:first-of-type {
+            border-top: none;
+        }
+        .sub-menu {
+            display: none;
+            margin: 0.5em 0 -0.5em 0; // essential code
+        }
+    }
 }
 
 /*--------------------------------------------------------------
@@ -133,66 +134,66 @@ Consider different media-query with "only"
     }
     #site-navigation {
         width: 100%;
-    }
-    .menu {
-        margin: 0 auto;
-        max-width: var(--container-max-width);
-    }
-    .menu > .menu-item {
-        display: inline-block;
-    }
-    .menu-item {
-        display: block;
-    }
-    .menu-item a {
-        color: var(--p-color);
-        display: inline-block;
-        padding: 0.5em 1em 0.5em 1em;
-    }
-    .menu-item:hover,
-    .menu-item a:hover,
-    .menu-item a:active {
-        background-color: var(--menu-bg-hover);
-        color: var(--menu-text-hover) !important;
-    }
-    .menu > .menu-item-has-children > a::after {
-        content: " \f107";
-        font-family: FontAwesome;
-    }
-    .sub-menu {
-        display: none;
-    }
-    .sub-menu a {
-        color: var(--p-color);
-        font-size: var(--font-size-reduced);
-        padding: 0.5em 1em 0.5em 1em;
-    }
-    .menu > .menu-item-has-children:hover > .sub-menu {
-        background: var(--menu-bg-hover);
-        display: block;
-        margin-left: 0;
-        position: absolute;
-        width: 250px;
-        border-bottom: 1px solid var(--menu-border);
-        z-index: 9;
-    }
-    .sub-menu .menu-item,
-    .sub-menu .sub-menu {
-        display: block;
-    }
-    .sub-menu .menu-item,
-    .sub-menu .sub-menu {
-        border-top: 1px solid var(--menu-border);
-    }
-    .sub-menu .menu-item:first-of-type {
-        border-top: none;
-    }
-    .sub-menu a:hover {
-        color: var(--diap-color);
-    }
-    .sub-menu .menu-item a:hover,
-    .sub-menu .menu-item a:active {
-        background-color: var(--menu-bg-hover);
-        color: var(--menu-text-hover);
+        .menu {
+            margin: 0 auto;
+            max-width: var(--container-max-width);
+        }
+        .menu > .menu-item {
+            display: inline-block;
+        }
+        .menu-item {
+            display: block;
+        }
+        .menu-item a {
+            color: var(--p-color);
+            display: inline-block;
+            padding: 0.5em 1em 0.5em 1em;
+        }
+        .menu-item:hover,
+        .menu-item a:hover,
+        .menu-item a:active {
+            background-color: var(--menu-bg-hover);
+            color: var(--menu-text-hover) !important;
+        }
+        .menu > .menu-item-has-children > a::after {
+            content: " \f107";
+            font-family: FontAwesome;
+        }
+        .sub-menu {
+            display: none;
+        }
+        .sub-menu a {
+            color: var(--p-color);
+            font-size: var(--font-size-reduced);
+            padding: 0.5em 1em 0.5em 1em;
+        }
+        .menu > .menu-item-has-children:hover > .sub-menu {
+            background: var(--menu-bg-hover);
+            display: block;
+            margin-left: 0;
+            position: absolute;
+            width: 250px;
+            border-bottom: 1px solid var(--menu-border);
+            z-index: 9;
+        }
+        .sub-menu .menu-item,
+        .sub-menu .sub-menu {
+            display: block;
+        }
+        .sub-menu .menu-item,
+        .sub-menu .sub-menu {
+            border-top: 1px solid var(--menu-border);
+        }
+        .sub-menu .menu-item:first-of-type {
+            border-top: none;
+        }
+        .sub-menu a:hover {
+            color: var(--diap-color);
+        }
+        .sub-menu .menu-item a:hover,
+        .sub-menu .menu-item a:active {
+            background-color: var(--menu-bg-hover);
+            color: var(--menu-text-hover);
+        }
     }
 }

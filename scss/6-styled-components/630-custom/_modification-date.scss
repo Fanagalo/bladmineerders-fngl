@@ -1,15 +1,17 @@
 .moddate-full {
     background-color: var(--menu-bg);
-    width: 100%;
-    position: absolute;
-    left: 0;
-    margin: 0;
-    padding: 1rem;
 }
 
 .moddate-area {
-    max-width: var(--text-max-width);
+    background-color: var(--menu-bg);
+    width: 100%;
+    padding: 1rem;
+    grid-area: moddate;
+}
+
+.moddate-content {
     margin: 0 auto;
+    max-width: var(--text-max-width);
     font-weight: var(--font-weight-sub);
     font-size: var(--font-size-reduced);
 }
