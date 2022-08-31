@@ -54,5 +54,5 @@ get_header();
 <div class="main-area-full"></div>
 
 <?php
-
+get_sidebar();
 get_footer();
