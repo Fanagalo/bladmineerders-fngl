@@ -12,7 +12,7 @@ aside section {
 
 @media only screen and (min-width: $mq-small) {
     aside {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
     // aside section {
     //     grid-column: span 2;
@@ -27,7 +27,7 @@ aside section {
 
 @media only screen and (min-width: $mq-medium) {
     aside {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     // aside section:nth-child(2n + 1):nth-last-child(1) {
     //     grid-column: span 2;
