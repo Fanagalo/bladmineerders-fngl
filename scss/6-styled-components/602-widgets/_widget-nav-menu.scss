@@ -8,14 +8,15 @@
         list-style: none;
         padding: 0;
         .menu-item {
-            // display: inline;
+            font-size: var(--font-size-reduced);
+            font-weight: var(--font-weight-sub);
             margin: 0 0 0.75rem 0;
-            line-height: var(--line-height-title);
+            line-height: var(--line-height-narrow);
             a {
-                text-decoration: none;
-                color: var(--widget-text-color);
+                // text-decoration: none;
+                color: var(--p-soft-color);
                 &:hover {
-                    color: var(--diap-color);
+                    color: var(--a-hover-color);
                     text-decoration: underline;
                 }
             }
