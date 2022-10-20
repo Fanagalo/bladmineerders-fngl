@@ -144,6 +144,8 @@ require get_template_directory() . '/inc/lower-taxa-tree.php';              // F
 require get_template_directory() . '/inc/site-statistics-shortcodes.php';   // Shortcodes to create site statistics
 require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
 require get_template_directory() . '/inc/block-editor-disable.php';         // Remove block editor
+require get_template_directory() . '/inc/comments-disable.php';             // Remove comments
+
 
 // limiet voor aantal zoekresultaten per pagina
 // bron https://www.relevanssi.com/knowledge-base/posts-per-page/
