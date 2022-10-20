@@ -27,5 +27,6 @@ get_header();
 <div class="main-area-full"></div>
 
 <?php
+get_template_part( 'inc/empty-bar' );
 get_sidebar();
 get_footer();
