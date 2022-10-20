@@ -143,6 +143,7 @@ require get_template_directory() . '/inc/cpts.php';                         // C
 require get_template_directory() . '/inc/lower-taxa-tree.php';              // Function for lower taxa tree for hosts and parasites
 require get_template_directory() . '/inc/site-statistics-shortcodes.php';   // Shortcodes to create site statistics
 require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
+require get_template_directory() . '/inc/block-editor-disable.php';         // Remove block editor
 
 // limiet voor aantal zoekresultaten per pagina
 // bron https://www.relevanssi.com/knowledge-base/posts-per-page/
