@@ -145,18 +145,4 @@ require get_template_directory() . '/inc/site-statistics-shortcodes.php';   // S
 require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
 require get_template_directory() . '/inc/block-editor-disable.php';         // Remove block editor
 require get_template_directory() . '/inc/comments-disable.php';             // Remove comments
-
-
-// limiet voor aantal zoekresultaten per pagina
-// bron https://www.relevanssi.com/knowledge-base/posts-per-page/
-
-add_filter('post_limits', 'postsperpage');
-function postsperpage($limits) {
-	if (is_search()) {
-		global $wp_query;
-		$wp_query->query_vars['posts_per_page'] = 1000;
-	}
-	return $limits;
-}
-
-
+require get_template_directory() . '/inc/relevanssi.php';                   // Limits search results in Relevanssi
