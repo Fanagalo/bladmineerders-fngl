@@ -49,7 +49,7 @@ get_header();
                 FROM $wpdb->posts
                 WHERE post_status = 'publish'
                 AND post_type = 'reference'
-                ORDER BY wp_posts.post_name ASC
+                ORDER BY post_name ASC
             ");
 
             echo '<dl class="reference">';
