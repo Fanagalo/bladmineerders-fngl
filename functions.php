@@ -132,17 +132,13 @@ add_action( 'wp_enqueue_scripts', 'bladmineerders_fngl_scripts' );
 
 
 /* Add functions from directory "inc" */ 
-require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme.
-require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
-require get_template_directory() . '/inc/custom-header.php';                // Custom Header
-// require get_template_directory() . '/inc/customizer.php';                   // Customizer
-// require get_template_directory() . '/inc/custom-block-styling.php';         // Custom styling of the frontend and backend of the block editor 
-// require get_template_directory() . '/inc/custom-color-font-blocks.php';     // Custom colors and font sizes for block editor
-// require get_template_directory() . '/inc/fngl-recent-posts-shortcode.php';  // Shortcode to display overview of pages, posts of CPT using a shortcode
-require get_template_directory() . '/inc/cpts.php';                         // Custom Post Types
-require get_template_directory() . '/inc/lower-taxa-tree.php';              // Function for lower taxa tree for hosts and parasites
-require get_template_directory() . '/inc/site-statistics-shortcodes.php';   // Shortcodes to create site statistics
-require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
 require get_template_directory() . '/inc/block-editor-disable.php';         // Remove block editor
 require get_template_directory() . '/inc/comments-disable.php';             // Remove comments
+require get_template_directory() . '/inc/cpts.php';                         // Custom Post Types
+require get_template_directory() . '/inc/custom-header.php';                // Custom Header
+require get_template_directory() . '/inc/lower-taxa-tree.php';              // Function for lower taxa tree for hosts and parasites
 require get_template_directory() . '/inc/relevanssi.php';                   // Limits search results in Relevanssi
+require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
+require get_template_directory() . '/inc/site-statistics-shortcodes.php';   // Shortcodes to create site statistics
+require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
+require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme
