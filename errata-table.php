@@ -25,9 +25,9 @@ get_header();
 		endwhile; // End of the loop.
 	?>
 
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+	<script type="text/javascript"  src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 		$(document).ready( function () 
 			{
