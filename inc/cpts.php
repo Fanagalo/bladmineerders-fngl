@@ -98,6 +98,9 @@ function bladmineerders_fngl_cpt_glossary()
 }
 add_action('init', 'bladmineerders_fngl_cpt_glossary');
 
+
+/* This action shows all the glossary items in one page */
+
 function fngl_get_all_glossary_posts( $query ) {
 	if( !is_admin() && $query->is_main_query() && is_post_type_archive( 'glossary' ) ) {
 		$query->set( 'posts_per_page', '-1' );
