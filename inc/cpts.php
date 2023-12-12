@@ -42,6 +42,7 @@ function bladmineerders_fngl_cpt_reference() {
 		// 'taxonomies'          => array( 'category', 'post_tag' ),
 		// 'hierarchical'        => true,
         'has_archive'         => true,
+		'menu_icon'           => 'none',
 	);
 
     register_post_type( 'reference', $args );
@@ -92,6 +93,8 @@ function bladmineerders_fngl_cpt_glossary()
 		// 'taxonomies'          => array('category', 'post_tag'),
 		// 'hierarchical'        => true,
         'has_archive'         => true,
+		'menu_icon'           => 'none',
+
 	);
 
 	register_post_type('glossary', $args);
