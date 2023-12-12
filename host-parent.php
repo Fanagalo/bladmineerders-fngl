@@ -26,7 +26,7 @@ get_header();
 
 	<div class="lower-taxa">
 		<?php
-			$templates = array('host-parent.php','host-genus.php','host-genus-determination.php','host-species-determination.php');
+			$templates = array('host-parent.php','host-genus.php','default','host-genus-determination.php','host-species-determination.php');
 			fngl_template_lower_taxa_tree(3,$templates);
 		?>
 	</div><!-- .lower-taxa -->

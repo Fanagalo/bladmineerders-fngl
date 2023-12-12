@@ -31,7 +31,7 @@ get_header();
 		) ); ?>
 
 		<?php
-			$templates = array('host-genus.php','host-genus-determination.php','host-species-determination.php');
+			$templates = array('host-genus.php', 'default','host-genus-determination.php','host-species-determination.php');
 			fngl_template_lower_taxa_tree(2,$templates);
 		?>
 	</div><!-- .lower-taxa -->
