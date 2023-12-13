@@ -20,8 +20,6 @@
 
 <body <?php body_class(); ?>>
 
-	<?php include_once("inc/analyticstracking.php") ?>
-
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bladmineerders-fngl' ); ?></a>
 
 	<div class="header-area-full"></div>
