@@ -1,13 +1,14 @@
 <?php
-/**
+
+/*
 Template Name: Host - Genus
+Template Post Type: page, host
  *
  * Custom template used for Genera of Hosts
  * Displays text from the content field: mainly a dichotomous table to the Parasite Species
  * Displays a hierarchical tree of lower taxa
  * Shows the modification date
  * 
- *
  * @package bladmineerders-fngl
  * @since version 0.75
  */
@@ -19,10 +20,9 @@ get_header();
 <main id="main" class="main-area">
 
 	<?php
-		while ( have_posts() ) :
-			the_post();
+		while ( have_posts() ) : the_post();
 			get_template_part( 'template-parts/content', 'page' );
-		endwhile; // End of the loop.
+		endwhile;
 	?>
 
 	<div class="lower-taxa">
@@ -31,7 +31,8 @@ get_header();
 		) ); ?>
 
 		<?php
-			$templates = array('host-genus.php', 'default','host-genus-determination.php','host-species-determination.php');
+			$templates = array('host-genus.php', 'default', 'host-genus-determination.php', 'host-species-determination.php');
+			// $templates = array('default');
 			fngl_template_lower_taxa_tree(2,$templates);
 		?>
 	</div><!-- .lower-taxa -->

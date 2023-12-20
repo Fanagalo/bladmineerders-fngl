@@ -1,6 +1,8 @@
 <?php
-/**
+
+/*
 Template Name: Host - Genus - Galler
+Template Post Type: page, host
  *
  * Custom template used for Genera of Hosts
  * Displays text from the content field: mainly a dichotomous table to the Parasite Species

@@ -1,8 +1,9 @@
 <?php
 
-/**
+/*
 Template Name: Host - Parent
- *
+Template Post Type: page, host
+ * 
  * Custom template used for Parents of Hosts
  * Displays text from the content field: mainly a dichotomous table to the Parasite Species
  * Displays a hierarchical tree of lower taxa
