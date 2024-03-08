@@ -1,4 +1,5 @@
 <?php
+
 /**
 Template Name: Errata with tabel
  *
@@ -19,31 +20,31 @@ get_header();
 <main id="main" class="main-area">
 
 	<?php
-		while ( have_posts() ) :
-			the_post();
-			get_template_part( 'template-parts/content', 'page' );
-		endwhile; // End of the loop.
+	while (have_posts()) :
+		the_post();
+		get_template_part('template-parts/content', 'page');
+	endwhile; // End of the loop.
 	?>
 
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript"  src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-	<script type="text/javascript">
-		$(document).ready( function () 
-			{
-				$('#ErrataTable').DataTable({
-			        paging: false,	
-			        info: false,
-			        "language": {
-					    "search": "Search",
-					}
-				})
-			} );
-	</script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
 
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#ErrataTable').DataTable({
+				paging: false,
+				info: false,
+				"language": {
+					"search": "Search",
+				}
+			})
+		});
+	</script>
+<p>&nbsp;</p>
 	<div class="table-legend">
 
-		<?php printf( __( '
+		<?php printf(__('
 				<div class="table-legend-column">
 					<h3>FILTER AND SORT TABLE</h3> 
 					To <strong>filter</strong> the table above, add a text to the search field (top right of the table).<br/>
@@ -56,7 +57,7 @@ get_header();
 					<h3>&nbsp;</h3>
 					<strong>Sort multiple columns</strong> with Shift&nbsp;+&nbsp;click on the arrows.
 				</div>
-		') ); ?>
+		')); ?>
 		<p style="clear:both">&nbsp;</p>
 	</div>
 
@@ -65,6 +66,6 @@ get_header();
 <div class="main-area-full"></div>
 
 <?php
-get_template_part( 'inc/modification-date' );
+get_template_part('inc/modification-date');
 get_sidebar();
 get_footer();

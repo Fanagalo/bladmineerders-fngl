@@ -143,23 +143,27 @@ h2.table-all-species a {
     }
 }
 
-.dataTables_filter {
+/* Datatables since 2.0.2 filter field */
+
+.dt-container .dt-layout-cell {
+    padding: 0 !important; //override of DataTables CSS
+}
+
+.dt-search {
     background: var(--row-head-color);
     width: 100%;
     border-bottom: 1px solid #eee;
     padding: 0.5em 1em;
-}
+    label {
+        font-weight: var(--font-weight-sub);
+    }
 
-.dataTables_filter label {
-    font-weight: var(--font-weight-sub);
-}
-
-.dataTables_filter input[type="search"] {
-    width: inherit;
-    font-size: 0.9em !important;
-    border-radius: 0 !important;
-    // border: 1px solid var(--p-soft-color) !important;
-    background-color: var(--general-bg) !important;
+    input[type="search"] {
+        width: 200px;
+        font-size: 0.9em !important;
+        border-radius: 0 !important;
+        background-color: var(--general-bg) !important;
+    }
 }
 
 /* Errata Table column width */

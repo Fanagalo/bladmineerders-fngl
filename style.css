@@ -4,7 +4,7 @@
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme built from fngl_s-core 0.75 
- Version: 1.0.11
+ Version: 1.0.12
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1422,19 +1422,22 @@ h2.table-all-species a {
   border-right: none;
 }
 
-.dataTables_filter {
+/* Datatables since 2.0.2 filter field */
+.dt-container .dt-layout-cell {
+  padding: 0 !important;
+}
+
+.dt-search {
   background: var(--row-head-color);
   width: 100%;
   border-bottom: 1px solid #eee;
   padding: 0.5em 1em;
 }
-
-.dataTables_filter label {
+.dt-search label {
   font-weight: var(--font-weight-sub);
 }
-
-.dataTables_filter input[type=search] {
-  width: inherit;
+.dt-search input[type=search] {
+  width: 200px;
   font-size: 0.9em !important;
   border-radius: 0 !important;
   background-color: var(--general-bg) !important;
