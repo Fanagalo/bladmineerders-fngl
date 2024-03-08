@@ -61,7 +61,7 @@ add_shortcode('statistics_images', 'fngl_statistics_images_shortcode');
 
 
 /**
- * Shortcode to display current date and time in Dutch or English, 
+ * Shortcode to display current date and time in Dutch or English 
  * Usage  [date-time-now]
  * 
  * @since bladmineerders-fngl version 1.0.11
@@ -78,4 +78,42 @@ function fngl_current_date_time_shortcode() {
 
     return $current_date_time;
 } 
-add_shortcode('date-time-now','fngl_current_date_time_shortcode'); 
+add_shortcode('date-time-now','fngl_current_date_time_shortcode');
+
+
+/**
+ * Shortcode to display current date in Dutch or English 
+ * Usage  [date-now]
+ * 
+ * @since bladmineerders-fngl version 1.0.11
+ * @return string
+ */
+
+function fngl_current_date_shortcode()
+{
+
+    if (qtranxf_getLanguage() == 'nl') {
+        $current_date = date_i18n('j F Y');
+    } else {
+        $current_date = date_i18n('F j, Y');
+    }
+
+    return $current_date;
+}
+add_shortcode('date-now', 'fngl_current_date_shortcode');
+
+
+
+/**
+ * Shortcode to display current year 
+ * Usage  [year-now]
+ * 
+ * @since bladmineerders-fngl version 1.0.12
+ * @return string
+ */
+
+function fngl_current_year_shortcode()
+{
+    return date('Y');
+}
+add_shortcode('year-now', 'fngl_current_year_shortcode');

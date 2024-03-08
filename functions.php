@@ -137,7 +137,7 @@ require get_template_directory() . '/inc/cpts.php';                         // C
 require get_template_directory() . '/inc/custom-header.php';                // Custom Header
 require get_template_directory() . '/inc/lower-taxa-tree.php';              // Function for lower taxa tree for hosts and parasites
 require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
-require get_template_directory() . '/inc/site-statistics-shortcodes.php';   // Shortcodes to create site statistics
+require get_template_directory() . '/inc/shortcodes.php';   				// Shortcodes to create site statistics and more
 require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme
 require get_template_directory() . '/inc/wp-admin-customize.php';           // Customize wp-admin with stylesheet wp-admin-customization.css
