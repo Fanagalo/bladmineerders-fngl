@@ -1,0 +1,34 @@
+.names-block {
+    background-color: #eee;
+    border: 1px solid #0f0;
+
+    h2 {
+        display: inherit; // should become "none"
+    }
+    h3 {
+        display: inline;
+        font-size: var(--fs-regular);
+        &::after {
+            content: ": ";
+        }
+    }
+    ul {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        &::after {
+            content: "\a";
+            white-space: pre;
+        }
+    }
+    li {
+        display: inline;
+        &:not(:last-child)::after {
+            content: ", ";
+        }
+    }
+    p {
+        display: inline;
+    }
+}

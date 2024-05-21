@@ -28,11 +28,17 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
+	<?php 
+		// todo: can the next section be deleted?
+		// if ( get_edit_post_link() ) : 
+	?>
 		<footer class="entry-footer">
 			<?php
 				bladmineerders_fngl_edit_post_link('<span class="edit-link">','</span>');
 			?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+	<?php 
+		// todo: can the next section be deleted?
+		// endif; 
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->
