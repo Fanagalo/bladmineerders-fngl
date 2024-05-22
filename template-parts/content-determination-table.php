@@ -30,7 +30,7 @@
 				echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
 
 				if ($nl_vern_fields) {
-					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vern'>";
+					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
 					foreach ($nl_vern_fields as $field) {
 						if (!empty($field)){
 							echo "<li>" . $field;
@@ -40,7 +40,7 @@
 				}
 
 				if ($en_vern_fields) {
-					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vern'>";
+					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
 					foreach ($en_vern_fields as $field) {
 						if (!empty($field)) {
 							echo "<li>" . $field;
@@ -60,7 +60,7 @@
 				}
 
 				if ($name_note_field) {
-					echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='note'>" . $name_note_field[0] . "</p>";
+					echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
 				}
 
 				echo "</div><!-- names-block -->";

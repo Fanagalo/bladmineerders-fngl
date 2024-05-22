@@ -4,8 +4,7 @@
     margin: 1rem auto;
 
     h2 {
-        display: inherit; // should become "none" to hide for visual visitors
-        display: none; // should become "none" to hide for visual visitors
+        display: none;
     }
     h3 {
         // display: inline;
@@ -41,7 +40,7 @@
         font-style: italic;
     }
 
-    p.note {
+    p.name_note {
         display: inline;
         font-size: var(--font-size-normal);
     }

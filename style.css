@@ -1602,7 +1602,6 @@ h2.table-all-species a {
   margin: 1rem auto;
 }
 .names-block h2 {
-  display: inherit;
   display: none;
 }
 .names-block h3 {
@@ -1632,7 +1631,7 @@ h2.table-all-species a {
 .names-block .synonym {
   font-style: italic;
 }
-.names-block p.note {
+.names-block p.name_note {
   display: inline;
   font-size: var(--font-size-normal);
 }
