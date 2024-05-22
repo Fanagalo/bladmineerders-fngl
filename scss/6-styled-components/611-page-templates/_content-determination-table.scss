@@ -1,19 +1,24 @@
 .names-block {
-    background-color: #eee;
-    border: 1px solid #0f0;
+    background-color: #ffffdd;
+    width: var(--text-max-width);
+    margin: 1rem auto;
 
     h2 {
-        display: inherit; // should become "none"
+        display: inherit; // should become "none" to hide for visual visitors
+        display: none; // should become "none" to hide for visual visitors
     }
     h3 {
-        display: inline;
-        font-size: var(--fs-regular);
-        &::after {
-            content: ": ";
-        }
+        // display: inline;
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-menu);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        // &::after {
+        //     content: ": ";
+        // }
     }
     ul {
-        display: inline;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -21,6 +26,9 @@
             content: "\a";
             white-space: pre;
         }
+        // line-height: var(--line-height-paragraph);
+        font-weight: var(--font-weight-light);
+        font-size: var(--font-size-big);
     }
     li {
         display: inline;
@@ -28,7 +36,13 @@
             content: ", ";
         }
     }
-    p {
+
+    .synonym {
+        font-style: italic;
+    }
+
+    p.note {
         display: inline;
+        font-size: var(--font-size-normal);
     }
 }
