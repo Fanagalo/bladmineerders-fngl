@@ -16,7 +16,6 @@
 	</header><!-- .entry-header -->
 
 	<?php
-		// TODO: make conditional if_admin
 		if(is_user_logged_in()){
 			$allfields = get_post_meta(get_the_ID());
 
@@ -33,7 +32,9 @@
 				if ($nl_vern_fields) {
 					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vern'>";
 					foreach ($nl_vern_fields as $field) {
-						echo "<li>" . $field;
+						if (!empty($field)){
+							echo "<li>" . $field;
+						}
 					}
 					echo "</ul>";
 				}
@@ -41,7 +42,9 @@
 				if ($en_vern_fields) {
 					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vern'>";
 					foreach ($en_vern_fields as $field) {
-						echo  "<li>" . $field;
+						if (!empty($field)) {
+							echo "<li>" . $field;
+						}
 					}
 					echo "</ul>";
 				}
@@ -49,7 +52,9 @@
 				if ($synonym_fields) {
 					echo "<h3>" . __('Synonym', 'bladmineerders-fngl') . "</h3><ul class='synonym'>";
 					foreach ($synonym_fields as $field) {
-						echo "<li>" . $field;
+						if (!empty($field)) {
+							echo "<li>" . $field;
+						}
 					}
 					echo "</ul>";
 				}
