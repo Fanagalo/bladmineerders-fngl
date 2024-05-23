@@ -29,20 +29,20 @@
 				echo "<div class='names-block'>";
 				echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
 
-				if ($nl_vern_fields) {
-					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
-					foreach ($nl_vern_fields as $field) {
-						if (!empty($field)){
+				if ($en_vern_fields) {
+					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
+					foreach ($en_vern_fields as $field) {
+						if (!empty($field)) {
 							echo "<li>" . $field;
 						}
 					}
 					echo "</ul>";
 				}
 
-				if ($en_vern_fields) {
-					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
-					foreach ($en_vern_fields as $field) {
-						if (!empty($field)) {
+				if ($nl_vern_fields) {
+					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
+					foreach ($nl_vern_fields as $field) {
+						if (!empty($field)){
 							echo "<li>" . $field;
 						}
 					}
@@ -59,12 +59,11 @@
 					echo "</ul>";
 				}
 
-				if ($name_note_field) {
+				if (!empty($name_note_field[0])) {
 					echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
 				}
 
 				echo "</div><!-- names-block -->";
-
 			} 
 		} 
 	?>
