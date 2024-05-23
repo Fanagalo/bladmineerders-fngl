@@ -15,17 +15,62 @@
 		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 	</header><!-- .entry-header -->
 
-	<?php bladmineerders_fngl_post_thumbnail(); ?>
+	<?php
+		if(is_user_logged_in()){
+			$allfields = get_post_meta(get_the_ID());
+
+			$nl_vern_fields = $allfields['nl_vernacular'];
+			$en_vern_fields = $allfields['en_vernacular'];
+			$synonym_fields = $allfields['synonym'];
+			$name_note_field = $allfields['name_note'];
+
+			if ($nl_vern_fields || $en_vern_fields || $synonym_fields || $name_note_field) {
+
+				echo "<div class='names-block'>";
+				echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
+
+				if ($en_vern_fields) {
+					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
+					foreach ($en_vern_fields as $field) {
+						if (!empty($field)) {
+							echo "<li>" . $field;
+						}
+					}
+					echo "</ul>";
+				}
+
+				if ($nl_vern_fields) {
+					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
+					foreach ($nl_vern_fields as $field) {
+						if (!empty($field)){
+							echo "<li>" . $field;
+						}
+					}
+					echo "</ul>";
+				}
+
+				if ($synonym_fields) {
+					echo "<h3>" . __('Synonym', 'bladmineerders-fngl') . "</h3><ul class='synonym'>";
+					foreach ($synonym_fields as $field) {
+						if (!empty($field)) {
+							echo "<li>" . $field;
+						}
+					}
+					echo "</ul>";
+				}
+
+				if (!empty($name_note_field[0])) {
+					echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
+				}
+
+				echo "</div><!-- names-block -->";
+			} 
+		} 
+	?>
 
 	<div class="entry-content">
 		<?php
-		the_content();
-
-		// todo: can the next section be deleted?
-		// wp_link_pages(array(
-		// 	'before' => '<div class="page-links">' . esc_html__('Pages:', 'bladmineerders-fngl'),
-		// 	'after'  => '</div>',
-		// ));
+			the_content();
 		?>
 	</div><!-- .entry-content -->
 

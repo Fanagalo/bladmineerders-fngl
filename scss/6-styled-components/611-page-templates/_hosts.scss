@@ -29,6 +29,12 @@ h2.synonymous-name {
     margin-bottom: 2em;
 }
 
+// this change could be executed if the old names are still available
+// h2.synonymous-name,
+// h2.vernacular-name {
+//     display: none;
+// }
+
 .couplet p {
     padding: 0.4em 0.8em;
     background-color: var(--dichotomous-table-color);

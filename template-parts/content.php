@@ -53,6 +53,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php bladmineerders_fngl_entry_footer(); ?>
+		<?php &nbsp; ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

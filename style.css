@@ -1596,6 +1596,46 @@ h2.table-all-species a {
     margin-right: 0;
   }
 }
+.names-block {
+  background-color: #ffffdd;
+  width: var(--text-max-width);
+  margin: 1rem auto;
+}
+.names-block h2 {
+  display: none;
+}
+.names-block h3 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-menu);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.names-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-big);
+}
+.names-block ul::after {
+  content: "\a";
+  white-space: pre;
+}
+.names-block li {
+  display: inline;
+}
+.names-block li:not(:last-child)::after {
+  content: ", ";
+}
+.names-block .synonym {
+  font-style: italic;
+}
+.names-block p.name_note {
+  display: inline;
+  font-size: var(--font-size-normal);
+}
+
 /* heading om parasite pages, mainly h3-level */
 .head-references,
 .head-hostplant,

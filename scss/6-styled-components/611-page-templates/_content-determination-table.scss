@@ -1,0 +1,47 @@
+.names-block {
+    background-color: #ffffdd;
+    width: var(--text-max-width);
+    margin: 1rem auto;
+
+    h2 {
+        display: none;
+    }
+    h3 {
+        // display: inline;
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-menu);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        // &::after {
+        //     content: ": ";
+        // }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        &::after {
+            content: "\a";
+            white-space: pre;
+        }
+        // line-height: var(--line-height-paragraph);
+        font-weight: var(--font-weight-light);
+        font-size: var(--font-size-big);
+    }
+    li {
+        display: inline;
+        &:not(:last-child)::after {
+            content: ", ";
+        }
+    }
+
+    .synonym {
+        font-style: italic;
+    }
+
+    p.name_note {
+        display: inline;
+        font-size: var(--font-size-normal);
+    }
+}
