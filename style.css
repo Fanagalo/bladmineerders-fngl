@@ -1630,6 +1630,7 @@ h2.table-all-species a {
 }
 .names-block .synonym {
   font-style: italic;
+  font-size: var(--font-size-medium);
 }
 .names-block p.name_note {
   display: inline;
