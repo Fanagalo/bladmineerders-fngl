@@ -142,7 +142,6 @@ require get_template_directory() . '/inc/comments-disable.php';             // R
 require get_template_directory() . '/inc/cpts.php';                         // Custom Post Types
 require get_template_directory() . '/inc/custom-header.php';                // Custom Header
 require get_template_directory() . '/inc/lower-taxa-tree.php';              // Function for lower taxa tree for hosts and parasites
-require get_template_directory() . '/inc/names-metabox.php';           		// Metabox for Names in determination
 require get_template_directory() . '/inc/sidebar-registration.php';         // Sidebar registration
 require get_template_directory() . '/inc/shortcodes.php';   				// Shortcodes to create site statistics and more
 require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
