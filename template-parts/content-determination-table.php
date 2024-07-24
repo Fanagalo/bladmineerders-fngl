@@ -19,10 +19,10 @@
 		if(is_user_logged_in()){
 			$allfields = get_post_meta(get_the_ID());
 
-			$nl_vern_fields = $allfields['nl_vernacular'];
-			$en_vern_fields = $allfields['en_vernacular'];
-			$synonym_fields = $allfields['synonym'];
-			$name_note_field = $allfields['name_note'];
+			$nl_vern_fields = isset($allfields['nl_vernacular']) ? $allfields['nl_vernacular']: null;
+			$en_vern_fields = isset($allfields['en_vernacular']) ? $allfields['en_vernacular'] : null;
+			$synonym_fields = isset($allfields['synonym']) ? $allfields['synonym'] : null;
+			$name_note_field = isset($allfields['name_note']) ? $allfields['name_note'] : null;
 
 			if ($nl_vern_fields || $en_vern_fields || $synonym_fields || $name_note_field) {
 
