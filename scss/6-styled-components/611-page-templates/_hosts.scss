@@ -10,17 +10,14 @@
 
 h2.synonymous-name,
 h2.vernacular-name {
-    font-weight: var(--font-weight-light);
-    max-width: var(--text-max-width);
-    margin: 0 auto 1.6875rem;
+    // font-weight: var(--font-weight-light);
+    // max-width: var(--text-max-width);
+    // margin: 0 auto 1.6875rem;
+    display: none;
 }
 
-h2.synonymous-name {
-    font-size: var(--font-size-medium);
-}
-
-// .page-template-host-species-determination h2.vernacular-name {
-//     margin-top: -1.6875rem;
+// h2.synonymous-name {
+//     font-size: var(--font-size-medium);
 // }
 
 /* groups of questions in dichotomous table */
@@ -28,12 +25,6 @@ h2.synonymous-name {
 .couplet {
     margin-bottom: 2em;
 }
-
-// this change could be executed if the old names are still available
-// h2.synonymous-name,
-// h2.vernacular-name {
-//     display: none;
-// }
 
 .couplet p {
     padding: 0.4em 0.8em;

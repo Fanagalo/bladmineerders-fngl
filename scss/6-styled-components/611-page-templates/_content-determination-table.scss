@@ -1,5 +1,5 @@
 .names-block {
-    background-color: #ffffdd;
+    // background-color: #ffffdd;
     width: var(--text-max-width);
     margin: 1rem auto;
 
@@ -46,3 +46,5 @@
         font-size: var(--font-size-normal);
     }
 }
+
+// make manually added fields invisible > done in _hosts.scss

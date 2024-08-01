@@ -16,7 +16,7 @@
 	</header><!-- .entry-header -->
 
 	<?php
-		if(is_user_logged_in()){
+		// if(is_user_logged_in()){
 			$allfields = get_post_meta(get_the_ID());
 
 			$nl_vern_fields = isset($allfields['nl_vernacular']) ? $allfields['nl_vernacular']: null;
@@ -65,7 +65,7 @@
 
 				echo "</div><!-- names-block -->";
 			} 
-		} 
+		// } 
 	?>
 
 	<div class="entry-content">
