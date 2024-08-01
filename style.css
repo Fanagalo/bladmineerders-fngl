@@ -1290,13 +1290,7 @@ dl.reference {
 /* the classes synonymous-name and vernacular-name are also present in the parasites */
 h2.synonymous-name,
 h2.vernacular-name {
-  font-weight: var(--font-weight-light);
-  max-width: var(--text-max-width);
-  margin: 0 auto 1.6875rem;
-}
-
-h2.synonymous-name {
-  font-size: var(--font-size-medium);
+  display: none;
 }
 
 /* groups of questions in dichotomous table */
@@ -1597,7 +1591,6 @@ h2.table-all-species a {
   }
 }
 .names-block {
-  background-color: #ffffdd;
   width: var(--text-max-width);
   margin: 1rem auto;
 }
