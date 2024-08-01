@@ -147,3 +147,4 @@ require get_template_directory() . '/inc/shortcodes.php';   				// Shortcodes to
 require get_template_directory() . '/inc/template-functions.php';           // Functions which enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-tags.php';                // Custom template tags for this theme
 require get_template_directory() . '/inc/wp-admin-customize.php';           // Customize wp-admin with stylesheet wp-admin-customization.css
+require get_template_directory() . '/inc/add_names_fields_to_search.php';   // Extend WordPress search to include custom fields
