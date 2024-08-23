@@ -1287,34 +1287,15 @@ dl.reference {
  * - host-parent.php 
  * - host-species-determination.php
  */
-/* the classes synonymous-name and vernacular-name are also present in the parasites */
-h2.synonymous-name,
-h2.vernacular-name {
-  display: none;
-}
-
-/* groups of questions in dichotomous table */
-.couplet {
-  margin-bottom: 2em;
-}
-
-.couplet p {
-  padding: 0.4em 0.8em;
-  background-color: var(--dichotomous-table-color);
-  margin: 0.2em auto;
-}
-
 .page-template-host-genus .entry-title {
   display: none;
 }
-
 .page-template-host-genus .entry-content h1 {
   font-weight: var(--font-weight-light);
   font-size: var(--font-size-big);
   line-height: var(--line-height-title);
 }
-
-.page-template-host-genus .entry-content h1 em {
+.page-template-host-genus h1 em {
   font-weight: var(--font-weight-bold);
   font-style: italic;
   font-size: var(--font-size-title);
@@ -1329,6 +1310,25 @@ h2.vernacular-name {
     font-size: var(--font-size-title-desktop);
   }
 }
+/* this kind of vernaculars and synonyms are legacy and are obsolete  */
+.page-template-host-genus-determination h2.synonymous-name,
+.page-template-host-genus-determination h2.vernacular-name,
+.page-template-host-species-determination h2.synonymous-name,
+.page-template-host-species-determination h2.vernacular-name {
+  display: none;
+}
+
+/* groups of questions in dichotomous table */
+.couplet {
+  margin-bottom: 2em;
+}
+
+.couplet p {
+  padding: 0.4em 0.8em;
+  background-color: var(--dichotomous-table-color);
+  margin: 0.2em auto;
+}
+
 /* determination tables */
 .page-template-host-genus-determination h1,
 .page-template-host-species-determination h1 {
@@ -1630,7 +1630,56 @@ h2.table-all-species a {
   font-size: var(--font-size-normal);
 }
 
-/* heading om parasite pages, mainly h3-level */
+/* headings with scientific and author name in one tag */
+/* h1 em is the actual title */
+.page-template-parasite-species .entry-content h1 {
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-big);
+  line-height: var(--line-height-title);
+}
+.page-template-parasite-species .entry-content h1 em {
+  font-weight: var(--font-weight-bold);
+  font-style: italic;
+  font-size: var(--font-size-title);
+  display: block;
+}
+
+@media screen and (min-width: 800px) {
+  .page-template-parasite-species .entry-content h1 {
+    font-size: var(--font-size-big-desktop);
+  }
+  .page-template-parasite-species .entry-content h1 em {
+    font-size: var(--font-size-title-desktop);
+  }
+}
+.page-template-parasite-species .entry-title,
+.page-template-page-parent .entry-title {
+  display: none;
+}
+
+.page-template-parasite-parent .entry-content h1,
+.page-template-parasite-stadia .entry-content h1 {
+  display: none;
+}
+
+/* vernaculars and synonyms */
+.page-template-parasite-species h2.vernacular-name,
+.page-template-parasite-species h2.vernacular-name,
+.page-template-parasite-parent h2.vernacular-name,
+.page-template-parasite-parent h2.vernacular-name,
+.page-template-parasite-stadia h2.vernacular-name,
+.page-template-parasite-stadia h2.vernacular-name {
+  font-weight: var(--font-weight-light);
+  max-width: var(--text-max-width);
+  margin: 0 auto 1.6875rem;
+}
+.page-template-parasite-species h2.synonymous-name,
+.page-template-parasite-parent h2.synonymous-name,
+.page-template-parasite-stadia h2.synonymous-name {
+  font-size: var(--font-size-medium);
+}
+
+/* sub headings om parasite pages, mainly h3-level */
 .head-references,
 .head-hostplant,
 .head-phenology,
@@ -1656,42 +1705,6 @@ p.references {
 
 .latinnames {
   font-style: italic;
-}
-
-/* headings with scientific and author name in one tag */
-.page-template-parasite-species .entry-content h1 {
-  font-weight: var(--font-weight-light);
-  font-size: var(--font-size-big);
-  line-height: var(--line-height-title);
-}
-
-.page-template-parasite-species .entry-content h1 em {
-  font-weight: var(--font-weight-bold);
-  font-style: italic;
-  font-size: var(--font-size-title);
-  display: block;
-}
-
-@media screen and (min-width: 800px) {
-  .page-template-parasite-species .entry-content h1 em {
-    font-size: var(--font-size-title-desktop);
-  }
-  .page-template-parasite-species .entry-content h1 {
-    font-size: var(--font-size-big-desktop);
-  }
-}
-.page-template-parasite-species .entry-title,
-.page-template-page-parent .entry-title {
-  display: none;
-}
-
-.page-template-parasite-parent .entry-content h1,
-.page-template-parasite-stadia .entry-content h1 {
-  display: none;
-}
-
-.page-template-parasite-species .entry-title {
-  display: none;
 }
 
 .no-results .page-title,

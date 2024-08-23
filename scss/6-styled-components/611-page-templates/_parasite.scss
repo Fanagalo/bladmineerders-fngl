@@ -1,5 +1,66 @@
-/* heading om parasite pages, mainly h3-level */
+/* headings with scientific and author name in one tag */
+/* h1 em is the actual title */
 
+.page-template-parasite-species {
+    .entry-content {
+        h1 {
+            font-weight: var(--font-weight-light);
+            font-size: var(--font-size-big);
+            line-height: var(--line-height-title);
+        }
+        h1 em {
+            font-weight: var(--font-weight-bold);
+            font-style: italic;
+            font-size: var(--font-size-title);
+            display: block; // forces line break for next part
+        }
+    }
+}
+
+@media screen and (min-width: $mq-medium) {
+    .page-template-parasite-species {
+        .entry-content {
+            h1 {
+                font-size: var(--font-size-big-desktop);
+            }
+            h1 em {
+                font-size: var(--font-size-title-desktop);
+            }
+        }
+    }
+}
+
+.page-template-parasite-species,
+.page-template-page-parent {
+    .entry-title {
+        display: none;
+    }
+}
+
+.page-template-parasite-parent,
+.page-template-parasite-stadia {
+    .entry-content h1 {
+        display: none;
+    }
+}
+
+/* vernaculars and synonyms */
+
+.page-template-parasite-species,
+.page-template-parasite-parent,
+.page-template-parasite-stadia {
+    h2.vernacular-name,
+    h2.vernacular-name {
+        font-weight: var(--font-weight-light);
+        max-width: var(--text-max-width);
+        margin: 0 auto 1.6875rem;
+    }
+    h2.synonymous-name {
+        font-size: var(--font-size-medium);
+    }
+}
+
+/* sub headings om parasite pages, mainly h3-level */
 .head-references,
 .head-hostplant,
 .head-phenology,
@@ -25,43 +86,4 @@ p.references {
 
 .latinnames {
     font-style: italic;
-}
-
-
-/* headings with scientific and author name in one tag */
-
-.page-template-parasite-species .entry-content h1 {
-    font-weight: var(--font-weight-light);
-    font-size: var(--font-size-big);
-    line-height: var(--line-height-title);
-}
-
-.page-template-parasite-species .entry-content h1 em {
-    font-weight: var(--font-weight-bold);
-    font-style: italic;
-    font-size: var(--font-size-title);
-    display: block; // forces line break for next part
-}
-
-@media screen and (min-width: $mq-medium) {
-    .page-template-parasite-species .entry-content h1 em {
-        font-size: var(--font-size-title-desktop);
-    }
-    .page-template-parasite-species .entry-content h1 {
-        font-size: var(--font-size-big-desktop);
-    }
-}
-
-.page-template-parasite-species .entry-title,
-.page-template-page-parent .entry-title {
-    display: none;
-}
-
-.page-template-parasite-parent .entry-content h1,
-.page-template-parasite-stadia .entry-content h1 {
-    display: none; // prevents display of two H1 headings; should ultimately be solved in content
-}
-
-.page-template-parasite-species .entry-title {
-    display: none; // prevents display of two H1 headings; should ultimately be solved in content
 }
