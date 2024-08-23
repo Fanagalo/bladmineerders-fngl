@@ -6,19 +6,43 @@
  * - host-species-determination.php
  */
 
-/* the classes synonymous-name and vernacular-name are also present in the parasites */
-
-h2.synonymous-name,
-h2.vernacular-name {
-    // font-weight: var(--font-weight-light);
-    // max-width: var(--text-max-width);
-    // margin: 0 auto 1.6875rem;
-    display: none;
+.page-template-host-genus {
+    .entry-title {
+        display: none;
+    }
+    .entry-content h1 {
+        font-weight: var(--font-weight-light);
+        font-size: var(--font-size-big);
+        line-height: var(--line-height-title);
+    }
+    h1 em {
+        font-weight: var(--font-weight-bold);
+        font-style: italic;
+        font-size: var(--font-size-title);
+        display: block; // forces line break for next part
+    }
 }
 
-// h2.synonymous-name {
-//     font-size: var(--font-size-medium);
-// }
+@media screen and (min-width: $mq-medium) {
+    .page-template-host-genus .entry-content {
+        h1 {
+            font-size: var(--font-size-big-desktop);
+        }
+        h1 em {
+            font-size: var(--font-size-title-desktop);
+        }
+    }
+}
+
+/* this kind of vernaculars and synonyms are legacy and are obsolete  */
+
+.page-template-host-genus-determination,
+.page-template-host-species-determination {
+    h2.synonymous-name,
+    h2.vernacular-name {
+        display: none;
+    }
+}
 
 /* groups of questions in dichotomous table */
 
@@ -30,33 +54,6 @@ h2.vernacular-name {
     padding: 0.4em 0.8em;
     background-color: var(--dichotomous-table-color);
     margin: 0.2em auto;
-}
-
-// .page-template-host-parent .entry-content h1,
-.page-template-host-genus .entry-title {
-    display: none;
-}
-
-.page-template-host-genus .entry-content h1 {
-    font-weight: var(--font-weight-light);
-    font-size: var(--font-size-big);
-    line-height: var(--line-height-title);
-}
-
-.page-template-host-genus .entry-content h1 em {
-    font-weight: var(--font-weight-bold);
-    font-style: italic;
-    font-size: var(--font-size-title);
-    display: block; // forces line break for next part
-}
-
-@media screen and (min-width: $mq-medium) {
-    .page-template-host-genus .entry-content h1 {
-        font-size: var(--font-size-big-desktop);
-    }
-    .page-template-host-genus .entry-content h1 em {
-        font-size: var(--font-size-title-desktop);
-    }
 }
 
 /* determination tables */
