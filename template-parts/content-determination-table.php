@@ -69,7 +69,53 @@
 
 	<div class="entry-content">
 		<?php
-			// get determination table from separate database table
+			global $wpdb; 
+			$wpdb->show_errors(); 
+			$host_slug = $post->post_name;
+
+			$tabledata = $wpdb->get_results("
+				SELECT host,organ,mode,stage,tax_top,tax_middle,tax_family,parasite,genera_number,species_number,host_slug,parasite_slug 
+				FROM host_determination 
+				WHERE host_slug = '$host_slug' 
+			");
+
+			if ($tabledata) {
+				//todo: better heading names for table, discuss with WNE
+				echo "<table id='DeterminationTable'><thead><tr>
+					<th>host</th>
+					<th>organ</th>
+					<th>mode</th>
+					<th>stage</th>
+					<th>tax_top</th>
+					<th>tax_middle</th>
+					<th>tax_family</th>
+					<th>parasite</th>
+					<th>genera_number</th>
+					<th>species_number</th>
+					<th>host_slug</th>
+					<th>parasite_slug</th>
+					</tr></<thead>";
+			}
+
+			foreach ($tabledata as $row) {
+				echo '<tbody><tr>';
+				echo '<td>' . $row->host . '</td>';
+				echo '<td>' . $row->organ . '</td>';
+				echo '<td>' . $row->mode . '</td>';
+				echo '<td>' . $row->stage . '</td>';
+				echo '<td>' . $row->tax_top . '</td>';
+				echo '<td>' . $row->tax_middle . '</td>';
+				echo '<td>' . $row->tax_family . '</td>';
+				echo '<td>' . $row->parasite . '</td>';
+				echo '<td>' . $row->genera_number . '</td>';
+				echo '<td>' . $row->species_number . '</td>';
+				echo '<td>' . $row->host_slug . '</td>';
+				echo '<td>' . $row->parasite_slug . '</td>';
+				echo '</tr></tbody>';
+			}
+
+			echo "</table>";
+
 		?>
 	</div><!-- .entry-content -->
 
