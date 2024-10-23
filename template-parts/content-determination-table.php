@@ -16,61 +16,61 @@
 	</header><!-- .entry-header -->
 
 	<?php
-		// if(is_user_logged_in()){
-			$allfields = get_post_meta(get_the_ID());
+	// if(is_user_logged_in()){
+	$allfields = get_post_meta(get_the_ID());
 
-			$nl_vern_fields = isset($allfields['nl_vernacular']) ? $allfields['nl_vernacular']: null;
-			$en_vern_fields = isset($allfields['en_vernacular']) ? $allfields['en_vernacular'] : null;
-			$synonym_fields = isset($allfields['synonym']) ? $allfields['synonym'] : null;
-			$name_note_field = isset($allfields['name_note']) ? $allfields['name_note'] : null;
+	$nl_vern_fields = isset($allfields['nl_vernacular']) ? $allfields['nl_vernacular'] : null;
+	$en_vern_fields = isset($allfields['en_vernacular']) ? $allfields['en_vernacular'] : null;
+	$synonym_fields = isset($allfields['synonym']) ? $allfields['synonym'] : null;
+	$name_note_field = isset($allfields['name_note']) ? $allfields['name_note'] : null;
 
-			if ($nl_vern_fields || $en_vern_fields || $synonym_fields || $name_note_field) {
+	if ($nl_vern_fields || $en_vern_fields || $synonym_fields || $name_note_field) {
 
-				echo "<div class='names-block'>";
-				echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
+		echo "<div class='names-block'>";
+		echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
 
-				if ($en_vern_fields) {
-					echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
-					foreach ($en_vern_fields as $field) {
-						if (!empty($field)) {
-							echo "<li>" . $field;
-						}
-					}
-					echo "</ul>";
+		if ($en_vern_fields) {
+			echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
+			foreach ($en_vern_fields as $field) {
+				if (!empty($field)) {
+					echo "<li>" . $field;
 				}
+			}
+			echo "</ul>";
+		}
 
-				if ($nl_vern_fields) {
-					echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
-					foreach ($nl_vern_fields as $field) {
-						if (!empty($field)){
-							echo "<li>" . $field;
-						}
-					}
-					echo "</ul>";
+		if ($nl_vern_fields) {
+			echo "<h3>" . __('Dutch vernacular name', 'bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
+			foreach ($nl_vern_fields as $field) {
+				if (!empty($field)) {
+					echo "<li>" . $field;
 				}
+			}
+			echo "</ul>";
+		}
 
-				if ($synonym_fields) {
-					echo "<h3>" . __('Synonym', 'bladmineerders-fngl') . "</h3><ul class='synonym'>";
-					foreach ($synonym_fields as $field) {
-						if (!empty($field)) {
-							echo "<li>" . $field;
-						}
-					}
-					echo "</ul>";
+		if ($synonym_fields) {
+			echo "<h3>" . __('Synonym', 'bladmineerders-fngl') . "</h3><ul class='synonym'>";
+			foreach ($synonym_fields as $field) {
+				if (!empty($field)) {
+					echo "<li>" . $field;
 				}
+			}
+			echo "</ul>";
+		}
 
-				if (!empty($name_note_field[0])) {
-					echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
-				}
+		if (!empty($name_note_field[0])) {
+			echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
+		}
 
-				echo "</div><!-- names-block -->";
-			} 
-		// } 
+		echo "</div><!-- names-block -->";
+	}
+	// } 
 	?>
 
 	<div class="entry-content">
 		<?php
-			the_content();
+		the_content();
 		?>
 	</div><!-- .entry-content -->
 

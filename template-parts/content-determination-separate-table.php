@@ -16,105 +16,110 @@
 	</header><!-- .entry-header -->
 
 	<?php
-		// get name fields from post_meta
-		$allfields = get_post_meta(get_the_ID());
+	// get name fields from post_meta
+	$allfields = get_post_meta(get_the_ID());
 
-		$nl_vern_fields = isset($allfields['nl_vernacular']) ? $allfields['nl_vernacular']: null;
-		$en_vern_fields = isset($allfields['en_vernacular']) ? $allfields['en_vernacular'] : null;
-		$synonym_fields = isset($allfields['synonym']) ? $allfields['synonym'] : null;
-		$name_note_field = isset($allfields['name_note']) ? $allfields['name_note'] : null;
+	$nl_vern_fields = isset($allfields['nl_vernacular']) ? $allfields['nl_vernacular'] : null;
+	$en_vern_fields = isset($allfields['en_vernacular']) ? $allfields['en_vernacular'] : null;
+	$synonym_fields = isset($allfields['synonym']) ? $allfields['synonym'] : null;
+	$name_note_field = isset($allfields['name_note']) ? $allfields['name_note'] : null;
 
-		if ($nl_vern_fields || $en_vern_fields || $synonym_fields || $name_note_field) {
+	if ($nl_vern_fields || $en_vern_fields || $synonym_fields || $name_note_field) {
 
-			echo "<div class='names-block'>";
-			echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
+		echo "<div class='names-block'>";
+		echo "<h2>" . __('Alternative names', 'bladmineerders-fngl') . "</h2>";
 
-			if ($en_vern_fields) {
-				echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
-				foreach ($en_vern_fields as $field) {
-					if (!empty($field)) {
-						echo "<li>" . $field;
-					}
+		if ($en_vern_fields) {
+			echo "<h3>" . __('English vernacular name', 'bladmineerders-fngl') . "</h3><ul class='en_vernacular'>";
+			foreach ($en_vern_fields as $field) {
+				if (!empty($field)) {
+					echo "<li>" . $field;
 				}
-				echo "</ul>";
 			}
+			echo "</ul>";
+		}
 
-			if ($nl_vern_fields) {
-				echo "<h3>" . __('Dutch vernacular name','bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
-				foreach ($nl_vern_fields as $field) {
-					if (!empty($field)){
-						echo "<li>" . $field;
-					}
+		if ($nl_vern_fields) {
+			echo "<h3>" . __('Dutch vernacular name', 'bladmineerders-fngl') . "</h3><ul class='nl_vernacular'>";
+			foreach ($nl_vern_fields as $field) {
+				if (!empty($field)) {
+					echo "<li>" . $field;
 				}
-				echo "</ul>";
 			}
+			echo "</ul>";
+		}
 
-			if ($synonym_fields) {
-				echo "<h3>" . __('Synonym', 'bladmineerders-fngl') . "</h3><ul class='synonym'>";
-				foreach ($synonym_fields as $field) {
-					if (!empty($field)) {
-						echo "<li>" . $field;
-					}
+		if ($synonym_fields) {
+			echo "<h3>" . __('Synonym', 'bladmineerders-fngl') . "</h3><ul class='synonym'>";
+			foreach ($synonym_fields as $field) {
+				if (!empty($field)) {
+					echo "<li>" . $field;
 				}
-				echo "</ul>";
 			}
+			echo "</ul>";
+		}
 
-			if (!empty($name_note_field[0])) {
-				echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
-			}
+		if (!empty($name_note_field[0])) {
+			echo "<h3>" . __('Note', 'bladmineerders-fngl') . "</h3><p class='name_note'>" . $name_note_field[0] . "</p>";
+		}
 
-			echo "</div><!-- names-block -->";
-		} 
+		echo "</div><!-- names-block -->";
+	}
 	?>
 
 	<div class="entry-content">
 		<?php
-			global $wpdb; 
-			$wpdb->show_errors(); 
-			$host_slug = $post->post_name;
+		global $wpdb;
+		$wpdb->show_errors();
+		$host_slug = $post->post_name;
 
-			$tabledata = $wpdb->get_results("
-				SELECT host,organ,mode,stage,tax_top,tax_middle,tax_family,parasite,genera_number,species_number,host_slug,parasite_slug 
+		$tabledata = $wpdb->get_results("
+				SELECT host,organ,mode,stage,tax_top,tax_middle,tax_family,parasite,genera_number,species_number,host_slug,parasite_slug,parasite_with_image 
 				FROM host_determination 
 				WHERE host_slug = '$host_slug' 
 			");
 
-			if ($tabledata) {
-				//todo: better heading names for table, discuss with WNE
-				echo "<table id='DeterminationTable'><thead><tr>
-					<th>host</th>
+		if ($tabledata) {
+			//todo: better heading names for table, discuss with WNE
+			echo "<table id='DeterminationTable' class='display'><thead><tr>
+					<!-- <th>host</th> -->
 					<th>organ</th>
 					<th>mode</th>
 					<th>stage</th>
 					<th>tax_top</th>
 					<th>tax_middle</th>
-					<th>tax_family</th>
+					<th>family</th>
 					<th>parasite</th>
-					<th>genera_number</th>
-					<th>species_number</th>
-					<th>host_slug</th>
-					<th>parasite_slug</th>
-					</tr></<thead>";
-			}
+					<th>parasite with image</th>
+					<th>genera</th>
+					<th>species</th>
+					<!-- <th>host_slug</th> -->
+					<!-- <th>parasite_slug</th> -->
+					</tr></<thead>
+					<tbody>";
+		}
 
-			foreach ($tabledata as $row) {
-				echo '<tbody><tr>';
-				echo '<td>' . $row->host . '</td>';
-				echo '<td>' . $row->organ . '</td>';
-				echo '<td>' . $row->mode . '</td>';
-				echo '<td>' . $row->stage . '</td>';
-				echo '<td>' . $row->tax_top . '</td>';
-				echo '<td>' . $row->tax_middle . '</td>';
-				echo '<td>' . $row->tax_family . '</td>';
-				echo '<td>' . $row->parasite . '</td>';
-				echo '<td>' . $row->genera_number . '</td>';
-				echo '<td>' . $row->species_number . '</td>';
-				echo '<td>' . $row->host_slug . '</td>';
-				echo '<td>' . $row->parasite_slug . '</td>';
-				echo '</tr></tbody>';
-			}
+		foreach ($tabledata as $row) {
+			echo '<tr>';
+			
+			// echo '<td>' . $row->host . '</td>';
+			echo '<td>' . $row->organ . '</td>';
+			echo '<td>' . $row->mode . '</td>';
+			echo '<td>' . $row->stage . '</td>';
+			echo '<td>' . $row->tax_top . '</td>';
+			echo '<td>' . $row->tax_middle . '</td>';
+			echo '<td>' . $row->tax_family . '</td>';
+			echo '<td><a href="' . get_site_url() . '/' . $row->parasite_slug . '">' . $row->parasite . '</a></td>';
+			echo '<td>' . $row->parasite_with_image . '</td>';
+			echo '<td>' . $row->genera_number . '</td>';
+			echo '<td>' . $row->species_number . '</td>';
+			// echo '<td>' . $row->host_slug . '</td>';
+			// echo '<td>' . $row->parasite_slug . '</td>';
 
-			echo "</table>";
+			echo '</tr>';
+		}
+
+		echo "</tbody></table>";
 
 		?>
 	</div><!-- .entry-content -->
@@ -128,21 +133,43 @@
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 
-
-<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('#DeterminationTable').DataTable({
-			paging: false,
-			info: false,
-			"language": {
-				"search": "Filter",
-			}
-		})
+	new DataTable('#DeterminationTable', {
+		order: [
+			[1, 'desc']
+		],
+		paging: false,
+		info: false,
+		"language": {
+			"search": "Filter",
+		}
 	});
+
+
+
+	// let table = new DataTable('#DeterminationTable', {
+	// 	responsive: true
+	// 	paging: false,
+	// 	info: false,
+	// 	"language": {
+	// 		"search": "Filter",
+	// 	}
+	// });
+
+	// $(document).ready(function() {
+	// 	$('#DeterminationTable').DataTable({
+	// 		paging: false,
+	// 		info: false,
+	// 		"language": {
+	// 			"search": "Filter",
+	// 		}
+	// 	})
+	// });
 </script>
 
 <div class="table-legend">
