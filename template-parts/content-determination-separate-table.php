@@ -74,38 +74,120 @@
 		$host_slug = $post->post_name;
 
 		$tabledata = $wpdb->get_results("
-				SELECT host,organ,mode,stage,tax_top,tax_middle,tax_family,parasite,genera_number,species_number,host_slug,parasite_slug,parasite_with_image 
+				SELECT * 
 				FROM host_determination 
 				WHERE host_slug = '$host_slug' 
 			");
 
 		if ($tabledata) {
-			//todo: better heading names for table, discuss with WNE
-			echo "<table id='DeterminationTable' class='display'><thead><tr>
-					<!-- <th>host</th> -->
+			echo '<table id="DeterminationTable" class="display"><thead><tr>';
+
+			if (get_locale() == 'nl_NL') {
+				echo '<!-- <th>host</th> -->
+					<th>orgaan</th>
+					<th>parasiteerwijze</th>
+					<th>stadium</th>
+					<th>hoofdgroep</th>
+					<th>groep</th>
+					<th>familie</th>
+					<th>parasiet</th>
+					<th>parasite with image</th>
+					<th>genera</th>
+					<th>species</th>
+					<!-- <th>host_slug</th> -->
+					<!-- <th>parasite_slug</th> -->';
+			} else {
+				echo '<!-- <th>host</th> -->
 					<th>organ</th>
 					<th>mode</th>
 					<th>stage</th>
-					<th>tax_top</th>
-					<th>tax_middle</th>
+					<th>main group</th>
+					<th>group</th>
 					<th>family</th>
 					<th>parasite</th>
 					<th>parasite with image</th>
 					<th>genera</th>
 					<th>species</th>
 					<!-- <th>host_slug</th> -->
-					<!-- <th>parasite_slug</th> -->
-					</tr></<thead>
-					<tbody>";
+					<!-- <th>parasite_slug</th> -->';
+			}
+			echo '</tr></<thead><tbody>';
 		}
 
 		foreach ($tabledata as $row) {
-			echo '<tr>';
 			
+			/* translation of organ terms */
+			$organ = $row->organ;
+
+			if (get_locale() == 'nl_NL'){
+				$organ_trans_nl = array(
+					'leaf bud' => 'bladknop',
+					'systemic' => 'systemisch',
+					'all buds' => 'alle knoppen',
+					'leaf' => 'blad',
+					'flower' => 'bloem',
+					'fruit' =>  'vrucht',
+					'root' =>  'wortel',
+					'root collar' => 'wortelhals',
+					'dead wood' => 'dood hout',
+					'stem' =>  'stengel',
+				);
+				$organ = strtr($organ, $organ_trans_nl);
+			} else {
+				$organ;
+			}
+
+			/* translation of mode terms */
+			$mode = $row->mode;
+
+			if (get_locale() == 'nl_NL') {
+				$mode_trans_nl = array(
+					'borer'       => 'boorder',
+					'canker'      => 'xxx canker',
+					'down'        => 'dons',
+					'film'        => 'overtrek',
+					'free'        => 'vrij',
+					'hidden'      => 'xxx hidden',
+					'gall'        => 'gal',
+					'grazer'      => 'grazer',
+					'leaf spot'   => 'bladvlek',
+					'miner' => 'mineerder',
+					'miner-borer' => 'mineerder-boorder',
+					'nacro fungus' => 'xxx nacro fungus',
+					'predator'    => 'mineerder-boorder',
+					'pustule'     => 'wrat',
+					'saprotrophic' => 'XXX saprotrophic',
+					'scale'       => 'schildje',
+					'stripe'      => 'striem',
+					'vagrant'     => 'vrijlevend',
+				);
+				$mode = strtr($mode, $mode_trans_nl);
+			} else {
+				$mode;
+			}
+
+			/* translation of mode terms */
+			$stage = $row->stage;
+
+			// replace 0 with empty string
+			$stage = strtr($stage, "0", " ");
+
+			if (get_locale() == 'nl_NL'
+			) {
+				$stage_trans_nl = array(
+					// todo: add translation strings
+					'EN'       => 'NL',
+				);
+				$stage = strtr($stage, $stage_trans_nl);
+			} else {
+				$stage;
+			}
+
+			echo '<tr>';
 			// echo '<td>' . $row->host . '</td>';
-			echo '<td>' . $row->organ . '</td>';
-			echo '<td>' . $row->mode . '</td>';
-			echo '<td>' . $row->stage . '</td>';
+			echo '<td>' . $organ . '</td>';
+			echo '<td>' . $mode . '</td>';
+			echo '<td>' . $stage . '</td>';
 			echo '<td>' . $row->tax_top . '</td>';
 			echo '<td>' . $row->tax_middle . '</td>';
 			echo '<td>' . $row->tax_family . '</td>';
@@ -137,7 +219,6 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
-
 <script type="text/javascript">
 	new DataTable('#DeterminationTable', {
 		order: [
@@ -150,116 +231,9 @@
 		}
 	});
 
-
-
-	// let table = new DataTable('#DeterminationTable', {
-	// 	responsive: true
-	// 	paging: false,
-	// 	info: false,
-	// 	"language": {
-	// 		"search": "Filter",
-	// 	}
-	// });
-
-	// $(document).ready(function() {
-	// 	$('#DeterminationTable').DataTable({
-	// 		paging: false,
-	// 		info: false,
-	// 		"language": {
-	// 			"search": "Filter",
-	// 		}
-	// 	})
-	// });
 </script>
 
 <div class="table-legend">
-
-	<?php printf(__('
-			[:nl]
-				<div class="table-legend-column">
-					<h3>Orgaan</h3>
-					het meest opvallend door de aantasting getroffen orgaan  <br/>
-					<br/>
-					<strong>alle knoppen:</strong> zowel blad- als bloemknoppen <br/>
-					<strong>blad:</strong> ook naald, phyllodium, bladsteel <br/>  
-					<strong>bladknop:</strong> ook ontvouwend jong blad <br/> 
-					<strong>bloem:</strong> ook bloeiwijze <br/> 
-					<strong>stengel:</strong> ook halm, onderste deel van de bloemsteel, bij grassen ook de bladschede <br/> 
-					<strong>systemisch:</strong> de gehele bovengrondse plant <br/> 
-					<strong>vrucht:</strong> ook zaad <br/> 
-					<strong>wortel:</strong> ook wortelstok en kruipende stengel, uitloper <br/> 
-					<strong>wortelhals:</strong> ook het onderste deel van de stengel
-				</div>
-
-				<div class="table-legend-column">
-					<h3>PARASITEERWIJZE</h3>
-					<strong>bladvlek:</strong> verkleurd, meestal niet vergald, vaak ± necrotisch teken van een schimmelaantasting <br/> 
-					<strong>boorder:</strong> larve inwendig, uitwendig vrijwel geen tekenen <br/> 
-					<strong>dons:</strong> 0.5-2 mm hoge schimmeldons <br/> 
-					<strong>gal:</strong> zwelling en/of misvorming <br/> 
-					<strong>grazer:</strong> vretend aan de buitenzijde van de plant <br/>  
-					<strong>mineerder-boorder:</strong> larve leeft aanvankelijk als mineerder, later als boorder <br/> 
-					<strong>overtrek:</strong> dunne film van schimmelweefsel <br/> 
-					<strong>striem:</strong> streep van schimmelweefsel in de lengterichting van een grasblad <br/> 
-					<strong>vrijlevend:</strong> (bladluizen, mijten) alleen bij grotere dichtheden misvormingen veroorzakend<br/>
-					<strong>wrat:</strong> prop van schimmelweefsel, meestal bruin-zwart en < 2 mm <br/> 
-				</div>
-
-				<div class="table-legend-column">
-					<h3>TABEL FILTEREN EN SORTEREN</h3> 
-					<strong>Filter</strong> bovenstaande tabel door een zoekterm te typen in het search-veld (bovenaan rechts in de tabel).<br/>
-					<strong>Sorteer een kolom</strong> door te klikken op de pijltjes achter de kolomnaam (zowel oplopend als aflopend). <br/>
-					<strong>Sorteer op meerdere kolommen</strong> door met Shift&nbsp;+&nbsp;klik op volgende pijltjes te klikken.
-					<br/>
-					<h3>NOTA BENE</h3> 
-					Het waardplanten-spectrum van een parasiet is vaak onvolledig bekend, 
-					zeker op het niveau van afzonderlijke soorten. Raadpleeg daarom in elk geval ook 
-					de tabel van alle soorten van dit geslacht.<br/>
-				</div>
-			[:]
-
-			[:en]
-				<div class="table-legend-column">
-					<h3>Organ</h3>
-					the part of the plant that most conspicuously is hit by the parasite<br/>
-					<br/> 
-					<strong>all buds:</strong> both flower buds and leaf buds<br/> 
-					<strong>flower:</strong> also inflorescence <br/> 
-					<strong>leaf:</strong> also needle, phyllodium, petiole<br/> 
-					<strong>leaf bud:</strong> also unfolding young leaf<br/> 
-					<strong>fruit:</strong> also seed<br/> 
-					<strong>root:</strong> also root stock, runners<br/> 
-					<strong>root collar:</strong> also the lowest part of the stem<br/> 
-					<strong>stem:</strong> also culm, the lower part of the peduncle, in grasses also leaf sheath<br/> 
-					<strong>systemic:</strong> the entire above-ground plant. 
-				</div>
-
-				<div class="table-legend-column">
-					<h3>PARASITIC MODE</h3> 
-					<strong>borer:</strong> larva living internally, almost no outwards signs<br/> 
-					<strong>down:</strong> 0.5-2 mm high fungal down<br/> 
-					<strong>film:</strong> very thin cover of fungal tussue<br/> 
-					<strong>gall:</strong> swelling and/or malformation<br/> 
-					<strong>grazer:</strong> feeding at the outside of the plant<br/> 
-					<strong>leaf spot:</strong> discoloured, often ± necrotic, generally not galled, sign of a fungus infection<br/> 
-					<strong>miner-borer:</strong> larve initially makes a mine, lives as a borer later<br/> 
-					<strong>pustule:</strong> plug of fungal tissue, generally brown-black and < 2 mm<br/> 
-					<strong>stripe:</strong> longitudinal line of fungal tissue in a grass leaf<br/> 
-					<strong>vagrant:</strong> (aphids, mites) living freely on the plant, at higher densitiy causing malformations.
-				</div>
-
-				<div class="table-legend-column">
-					<h3>FILTER AND SORT TABLE</h3> 
-					To <strong>filter</strong> the table above, add a text to the search field (top right of the table).<br/>
-					To <strong>sort a column</strong> click on an arrow after the column name (both ascending and descending). <br/>
-					<strong>Sort multiple columns</strong> with Shift&nbsp;+&nbsp;click on the arrows.
-					<br/>
-					<h3>IMPORTANT</h3>
-					The host plant spectre of a parasite is rarely known exhaustively; 
-					this applies in particular at the species level. It is advisable therefore to 
-					check at least also the list of all parasites of this genus.<br/>
-				</div>
-			[:]
-		')); ?>
+	<?php get_template_part('template-parts/content', 'determination-legenda'); ?>
 	<p style="clear:both">&nbsp;</p>
 </div>
