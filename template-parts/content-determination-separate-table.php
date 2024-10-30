@@ -85,7 +85,7 @@
 			if (get_locale() == 'nl_NL') {
 				echo '<!-- <th>host</th> -->
 					<th>orgaan</th>
-					<th>parasiteerwijze</th>
+					<th>parasiteer<wbr />wijze</th>
 					<th>stadium</th>
 					<th>hoofdgroep</th>
 					<th>groep</th>
@@ -121,16 +121,18 @@
 
 			if (get_locale() == 'nl_NL'){
 				$organ_trans_nl = array(
-					'leaf bud' => 'bladknop',
-					'systemic' => 'systemisch',
 					'all buds' => 'alle knoppen',
-					'leaf' => 'blad',
-					'flower' => 'bloem',
-					'fruit' =>  'vrucht',
-					'root' =>  'wortel',
-					'root collar' => 'wortelhals',
+					'bud' => 'knop',
 					'dead wood' => 'dood hout',
-					'stem' =>  'stengel',
+					'flower' =>  'bloem',
+					'fruit' => 'vrucht',
+					'leaf' => 'blad',
+					'leaf bud' => 'bladknop',
+					'root' => 'wortel',
+					'root collar' => 'wortelhals',
+					'seed' => 'zaad',
+					'stem' => 'stengel',
+					'systemic' => 'systemisch',
 				);
 				$organ = strtr($organ, $organ_trans_nl);
 			} else {
@@ -142,24 +144,26 @@
 
 			if (get_locale() == 'nl_NL') {
 				$mode_trans_nl = array(
-					'borer'       => 'boorder',
-					'canker'      => 'xxx canker',
-					'down'        => 'dons',
-					'film'        => 'overtrek',
-					'free'        => 'vrij',
-					'hidden'      => 'xxx hidden',
-					'gall'        => 'gal',
-					'grazer'      => 'grazer',
-					'leaf spot'   => 'bladvlek',
-					'miner' => 'mineerder',
-					'miner-borer' => 'mineerder-boorder',
-					'nacro fungus' => 'xxx nacro fungus',
-					'predator'    => 'mineerder-boorder',
-					'pustule'     => 'wrat',
-					'saprotrophic' => 'XXX saprotrophic',
-					'scale'       => 'schildje',
-					'stripe'      => 'striem',
-					'vagrant'     => 'vrijlevend',
+					'borer'         => 'boorder',
+					'canker'        => 'kanker',
+					'down'          => 'dons',
+					'film'          => 'overtrek',
+					'free'          => 'vrij',
+					'gall'          => 'gal',
+					'hidden'        => 'verborgen',
+					'leaf spot'     => 'bladvlek',
+					'macro fungus'  => 'macrofungus',
+					'miner'         => 'mineerder',
+					'miner-borer'   => 'mineerder-boorder',
+					'miner > borer' => 'mineerder > boorder',
+					'nacro fungus'  => 'nacrofungus',
+					'oviposition scar' => 'ovipositie-litteken',
+					'pustule'       => 'wrat',
+					'saprotrophic'  => 'saprotroof',
+					'scale'         => 'schildluis',
+					'stripe'        => 'streep',
+					'vagrant'       => 'vrijlevend',
+					"witches' broom" => "heksenbezem",
 				);
 				$mode = strtr($mode, $mode_trans_nl);
 			} else {
@@ -175,8 +179,16 @@
 			if (get_locale() == 'nl_NL'
 			) {
 				$stage_trans_nl = array(
-					// todo: add translation strings
-					'EN'       => 'NL',
+					'agamous gen.' => 'agame gen.',
+					'anamorph' => 'anamorf',
+					'egg' => 'ei',
+					'larva' => 'larve',
+					'older larva' => 'oudere larve',
+					'sexual gen.' => 'sexuele gen.',
+					'spring gen.' => 'voorjaarsgen.',
+					'summer gen.' => 'zomergen.',
+					'teleomorph' => 'teleomorf',
+					'young larva' => 'jonge larve',
 				);
 				$stage = strtr($stage, $stage_trans_nl);
 			} else {
@@ -221,9 +233,6 @@
 
 <script type="text/javascript">
 	new DataTable('#DeterminationTable', {
-		order: [
-			[1, 'desc']
-		],
 		paging: false,
 		info: false,
 		"language": {
