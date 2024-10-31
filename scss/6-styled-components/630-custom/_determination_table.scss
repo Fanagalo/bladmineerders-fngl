@@ -10,14 +10,29 @@
 
 /* determination tables */
 
-.page-template-host-genus-determination h1,
-.page-template-host-species-determination h1 {
-    max-width: var(--text-max-width);
-    margin-left: auto;
-    margin-right: auto;
-    font-style: italic;
+:root {
+    --camera-icon: url('data:image/svg+xml;utf8,<svg viewBox="13 0 370 320" xmlns="http://www.w3.org/2000/svg"><circle cx="201" cy="170.964" r="75" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;"/><path d="M279.127,63.71c6.661,8.389 16.787,13.28 27.5,13.28l17.068,-0c11.521,-0 22.571,4.576 30.717,12.723c8.147,8.146 12.723,19.196 12.723,30.717l0,131.19c0,11.521 -4.576,22.57 -12.723,30.716c-8.146,8.147 -19.196,12.724 -30.717,12.724l-254.2,-0c-11.521,-0 -22.57,-4.577 -30.717,-12.724c-8.146,-8.146 -12.723,-19.195 -12.723,-30.716l-0,-131.19c-0,-11.521 4.577,-22.571 12.723,-30.717c8.147,-8.147 19.196,-12.723 30.717,-12.723l17.486,-0c10.474,-0 20.4,-4.678 27.068,-12.755c9.373,-11.354 21.61,-26.178 21.61,-26.178c8.898,-10.779 22.145,-17.021 36.123,-17.021l50.845,-0c14.29,-0 27.798,6.523 36.684,17.715c-0,-0 11.049,13.916 19.816,24.959Z" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;" /></svg>');
 }
 
+.parasite_with_image {
+    content: "";
+    display: inline-block;
+    background: no-repeat left var(--camera-icon);
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    margin-top: 4px;
+}
+
+.page-template-host-genus-determination,
+.page-template-host-species-determination {
+    h1 {
+        max-width: var(--text-max-width);
+        margin-left: auto;
+        margin-right: auto;
+        font-style: italic;
+    }
+}
 .page-template-errata-table,
 .page-template-host-genus-determination,
 .page-template-host-species-determination {
@@ -36,7 +51,7 @@
             letter-spacing: 1px;
             font-weight: var(--font-weight-sub);
             text-align: left;
-            padding: 10px 8px !important;
+            padding: 10px 6px !important;
             &:hover {
                 color: var(--head-sort-color);
             }
@@ -59,6 +74,7 @@
     td {
         border-right: 1px solid var(--row-dark-line-color);
         border-top: none;
+        padding: 10px 6px !important; //override of DataTables CSS
     }
     td:first-of-type {
         border-left: 1px solid var(--row-dark-line-color);
@@ -69,29 +85,49 @@
 
 #DeterminationTable_wrapper {
     margin: 1rem 0;
+    // background-color: #696;
 }
 
-/* Datatables since 2.0.2 filter field */
-
-.dt-container .dt-layout-cell {
-    padding: 0 !important; //override of DataTables CSS
+.dt-container {
+    .dt-layout-cell {
+        padding: 0 !important; //override of DataTables CSS
+    }
+    .dt-layout-row {
+        margin: 0 !important; //override of DataTables CSS
+    }
+}
+.dt-layout-end {
+    width: 100%;
+    background: var(--row-head-color);
+    border-bottom: 1px solid #eee;
+}
+.dt-layout-table {
+    overflow-x: inherit; // this keeps the content visible though in an ugly manner
 }
 
 .dt-search {
     background: var(--row-head-color);
-    width: 100%;
-    border-bottom: 1px solid #eee;
     padding: 0.5em 1em;
     label {
         font-weight: var(--font-weight-sub);
     }
-
     input[type="search"] {
         width: 200px;
         font-size: 0.9em !important;
         border-radius: 0 !important;
         background-color: var(--general-bg) !important;
     }
+}
+
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order,
+table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order,
+table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order,
+table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order,
+table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order,
+table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order,
+table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order,
+table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
+    right: 2px !important; //override of DataTables CSS
 }
 
 /* cursieve parasietnamen */
@@ -120,7 +156,7 @@
 }
 
 /* responsive tabellen */
-
+/*
 @media screen and (max-width: $mq-medium) {
     #ErrataTable_filter,
     #DeterminationTable_filter {
@@ -215,3 +251,5 @@
         content: "parasiet";
     }
 }
+
+*/

@@ -85,15 +85,15 @@
 			if (get_locale() == 'nl_NL') {
 				echo '<!-- <th>host</th> -->
 					<th>orgaan</th>
-					<th>parasiteer<wbr />wijze</th>
+					<th>parasi<wbr />teer<wbr />wijze</th>
 					<th>stadium</th>
-					<th>hoofdgroep</th>
+					<th>hoofd<wbr />groep</th>
 					<th>groep</th>
 					<th>familie</th>
 					<th>parasiet</th>
-					<th>parasite with image</th>
-					<th>genera</th>
-					<th>species</th>
+					<th><!-- parasite with image --></th>
+					<th>G</th>
+					<th>S</th>
 					<!-- <th>host_slug</th> -->
 					<!-- <th>parasite_slug</th> -->';
 			} else {
@@ -105,9 +105,9 @@
 					<th>group</th>
 					<th>family</th>
 					<th>parasite</th>
-					<th>parasite with image</th>
-					<th>genera</th>
-					<th>species</th>
+					<th><!-- parasite with image --></th>
+					<th>G</th>
+					<th>S</th>
 					<!-- <th>host_slug</th> -->
 					<!-- <th>parasite_slug</th> -->';
 			}
@@ -115,11 +115,11 @@
 		}
 
 		foreach ($tabledata as $row) {
-			
+
 			/* translation of organ terms */
 			$organ = $row->organ;
 
-			if (get_locale() == 'nl_NL'){
+			if (get_locale() == 'nl_NL') {
 				$organ_trans_nl = array(
 					'all buds' => 'alle knoppen',
 					'bud' => 'knop',
@@ -170,13 +170,14 @@
 				$mode;
 			}
 
-			/* translation of mode terms */
+			/* translation of stage terms */
 			$stage = $row->stage;
 
 			// replace 0 with empty string
 			$stage = strtr($stage, "0", " ");
 
-			if (get_locale() == 'nl_NL'
+			if (
+				get_locale() == 'nl_NL'
 			) {
 				$stage_trans_nl = array(
 					'agamous gen.' => 'agame gen.',
@@ -195,6 +196,11 @@
 				$stage;
 			}
 
+			/* replace 1 with camera SVG image */
+			$camera = str_replace("1", "<i class='parasite_with_image'>&nbsp;</i>", $row->parasite_with_image);
+
+			/* fill the table */
+
 			echo '<tr>';
 			// echo '<td>' . $row->host . '</td>';
 			echo '<td>' . $organ . '</td>';
@@ -204,7 +210,7 @@
 			echo '<td>' . $row->tax_middle . '</td>';
 			echo '<td>' . $row->tax_family . '</td>';
 			echo '<td><a href="' . get_site_url() . '/' . $row->parasite_slug . '">' . $row->parasite . '</a></td>';
-			echo '<td>' . $row->parasite_with_image . '</td>';
+			echo '<td>' . $camera . '</td>';
 			echo '<td>' . $row->genera_number . '</td>';
 			echo '<td>' . $row->species_number . '</td>';
 			// echo '<td>' . $row->host_slug . '</td>';
@@ -227,8 +233,8 @@
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 
+
 <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
 <script type="text/javascript">
@@ -239,7 +245,6 @@
 			"search": "Filter",
 		}
 	});
-
 </script>
 
 <div class="table-legend">
