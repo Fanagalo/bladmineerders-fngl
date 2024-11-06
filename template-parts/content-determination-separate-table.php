@@ -197,7 +197,7 @@
 			}
 
 			/* replace 1 with camera SVG image */
-			$camera = str_replace("1", "<i class='parasite_with_image'>&nbsp;</i>", $row->parasite_with_image);
+			$parasite_with_image = str_replace("1", "<i class='parasite_with_image'>&nbsp;</i>", $row->parasite_with_image);
 
 			/* fill the table */
 
@@ -210,7 +210,7 @@
 			echo '<td>' . $row->tax_middle . '</td>';
 			echo '<td>' . $row->tax_family . '</td>';
 			echo '<td><a href="' . get_site_url() . '/' . $row->parasite_slug . '">' . $row->parasite . '</a></td>';
-			echo '<td>' . $camera . '</td>';
+			echo '<td>' . $parasite_with_image . '</td>';
 			echo '<td>' . $row->genera_number . '</td>';
 			echo '<td>' . $row->species_number . '</td>';
 			// echo '<td>' . $row->host_slug . '</td>';
