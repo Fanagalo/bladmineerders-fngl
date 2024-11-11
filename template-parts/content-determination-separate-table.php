@@ -131,11 +131,9 @@
 
 			if (get_locale() == 'nl_NL') {
 				$organ_trans_nl = array(
-					'all buds'    => 'alle knoppen',  // obsolete
 					'bud'         => 'knop',          // current
 					'dead wood'   => 'dood hout',
 					'flower'      =>  'bloem',
-					'fruit'       => 'vrucht',        // obsolete
 					'leaf'        => 'blad',
 					'leaf bud'    => 'bladknop',
 					'root'        => 'wortel',
@@ -172,7 +170,6 @@
 					'saprotrophic'     => 'saprotroof',          // current
 					'scale'            => 'schildluis',          // current
 					'stripe'           => 'streep',
-					'vagrant'          => 'vrijlevend',          // obsolete
 					"witches' broom"   => "heksenbezem",
 				);
 				$mode = strtr($mode, $mode_trans_nl);
