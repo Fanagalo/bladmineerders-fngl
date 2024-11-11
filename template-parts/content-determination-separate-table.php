@@ -69,12 +69,22 @@
 
 	<div class="entry-content">
 		<?php
+			// the_content();
+		?>
+	</div><!-- .entry-content -->
+
+	<div class="determination-table">
+		echo "<h2>" . __('Determination table', 'bladmineerders-fngl') . "</h2>";
+
+		<?php
 		global $wpdb;
 		$wpdb->show_errors();
 		$host_slug = $post->post_name;
 
+		// SELECT host,organ,mode,stage,tax_top,tax_middle,tax_family,parasite,genera_number,species_number,host_slug,parasite_slug 
+
 		$tabledata = $wpdb->get_results("
-				SELECT * 
+				SELECT *
 				FROM host_determination 
 				WHERE host_slug = '$host_slug' 
 			");
@@ -91,7 +101,7 @@
 					<th>groep</th>
 					<th>familie</th>
 					<th>parasiet</th>
-					<th><!-- parasite with image --></th>
+					<th>P<!-- parasite with image --></th>
 					<th>G</th>
 					<th>S</th>
 					<!-- <th>host_slug</th> -->
@@ -105,7 +115,7 @@
 					<th>group</th>
 					<th>family</th>
 					<th>parasite</th>
-					<th><!-- parasite with image --></th>
+					<th>P<!-- parasite with image --></th>
 					<th>G</th>
 					<th>S</th>
 					<!-- <th>host_slug</th> -->
@@ -121,18 +131,18 @@
 
 			if (get_locale() == 'nl_NL') {
 				$organ_trans_nl = array(
-					'all buds' => 'alle knoppen',
-					'bud' => 'knop',
-					'dead wood' => 'dood hout',
-					'flower' =>  'bloem',
-					'fruit' => 'vrucht',
-					'leaf' => 'blad',
-					'leaf bud' => 'bladknop',
-					'root' => 'wortel',
+					'all buds'    => 'alle knoppen',  // obsolete
+					'bud'         => 'knop',          // current
+					'dead wood'   => 'dood hout',
+					'flower'      =>  'bloem',
+					'fruit'       => 'vrucht',        // obsolete
+					'leaf'        => 'blad',
+					'leaf bud'    => 'bladknop',
+					'root'        => 'wortel',
 					'root collar' => 'wortelhals',
-					'seed' => 'zaad',
-					'stem' => 'stengel',
-					'systemic' => 'systemisch',
+					'seed'        => 'zaad',
+					'stem'        => 'stengel',
+					'systemic'    => 'systemisch',
 				);
 				$organ = strtr($organ, $organ_trans_nl);
 			} else {
@@ -144,26 +154,26 @@
 
 			if (get_locale() == 'nl_NL') {
 				$mode_trans_nl = array(
-					'borer'         => 'boorder',
-					'canker'        => 'kanker',
-					'down'          => 'dons',
-					'film'          => 'overtrek',
-					'free'          => 'vrij',
-					'gall'          => 'gal',
-					'hidden'        => 'verborgen',
-					'leaf spot'     => 'bladvlek',
-					'macro fungus'  => 'macrofungus',
-					'miner'         => 'mineerder',
-					'miner-borer'   => 'mineerder-boorder',
-					'miner > borer' => 'mineerder > boorder',
-					'nacro fungus'  => 'nacrofungus',
+					'borer'            => 'boorder',
+					'canker'           => 'kanker',              // current
+					'down'             => 'dons',
+					'film'             => 'overtrek',
+					'free'             => 'vrij',                // current
+					'gall'             => 'gal',
+					'hidden'           => 'verborgen',           // current
+					'leaf spot'        => 'bladvlek',
+					'macro fungus'     => 'macrofungus',
+					'miner'            => 'mineerder',
+					'miner-borer'      => 'mineerder-boorder',
+					'miner > borer'    => 'mineerder > boorder',
+					'nacro fungus'     => 'nacrofungus',
 					'oviposition scar' => 'ovipositie-litteken',
-					'pustule'       => 'wrat',
-					'saprotrophic'  => 'saprotroof',
-					'scale'         => 'schildluis',
-					'stripe'        => 'streep',
-					'vagrant'       => 'vrijlevend',
-					"witches' broom" => "heksenbezem",
+					'pustule'          => 'wrat',
+					'saprotrophic'     => 'saprotroof',          // current
+					'scale'            => 'schildluis',          // current
+					'stripe'           => 'streep',
+					'vagrant'          => 'vrijlevend',          // obsolete
+					"witches' broom"   => "heksenbezem",
 				);
 				$mode = strtr($mode, $mode_trans_nl);
 			} else {
@@ -180,16 +190,16 @@
 				get_locale() == 'nl_NL'
 			) {
 				$stage_trans_nl = array(
-					'agamous gen.' => 'agame gen.',
-					'anamorph' => 'anamorf',
-					'egg' => 'ei',
-					'larva' => 'larve',
-					'older larva' => 'oudere larve',
-					'sexual gen.' => 'sexuele gen.',
-					'spring gen.' => 'voorjaarsgen.',
-					'summer gen.' => 'zomergen.',
-					'teleomorph' => 'teleomorf',
-					'young larva' => 'jonge larve',
+					'agamous gen.'    => 'agame gen.',
+					'anamorph'        => 'anamorf',
+					'egg'             => 'ei',
+					'larva'           => 'larve',
+					'older larva'     => 'oudere larve',
+					'sexual gen.'     => 'sexuele gen.',
+					'spring gen.'     => 'voorjaarsgen.',
+					'summer gen.'     => 'zomergen.',
+					'teleomorph'      => 'teleomorf',
+					'young larva'     => 'jonge larve',
 				);
 				$stage = strtr($stage, $stage_trans_nl);
 			} else {
@@ -222,7 +232,7 @@
 		echo "</tbody></table>";
 
 		?>
-	</div><!-- .entry-content -->
+	</div><!-- .determination-table -->
 
 	<?php if (get_edit_post_link()) : ?>
 		<footer class="entry-footer">
