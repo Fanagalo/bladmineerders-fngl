@@ -134,9 +134,10 @@
 
 			if (get_locale() == 'nl_NL') {
 				$organ_trans_nl = array(
-					'bud'         => 'knop',          // current
+					'bud'         => 'knop',          
 					'dead wood'   => 'dood hout',
-					'flower'      =>  'bloem',
+					'flower'      => 'bloem',
+					'fruit'       => 'vrucht',
 					'leaf'        => 'blad',
 					'leaf bud'    => 'bladknop',
 					'root'        => 'wortel',
@@ -156,22 +157,22 @@
 			if (get_locale() == 'nl_NL') {
 				$mode_trans_nl = array(
 					'borer'            => 'boorder',
-					'canker'           => 'kanker',              // current
+					'canker'           => 'kanker',    
 					'down'             => 'dons',
 					'film'             => 'overtrek',
-					'free'             => 'vrij',                // current
+					'free'             => 'vrij',      
 					'gall'             => 'gal',
-					'hidden'           => 'verborgen',           // current
+					'hidden'           => 'verborgen', 
+					// 'inquiline'        => 'inquiline'        // no translation necessary
 					'leaf spot'        => 'bladvlek',
 					'macro fungus'     => 'macrofungus',
 					'miner'            => 'mineerder',
-					'miner-borer'      => 'mineerder-boorder',
 					'miner > borer'    => 'mineerder > boorder',
-					'nacro fungus'     => 'nacrofungus',
 					'oviposition scar' => 'ovipositie-litteken',
+					// 'predator'         => 'predator',        // no translation necessary
 					'pustule'          => 'wrat',
-					'saprotrophic'     => 'saprotroof',          // current
-					'scale'            => 'schildluis',          // current
+					'saprotrophic'     => 'saprotroof',
+					'scale'            => 'schildluis',
 					'stripe'           => 'streep',
 					"witches' broom"   => "heksenbezem",
 				);
