@@ -1959,6 +1959,10 @@ Consider different media-query with "only"
   margin-top: 4px;
 }
 
+.determination-table h2 {
+  display: none;
+}
+
 .page-template-host-genus-determination h1,
 .page-template-host-species-determination h1 {
   max-width: var(--text-max-width);

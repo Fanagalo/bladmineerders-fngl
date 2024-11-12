@@ -74,9 +74,12 @@
 	</div><!-- .entry-content -->
 
 	<div class="determination-table">
-		echo "<h2>" . __('Determination table', 'bladmineerders-fngl') . "</h2>";
-
 		<?php
+		
+		echo "<h2>" . __('Determination table', 'bladmineerders-fngl') . "</h2>";
+		
+		// best place for unfolding legenda
+
 		global $wpdb;
 		$wpdb->show_errors();
 		$host_slug = $post->post_name;
