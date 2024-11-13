@@ -90,8 +90,8 @@
             <div class="table-legend-column">
                 <h3>COLUMNS</h3>
                 <strong>P</strong>: with image<br/>
-                <strong>G</strong>: number of genera on this site<br/>
-                <strong>S</strong>: number of species on this site<br/>
+                <strong>G</strong>: number of genera on this website<br/>
+                <strong>S</strong>: number of species on this website<br/>
                 <h3>FILTER AND SORT TABLE</h3> 
                 To <strong>filter</strong> the table above, add a text to the search field (top right of the table).<br/>
                 To <strong>sort a column</strong> click on an arrow after the column name (both ascending and descending). <br/>
