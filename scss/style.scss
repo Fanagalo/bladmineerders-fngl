@@ -61,7 +61,6 @@
 @import "6-styled-components/611-page-templates/archive-reference";
 @import "6-styled-components/611-page-templates/categories";
 @import "6-styled-components/611-page-templates/hosts";
-@import "6-styled-components/611-page-templates/content-determination-table";
 @import "6-styled-components/611-page-templates/parasite";
 @import "6-styled-components/611-page-templates/search";
 
@@ -74,11 +73,14 @@
 
 @import "6-styled-components/630-custom/caption";
 @import "6-styled-components/630-custom/columns";
+@import "6-styled-components/630-custom/determination_table";
+@import "6-styled-components/630-custom/determination_table_legenda";
 @import "6-styled-components/630-custom/edit-link";
 @import "6-styled-components/630-custom/lower-taxa-tree";
 @import "6-styled-components/630-custom/letterbox";
 @import "6-styled-components/630-custom/little-history";
 @import "6-styled-components/630-custom/modification-date";
+@import "6-styled-components/630-custom/names-block";
 @import "6-styled-components/630-custom/panel";
 
 @import "6-styled-components/650-vendor/breadcrumb";

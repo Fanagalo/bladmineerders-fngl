@@ -1,3 +1,13 @@
+/*
+ * This CSS is used for the Names block used on 
+ * - host-genus-determination.php
+ * - host-species-determination.php
+ *
+ * the older name fields in the post_content area are made invisible in _hosts.scss
+ *
+ * todo: the manually added name should be removed
+ */
+
 .names-block {
     // background-color: #ffffdd;
     width: var(--text-max-width);
@@ -46,5 +56,3 @@
         font-size: var(--font-size-normal);
     }
 }
-
-// make manually added fields invisible > done in _hosts.scss
