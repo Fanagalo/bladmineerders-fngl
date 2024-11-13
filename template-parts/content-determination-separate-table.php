@@ -98,9 +98,9 @@
 			if (get_locale() == 'nl_NL') {
 				echo '<!-- <th>host</th> -->
 					<th>orgaan</th>
-					<th>parasi<wbr />teer<wbr />wijze</th>
+					<th>parasi&shy;teer&shy;wijze</th>
 					<th>stadium</th>
-					<th>hoofd<wbr />groep</th>
+					<th>hoofd&shy;groep</th>
 					<th>groep</th>
 					<th>familie</th>
 					<th>parasiet</th>
