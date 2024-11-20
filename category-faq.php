@@ -40,13 +40,12 @@ get_header();
         if ( $my_query ->have_posts() ):
             while ( $my_query->have_posts() ): $my_query->the_post(); ?>
         
-                <div class="entry-meta">
-                    <?php bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); ?>
-                </div>
-
-                <div class="faq-article">
-                    <h2 <?php post_class(); ?>><?php the_title(); ?> </h2>
-                    <?php the_content( '', '' ); ?>
+                    <div class="faq-article">
+                        <h2 <?php post_class(); ?>><?php the_title(); ?> </h2>
+                    <?php 
+                        bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); 
+                        the_content( '', '' ); 
+                    ?>
                 </div>
             <?php endwhile; 
         endif; 

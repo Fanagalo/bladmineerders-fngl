@@ -1,21 +1,22 @@
-.item-edit-link a,
-.edit-link a {
-    background-color: #f3f5f6;
-    border: 1px #0071a1 solid;
-    border-radius: 3px;
-    color: #0071a1;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 0.25em .75em;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-    display: block;
-}
-
-.edit-link a:hover {
-    box-shadow: 0px 0px 4px 1px #08f;
+.item-edit-link,
+.edit-link {
+    a {
+        background-color: #f3f5f6;
+        border: 1px #0071a1 solid;
+        border-radius: 3px;
+        color: #0071a1;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 0.25em 0.75em;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+        display: block;
+        &:hover {
+            box-shadow: 0px 0px 4px 1px #08f;
+        }
+    }
 }
 
 .edit-link {
@@ -27,7 +28,7 @@
 
 .item-edit-link {
     position: absolute;
-    margin: 3rem 0 0 -105px; // located left of section
+    margin: 0.5rem 0 0 -105px; // located left of section
     width: 100px;
     text-align: center;
 }
