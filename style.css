@@ -2250,7 +2250,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   width: 100%;
   display: block;
 }
-
+.item-edit-link a:hover,
 .edit-link a:hover {
   box-shadow: 0px 0px 4px 1px #08f;
 }
@@ -2264,7 +2264,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
 
 .item-edit-link {
   position: absolute;
-  margin: 3rem 0 0 -105px;
+  margin: 0.5rem 0 0 -105px;
   width: 100px;
   text-align: center;
 }

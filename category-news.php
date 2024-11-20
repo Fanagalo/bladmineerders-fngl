@@ -46,12 +46,10 @@ get_header();
         if ( $my_query ->have_posts() ):
             while ( $my_query->have_posts() ): $my_query->the_post(); ?>
         
-                <div class="entry-meta">
-                    <?php bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); ?>
-                </div>
-
-                <div class="news-article">
-                    <h2 <?php post_class(); ?>><?php the_title(); ?> </h2>
+                    
+                    <div class="news-article">
+                        <h2 <?php post_class(); ?>><?php the_title(); ?> </h2>
+                        <?php bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); ?>
 
                     <div class="moddate-line">
                         <?php printf( __( '[:nl]Laatste bewerking[:en]Last modified[:] ' ) ); ?>

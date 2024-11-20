@@ -41,7 +41,7 @@ get_header();
 
 				while ( have_posts() ) :
 					the_post();
-					bladmineerders_fngl_edit_post_link('<span class="edit-link">', '</span>');
+					bladmineerders_fngl_edit_post_link('<span class="item-edit-link">', '</span>');
 					the_title( '<dt>', '</dt>' );
 					echo '<dd>';
 					the_content( '', '' );

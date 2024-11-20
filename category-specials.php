@@ -40,13 +40,12 @@ get_header();
         if ( $my_query ->have_posts() ):
     
             while ( $my_query->have_posts() ): $my_query->the_post(); ?>
-        
-                <div class="entry-meta">
-                    <?php bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>'); ?>
-                </div>
-    
+
                 <div class="news-article">
-                    <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+                    <?php 
+                        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); 
+                        bladmineerders_fngl_edit_post_link('<span class="item-edit-link">','</span>');
+                    ?>
     
                     <div class="mod_date-container">
                         <?php printf( __( '[:nl]Laatste bewerking[:en]Last modified[:] ' ) ); ?>
