@@ -125,6 +125,12 @@
 					<!-- <th>parasite_slug</th> -->';
 			}
 			echo '</tr></<thead><tbody>';
+		} else {
+			if (get_locale() == 'nl_NL') {
+				echo '<p class="no-table-data">Nog geen gegevens voor een tabel beschikbaar.</p>';
+			}else{
+				echo '<p class="no-table-data">No table data available yet.</p>';
+			}
 		}
 
 		foreach ($tabledata as $row) {
