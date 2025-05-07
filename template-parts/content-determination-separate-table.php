@@ -160,6 +160,8 @@
 			/* translation of mode terms */
 			$mode = $row->mode;
 
+			$mode = strtr($mode, "0", " ");
+
 			if (get_locale() == 'nl_NL') {
 				$mode_trans_nl = array(
 					'borer'            => 'boorder',
