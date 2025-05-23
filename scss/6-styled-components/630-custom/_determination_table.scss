@@ -96,29 +96,33 @@
 
 #DeterminationTable_wrapper {
     margin: 1rem 0;
-    // background-color: #696;
+    .dt-layout-row:first-child {
+        position: sticky; // makes filter bar sticky
+        top: 0;
+        z-index: 100;
+    }
 }
 
-.dt-container {
-    .dt-layout-cell {
-        padding: 0 !important; //override of DataTables CSS
-    }
-    .dt-layout-row {
-        margin: 0 !important; //override of DataTables CSS
-    }
+.dt-container .dt-layout-row {
+    margin: 0 !important; //override of DataTables CSS
 }
+
 .dt-layout-end {
+    padding: 0 !important; //override of DataTables CSS
     width: 100%;
     background: var(--row-head-color);
     border-bottom: 1px solid #eee;
 }
 .dt-layout-table {
-    overflow-x: inherit; // this keeps the content visible though in an ugly manner
+    // overflow-x: inherit; // this keeps the content visible though in an ugly manner
 }
 
 .dt-search {
     background: var(--row-head-color);
     padding: 0.5em 1em;
+    margin: 0 !important; //override of DataTables CSS
+    margin-right: auto !important; //override of DataTables CSS
+    text-align: left !important; //override of DataTables CSS
     label {
         font-weight: var(--font-weight-sub);
     }
@@ -146,10 +150,10 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
 #DeterminationTable {
     --col-1-width: 25px;
     --col-2-width: 100px;
+    z-index: 1;
     thead {
-        background: greenyellow;
         position: sticky;
-        top: 0;
+        top: 50px;
         /* Don't forget this, required for the stickiness */
         box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
         z-index: 3;

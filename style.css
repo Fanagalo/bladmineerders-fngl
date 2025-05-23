@@ -2044,27 +2044,29 @@ Consider different media-query with "only"
 #DeterminationTable_wrapper {
   margin: 1rem 0;
 }
-
-.dt-container .dt-layout-cell {
-  padding: 0 !important;
+#DeterminationTable_wrapper .dt-layout-row:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
+
 .dt-container .dt-layout-row {
   margin: 0 !important;
 }
 
 .dt-layout-end {
+  padding: 0 !important;
   width: 100%;
   background: var(--row-head-color);
   border-bottom: 1px solid #eee;
 }
 
-.dt-layout-table {
-  overflow-x: inherit;
-}
-
 .dt-search {
   background: var(--row-head-color);
   padding: 0.5em 1em;
+  margin: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
 }
 .dt-search label {
   font-weight: var(--font-weight-sub);
@@ -2091,11 +2093,11 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
 #DeterminationTable {
   --col-1-width: 25px;
   --col-2-width: 100px;
+  z-index: 1;
 }
 #DeterminationTable thead {
-  background: greenyellow;
   position: sticky;
-  top: 0;
+  top: 50px;
   /* Don't forget this, required for the stickiness */
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
   z-index: 3;
