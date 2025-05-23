@@ -10,7 +10,7 @@
 
 .names-block {
     // background-color: #ffffdd;
-    width: var(--text-max-width);
+    max-width: var(--text-max-width);
     margin: 1rem auto;
 
     h2 {
@@ -40,10 +40,11 @@
         font-size: var(--font-size-big);
     }
     li {
-        display: inline;
+        display: inline-block;
         &:not(:last-child)::after {
             content: ", ";
         }
+        margin-right: 0.25rem;
     }
 
     .synonym {

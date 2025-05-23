@@ -1945,11 +1945,8 @@ Consider different media-query with "only"
  *
  */
 /* determination tables */
-:root {
-  --camera-icon: url('data:image/svg+xml;utf8,<svg viewBox="13 0 370 320" xmlns="http://www.w3.org/2000/svg"><circle cx="201" cy="170.964" r="75" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;"/><path d="M279.127,63.71c6.661,8.389 16.787,13.28 27.5,13.28l17.068,-0c11.521,-0 22.571,4.576 30.717,12.723c8.147,8.146 12.723,19.196 12.723,30.717l0,131.19c0,11.521 -4.576,22.57 -12.723,30.716c-8.146,8.147 -19.196,12.724 -30.717,12.724l-254.2,-0c-11.521,-0 -22.57,-4.577 -30.717,-12.724c-8.146,-8.146 -12.723,-19.195 -12.723,-30.716l-0,-131.19c-0,-11.521 4.577,-22.571 12.723,-30.717c8.147,-8.147 19.196,-12.723 30.717,-12.723l17.486,-0c10.474,-0 20.4,-4.678 27.068,-12.755c9.373,-11.354 21.61,-26.178 21.61,-26.178c8.898,-10.779 22.145,-17.021 36.123,-17.021l50.845,-0c14.29,-0 27.798,6.523 36.684,17.715c-0,-0 11.049,13.916 19.816,24.959Z" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;" /></svg>');
-}
-
 .parasite_with_image {
+  --camera-icon: url('data:image/svg+xml;utf8,<svg viewBox="13 0 370 320" xmlns="http://www.w3.org/2000/svg"><circle cx="201" cy="170.964" r="75" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;"/><path d="M279.127,63.71c6.661,8.389 16.787,13.28 27.5,13.28l17.068,-0c11.521,-0 22.571,4.576 30.717,12.723c8.147,8.146 12.723,19.196 12.723,30.717l0,131.19c0,11.521 -4.576,22.57 -12.723,30.716c-8.146,8.147 -19.196,12.724 -30.717,12.724l-254.2,-0c-11.521,-0 -22.57,-4.577 -30.717,-12.724c-8.146,-8.146 -12.723,-19.195 -12.723,-30.716l-0,-131.19c-0,-11.521 4.577,-22.571 12.723,-30.717c8.147,-8.147 19.196,-12.723 30.717,-12.723l17.486,-0c10.474,-0 20.4,-4.678 27.068,-12.755c9.373,-11.354 21.61,-26.178 21.61,-26.178c8.898,-10.779 22.145,-17.021 36.123,-17.021l50.845,-0c14.29,-0 27.798,6.523 36.684,17.715c-0,-0 11.049,13.916 19.816,24.959Z" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;" /></svg>');
   content: "";
   display: inline-block;
   background: no-repeat left var(--camera-icon);
@@ -2088,6 +2085,42 @@ table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order,
 table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order,
 table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   right: 2px !important;
+}
+
+/* new responsive solution 2025-05-12 */
+#DeterminationTable {
+  --col-1-width: 25px;
+  --col-2-width: 100px;
+}
+#DeterminationTable thead {
+  background: greenyellow;
+  position: sticky;
+  top: 0;
+  /* Don't forget this, required for the stickiness */
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+#DeterminationTable thead th:nth-child(1),
+#DeterminationTable thead th:nth-child(2) {
+  background-color: green;
+  z-index: 4;
+}
+#DeterminationTable tbody td:nth-child(1),
+#DeterminationTable tbody td:nth-child(2) {
+  z-index: 2;
+  background-color: pink;
+}
+#DeterminationTable thead th:nth-child(1),
+#DeterminationTable tbody td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  min-width: var(--col-1-width);
+}
+#DeterminationTable thead th:nth-child(2),
+#DeterminationTable tbody td:nth-child(2) {
+  position: sticky;
+  left: var(--col-1-width);
+  min-width: var(--col-2-width);
 }
 
 /* cursieve parasietnamen */
@@ -2453,7 +2486,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
  * todo: the manually added name should be removed
  */
 .names-block {
-  width: var(--text-max-width);
+  max-width: var(--text-max-width);
   margin: 1rem auto;
 }
 .names-block h2 {
@@ -2478,7 +2511,8 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   white-space: pre;
 }
 .names-block li {
-  display: inline;
+  display: inline-block;
+  margin-right: 0.25rem;
 }
 .names-block li:not(:last-child)::after {
   content: ", ";
