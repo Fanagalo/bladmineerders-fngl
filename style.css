@@ -1968,6 +1968,10 @@ Consider different media-query with "only"
   display: none;
 }
 
+.page-template-host-genus-determination,
+.page-template-host-species-determination {
+  overflow-x: hidden;
+}
 .page-template-host-genus-determination h1,
 .page-template-host-species-determination h1 {
   max-width: var(--text-max-width);
@@ -2061,6 +2065,10 @@ Consider different media-query with "only"
   border-bottom: 1px solid #eee;
 }
 
+.dt-layout-table {
+  overflow-x: scroll;
+}
+
 .dt-search {
   background: var(--row-head-color);
   padding: 0.5em 1em;
@@ -2089,15 +2097,17 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   right: 2px !important;
 }
 
-/* new responsive solution 2025-05-12 */
+/** 
+ * new responsive solution 2025-05-12 
+ */
+/* disable horizontal scrolling of non-table content */
 #DeterminationTable {
-  --col-1-width: 25px;
+  --col-1-width: 100px;
   --col-2-width: 100px;
   z-index: 1;
 }
 #DeterminationTable thead {
   position: sticky;
-  top: 50px;
   /* Don't forget this, required for the stickiness */
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
   z-index: 3;
@@ -2144,104 +2154,6 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   width: 12%;
 }
 
-/* responsive tabellen */
-/*
-@media screen and (max-width: $mq-medium) {
-    #ErrataTable_filter,
-    #DeterminationTable_filter {
-        margin: 0 !important;
-        text-align: left !important;
-        padding: 0.25rem 0 0.25rem 9px;
-        margin-right: 1px;
-    }
-    #ErrataTable *,
-    #DeterminationTable * {
-        display: block;
-    }
-    #ErrataTable th,
-    #DeterminationTable th {
-        border-right: none;
-    }
-    #ErrataTable tr,
-    #DeterminationTable tr {
-        border-bottom: #333 solid 2px;
-    }
-    #ErrataTable td,
-    #DeterminationTable td {
-        border: none;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        padding: 2px 0 2px 120px;
-        min-height: 24px;
-    }
-    #ErrataTable td a,
-    #DeterminationTable td a {
-        border-bottom: none;
-        text-decoration: underline;
-    }
-    #ErrataTable td:before,
-    #DeterminationTable td:before {
-        position: absolute;
-        top: 8px;
-        left: 3px;
-        width: 10%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-size: 0.9em;
-        font-weight: 300;
-        line-height: 0.9;
-    }
-    #ErrataTable td:nth-of-type(1):before {
-        content: "page";
-    }
-    #ErrataTable td:nth-of-type(2):before {
-        content: "erratum";
-    }
-    #ErrataTable td:nth-of-type(3):before {
-        content: "note";
-    }
-    #ErrataTable td:nth-of-type(4):before {
-        content: "date";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(1):before {
-        content: "organ";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(2):before {
-        content: "parasitic mode";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(3):before {
-        content: "stage";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(4):before {
-        content: "note";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(5):before {
-        content: "tax. group";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(6):before {
-        content: "parasite";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(1):before {
-        content: "orgaan";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(2):before {
-        content: "parasiteerwijze";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(3):before {
-        content: "stadium";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(4):before {
-        content: "opmerking";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(5):before {
-        content: "tax. groep";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(6):before {
-        content: "parasiet";
-    }
-}
-
-*/
 /* legenda of determination table */
 .table-legend {
   max-width: var(--container-max-width);
