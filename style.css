@@ -2087,7 +2087,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
 /** 
  * new responsive solution 2025-07-30
  * 
- * the filter and table header are sticky on screens smaller than 1040px
+ * filter and table header are sticky on screens smaller than 1040px
  * horizontal scrolling the table without scrolling other parts can't be done with CSS only
  */
 @media screen and (max-width: 1040px) {
