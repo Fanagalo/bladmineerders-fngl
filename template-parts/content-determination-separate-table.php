@@ -185,6 +185,12 @@
 					"witches' broom"   => "heksenbezem",
 				);
 				$mode = strtr($mode, $mode_trans_nl);
+			// } elseif (get_locale() == 'en_US') {
+			// 	$mode_trans_en = array(
+			// 		'oviposition scar' => 'oviposi&shy;tion scar',
+			// 		'saprotrophic'     => 'sapro&shy;trophic',
+			// 	);
+			// 	$mode = strtr($mode, $mode_trans_en);
 			} else {
 				$mode;
 			}

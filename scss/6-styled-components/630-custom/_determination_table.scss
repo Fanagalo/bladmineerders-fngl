@@ -10,11 +10,8 @@
 
 /* determination tables */
 
-:root {
-    --camera-icon: url('data:image/svg+xml;utf8,<svg viewBox="13 0 370 320" xmlns="http://www.w3.org/2000/svg"><circle cx="201" cy="170.964" r="75" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;"/><path d="M279.127,63.71c6.661,8.389 16.787,13.28 27.5,13.28l17.068,-0c11.521,-0 22.571,4.576 30.717,12.723c8.147,8.146 12.723,19.196 12.723,30.717l0,131.19c0,11.521 -4.576,22.57 -12.723,30.716c-8.146,8.147 -19.196,12.724 -30.717,12.724l-254.2,-0c-11.521,-0 -22.57,-4.577 -30.717,-12.724c-8.146,-8.146 -12.723,-19.195 -12.723,-30.716l-0,-131.19c-0,-11.521 4.577,-22.571 12.723,-30.717c8.147,-8.147 19.196,-12.723 30.717,-12.723l17.486,-0c10.474,-0 20.4,-4.678 27.068,-12.755c9.373,-11.354 21.61,-26.178 21.61,-26.178c8.898,-10.779 22.145,-17.021 36.123,-17.021l50.845,-0c14.29,-0 27.798,6.523 36.684,17.715c-0,-0 11.049,13.916 19.816,24.959Z" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;" /></svg>');
-}
-
 .parasite_with_image {
+    --camera-icon: url('data:image/svg+xml;utf8,<svg viewBox="13 0 370 320" xmlns="http://www.w3.org/2000/svg"><circle cx="201" cy="170.964" r="75" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;"/><path d="M279.127,63.71c6.661,8.389 16.787,13.28 27.5,13.28l17.068,-0c11.521,-0 22.571,4.576 30.717,12.723c8.147,8.146 12.723,19.196 12.723,30.717l0,131.19c0,11.521 -4.576,22.57 -12.723,30.716c-8.146,8.147 -19.196,12.724 -30.717,12.724l-254.2,-0c-11.521,-0 -22.57,-4.577 -30.717,-12.724c-8.146,-8.146 -12.723,-19.195 -12.723,-30.716l-0,-131.19c-0,-11.521 4.577,-22.571 12.723,-30.717c8.147,-8.147 19.196,-12.723 30.717,-12.723l17.486,-0c10.474,-0 20.4,-4.678 27.068,-12.755c9.373,-11.354 21.61,-26.178 21.61,-26.178c8.898,-10.779 22.145,-17.021 36.123,-17.021l50.845,-0c14.29,-0 27.798,6.523 36.684,17.715c-0,-0 11.049,13.916 19.816,24.959Z" style="fill:none;stroke:rgb(51,51,51);stroke-width:24px;" /></svg>');
     content: "";
     display: inline-block;
     background: no-repeat left var(--camera-icon);
@@ -40,6 +37,7 @@
 
 .page-template-host-genus-determination,
 .page-template-host-species-determination {
+    // overflow-x: hidden;
     h1 {
         max-width: var(--text-max-width);
         margin-left: auto;
@@ -99,29 +97,25 @@
 
 #DeterminationTable_wrapper {
     margin: 1rem 0;
-    // background-color: #696;
 }
 
-.dt-container {
-    .dt-layout-cell {
-        padding: 0 !important; //override of DataTables CSS
-    }
-    .dt-layout-row {
-        margin: 0 !important; //override of DataTables CSS
-    }
+.dt-container .dt-layout-row {
+    margin: 0 !important; //override of DataTables CSS
 }
+
 .dt-layout-end {
+    padding: 0 !important; //override of DataTables CSS
     width: 100%;
     background: var(--row-head-color);
     border-bottom: 1px solid #eee;
-}
-.dt-layout-table {
-    overflow-x: inherit; // this keeps the content visible though in an ugly manner
 }
 
 .dt-search {
     background: var(--row-head-color);
     padding: 0.5em 1em;
+    margin: 0 !important; //override of DataTables CSS
+    margin-right: auto !important; //override of DataTables CSS
+    text-align: left !important; //override of DataTables CSS
     label {
         font-weight: var(--font-weight-sub);
     }
@@ -144,7 +138,42 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
     right: 2px !important; //override of DataTables CSS
 }
 
-/* cursieve parasietnamen */
+/** 
+ * new responsive solution 2025-07-30
+ * 
+ * filter and table header are sticky on screens smaller than 1040px
+ * horizontal scrolling the table without scrolling other parts can't be done with CSS only
+ */
+
+@media screen and (max-width: $mq-large) {
+    #DeterminationTable_wrapper {
+        .dt-layout-row {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            width: 1100px; // set filter and table on same width
+        }
+
+        & > .dt-layout-cell.dt-layout-end {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 54px;
+        }
+
+        .dt-layout-row.dt-layout-table {
+            z-index: 0;
+        }
+
+        thead {
+            position: sticky;
+            top: 51px;
+            z-index: 1;
+        }
+    }
+}
+
+/* parasite names in italic */
 
 #DeterminationTable td > a {
     font-style: italic;
@@ -168,102 +197,3 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
         width: 12%;
     }
 }
-
-/* responsive tabellen */
-/*
-@media screen and (max-width: $mq-medium) {
-    #ErrataTable_filter,
-    #DeterminationTable_filter {
-        margin: 0 !important;
-        text-align: left !important;
-        padding: 0.25rem 0 0.25rem 9px;
-        margin-right: 1px;
-    }
-    #ErrataTable *,
-    #DeterminationTable * {
-        display: block;
-    }
-    #ErrataTable th,
-    #DeterminationTable th {
-        border-right: none;
-    }
-    #ErrataTable tr,
-    #DeterminationTable tr {
-        border-bottom: #333 solid 2px;
-    }
-    #ErrataTable td,
-    #DeterminationTable td {
-        border: none;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        padding: 2px 0 2px 120px;
-        min-height: 24px;
-    }
-    #ErrataTable td a,
-    #DeterminationTable td a {
-        border-bottom: none;
-        text-decoration: underline;
-    }
-    #ErrataTable td:before,
-    #DeterminationTable td:before {
-        position: absolute;
-        top: 8px;
-        left: 3px;
-        width: 10%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-size: 0.9em;
-        font-weight: 300;
-        line-height: 0.9;
-    }
-    #ErrataTable td:nth-of-type(1):before {
-        content: "page";
-    }
-    #ErrataTable td:nth-of-type(2):before {
-        content: "erratum";
-    }
-    #ErrataTable td:nth-of-type(3):before {
-        content: "note";
-    }
-    #ErrataTable td:nth-of-type(4):before {
-        content: "date";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(1):before {
-        content: "organ";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(2):before {
-        content: "parasitic mode";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(3):before {
-        content: "stage";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(4):before {
-        content: "note";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(5):before {
-        content: "tax. group";
-    }
-    html[lang="en-US"] #DeterminationTable td:nth-of-type(6):before {
-        content: "parasite";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(1):before {
-        content: "orgaan";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(2):before {
-        content: "parasiteerwijze";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(3):before {
-        content: "stadium";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(4):before {
-        content: "opmerking";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(5):before {
-        content: "tax. groep";
-    }
-    html[lang="nl"] #DeterminationTable td:nth-of-type(6):before {
-        content: "parasiet";
-    }
-}
-
-*/
