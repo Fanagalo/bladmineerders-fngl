@@ -37,7 +37,7 @@
 
 .page-template-host-genus-determination,
 .page-template-host-species-determination {
-    overflow-x: hidden;
+    // overflow-x: hidden;
     h1 {
         max-width: var(--text-max-width);
         margin-left: auto;
@@ -97,11 +97,6 @@
 
 #DeterminationTable_wrapper {
     margin: 1rem 0;
-    .dt-layout-row:first-child {
-        position: sticky; // makes filter bar sticky
-        top: 0;
-        z-index: 100;
-    }
 }
 
 .dt-container .dt-layout-row {
@@ -113,9 +108,6 @@
     width: 100%;
     background: var(--row-head-color);
     border-bottom: 1px solid #eee;
-}
-.dt-layout-table {
-    overflow-x: scroll; // TODO: this give a gap above the table
 }
 
 .dt-search {
@@ -147,55 +139,41 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
 }
 
 /** 
- * new responsive solution 2025-05-12 
+ * new responsive solution 2025-07-30
+ * 
+ * filter and table header are sticky on screens smaller than 1040px
+ * horizontal scrolling the table without scrolling other parts can't be done with CSS only
  */
 
-/* disable horizontal scrolling of non-table content */
+@media screen and (max-width: $mq-large) {
+    #DeterminationTable_wrapper {
+        .dt-layout-row {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            width: 1100px; // set filter and table on same width
+        }
 
-// header {
-//     position: sticky;
-//     left: 0;
-// }
+        & > .dt-layout-cell.dt-layout-end {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 54px;
+        }
 
-#DeterminationTable {
-    --col-1-width: 100px;
-    --col-2-width: 100px;
-    z-index: 1;
-    thead {
-        position: sticky;
-        // top: 50px;
-        /* Don't forget this, required for the stickiness */
-        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
-        z-index: 3;
-    }
+        .dt-layout-row.dt-layout-table {
+            z-index: 0;
+        }
 
-    thead th:nth-child(1),
-    thead th:nth-child(2) {
-        background-color: green;
-        z-index: 4;
-    }
-
-    tbody td:nth-child(1),
-    tbody td:nth-child(2) {
-        z-index: 2;
-        background-color: pink;
-    }
-
-    thead th:nth-child(1),
-    tbody td:nth-child(1) {
-        position: sticky;
-        left: 0;
-        min-width: var(--col-1-width);
-    }
-
-    thead th:nth-child(2),
-    tbody td:nth-child(2) {
-        position: sticky;
-        left: var(--col-1-width);
-        min-width: var(--col-2-width);
+        thead {
+            position: sticky;
+            top: 51px;
+            z-index: 1;
+        }
     }
 }
-/* cursieve parasietnamen */
+
+/* parasite names in italic */
 
 #DeterminationTable td > a {
     font-style: italic;
