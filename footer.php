@@ -14,7 +14,7 @@
 			<p><strong>2001-<?php echo date("Y"); ?> W.N.&nbsp;Ellis, Amsterdam, <?php printf( __( '[:nl]Nederland[:en]The&nbsp;Netherlands[:]' ) ); ?></strong><br>
 				<br>
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/by-nc-sa.svg" alt="Creative Commons-Licentie" style="border-width:0" >
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/by-nc-sa.svg" alt="Creative Commons-Licentie" style="border-width:0" >
 				</a> <br>
 				<?php printf( __( '
 					[:nl]
@@ -33,17 +33,17 @@
 		<div class="bm-logos">
 			<?php printf( __( '[:nl]Ondersteund door[:en]Supported by[:]<br>' ) ); ?>
 			<a href="//naturalis.nl" target="_blank">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/naturalis.png" alt="Naturalis logo">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/naturalis.png" alt="Naturalis logo">
 			</a>
 			<a href="//eis-nederland.nl" target="_blank">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/eis.png" alt="EIS Kenniscentrum insecten en andere ongewervelden logo">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/eis.png" alt="EIS Kenniscentrum insecten en andere ongewervelden logo">
 			</a>
 		</div>
 
 		<div class="fanagalo-me-fecit">
 			<?php printf( __( '[:nl]Ontwerp en code door[:en]Designed and developed by[:]<br>' ) ); ?>
 			<a href="http://fanagalo.nl" target="_blank">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Fanagalo-logo-RGB.png" alt="Fanagalo logo">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Fanagalo-logo-RGB.png" alt="Fanagalo logo">
 			</a>
 		</div>
 

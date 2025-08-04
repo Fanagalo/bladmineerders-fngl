@@ -26,7 +26,7 @@
 	<header id="masthead" class="header-area">
 
 	<div class="site-branding">
-			<img class="header-area-full-image" src="<?php echo get_template_directory_uri() ?>/images/bladmineerders-header-image-v3c.png">
+			<img class="header-area-full-image" src="<?php echo get_template_directory_uri() ?>/assets/images/bladmineerders-header-image-v3c.png">
 			<?php
 			if ( is_front_page() && is_home() ) :
 				?>

@@ -69,15 +69,15 @@
 
 	<div class="entry-content">
 		<?php
-			// the_content();
+		// the_content();
 		?>
 	</div><!-- .entry-content -->
 
 	<div class="determination-table">
 		<?php
-		
+
 		echo "<h2>" . __('Determination table', 'bladmineerders-fngl') . "</h2>";
-		
+
 		// best place for unfolding legenda
 
 		global $wpdb;
@@ -128,7 +128,7 @@
 		} else {
 			if (get_locale() == 'nl_NL') {
 				echo '<p class="no-table-data">Nog geen gegevens voor een tabel beschikbaar.</p>';
-			}else{
+			} else {
 				echo '<p class="no-table-data">No table data available yet.</p>';
 			}
 		}
@@ -140,7 +140,7 @@
 
 			if (get_locale() == 'nl_NL') {
 				$organ_trans_nl = array(
-					'bud'         => 'knop',          
+					'bud'         => 'knop',
 					'dead wood'   => 'dood hout',
 					'flower'      => 'bloem',
 					'fruit'       => 'vrucht',
@@ -165,12 +165,12 @@
 			if (get_locale() == 'nl_NL') {
 				$mode_trans_nl = array(
 					'borer'            => 'boorder',
-					'canker'           => 'kanker',    
+					'canker'           => 'kanker',
 					'down'             => 'dons',
 					'film'             => 'overtrek',
-					'free'             => 'vrij',      
+					'free'             => 'vrij',
 					'gall'             => 'gal',
-					'hidden'           => 'verborgen', 
+					'hidden'           => 'verborgen',
 					// 'inquiline'        => 'inquiline'        // no translation necessary
 					'leaf spot'        => 'bladvlek',
 					'macro fungus'     => 'macrofungus',
@@ -185,12 +185,12 @@
 					"witches' broom"   => "heksenbezem",
 				);
 				$mode = strtr($mode, $mode_trans_nl);
-			// } elseif (get_locale() == 'en_US') {
-			// 	$mode_trans_en = array(
-			// 		'oviposition scar' => 'oviposi&shy;tion scar',
-			// 		'saprotrophic'     => 'sapro&shy;trophic',
-			// 	);
-			// 	$mode = strtr($mode, $mode_trans_en);
+				// } elseif (get_locale() == 'en_US') {
+				// 	$mode_trans_en = array(
+				// 		'oviposition scar' => 'oviposi&shy;tion scar',
+				// 		'saprotrophic'     => 'sapro&shy;trophic',
+				// 	);
+				// 	$mode = strtr($mode, $mode_trans_en);
 			} else {
 				$mode;
 			}
@@ -259,8 +259,8 @@
 </article><!-- #post-<?php the_ID(); ?> -->
 
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css" />
+<script src="https://cdn.datatables.net/2.3.2/js/dataTables.min.js"></script>
 
 <script type="text/javascript">
 	new DataTable('#DeterminationTable', {
