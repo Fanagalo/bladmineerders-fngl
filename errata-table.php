@@ -26,11 +26,11 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
-	<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css" />
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+	<script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#ErrataTable').DataTable({
 				paging: false,
@@ -41,7 +41,7 @@ get_header();
 			})
 		});
 	</script>
-<p>&nbsp;</p>
+	<p>&nbsp;</p>
 	<div class="table-legend">
 
 		<?php printf(__('

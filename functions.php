@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Bladmineerders FNGL functions and definitions
  *
@@ -7,10 +8,10 @@
  */
 
 // Disable use XML-RPC
-add_filter( 'xmlrpc_enabled', '__return_false' );
+add_filter('xmlrpc_enabled', '__return_false');
 
 
-if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
+if (! function_exists('bladmineerders_fngl_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -18,14 +19,15 @@ if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function bladmineerders_fngl_setup() {
+	function bladmineerders_fngl_setup()
+	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Healthmasters theme by Fanagalo, use a find and replace
 		 * to change 'bladmineerders-fngl' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'bladmineerders-fngl', get_template_directory() . '/languages' );
+		load_theme_textdomain('bladmineerders-fngl', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
 		// add_theme_support( 'automatic-feed-links' ); 2024-05-21 disabled for performance reasons
@@ -36,7 +38,7 @@ if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -46,9 +48,9 @@ if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
 		// add_theme_support( 'post-thumbnails' ); 2024-05-21 disabled for performance reasons
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'bladmineerders-fngl' ),
-		) );
+		register_nav_menus(array(
+			'primary' => esc_html__('Primary', 'bladmineerders-fngl'),
+		));
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -62,11 +64,11 @@ if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
-		*/ 
+		*/
 		// 2024-05-21 disabled for performance reasons 
-		
+
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support('customize-selective-refresh-widgets');
 
 		/**
 		 * Register support for Gutenberg wide images in your theme
@@ -76,7 +78,7 @@ if ( ! function_exists( 'bladmineerders_fngl_setup' ) ) :
 	}
 endif;
 
-add_action( 'after_setup_theme', 'bladmineerders_fngl_setup' );
+add_action('after_setup_theme', 'bladmineerders_fngl_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -99,33 +101,35 @@ add_action( 'after_setup_theme', 'bladmineerders_fngl_setup' );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function bladmineerders_fngl_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bladmineerders-fngl' ),
+function bladmineerders_fngl_widgets_init()
+{
+	register_sidebar(array(
+		'name'          => esc_html__('Sidebar', 'bladmineerders-fngl'),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'bladmineerders-fngl' ),
+		'description'   => esc_html__('Add widgets here.', 'bladmineerders-fngl'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+	));
 }
-add_action( 'widgets_init', 'bladmineerders_fngl_widgets_init' );
+add_action('widgets_init', 'bladmineerders_fngl_widgets_init');
 
 
 /**
  * Enqueue scripts and styles.
  */
 
-function bladmineerders_fngl_scripts() {
-	wp_enqueue_style( 'bladmineerders-fngl-style', get_stylesheet_uri() );
+function bladmineerders_fngl_scripts()
+{
+	wp_enqueue_style('bladmineerders-fngl-style', get_stylesheet_uri());
 
 	// Script for responsive mobile menu
 	// source: https://www.customyou.nl/responsive-menu-wordpress-clean-tutorial/
-	wp_enqueue_script( 'nav-menu.js', get_template_directory_uri() . '/js/nav-menu.js', array('jquery'), '20151111', true );
+	wp_enqueue_script('nav-menu.js', get_template_directory_uri() . '/assets/js/nav-menu.js', array('jquery'), '20151111', true);
 
 	// Helps with accessibility for keyboard only users. Original from _s
-	wp_enqueue_script( 'bladmineerders-fngl-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script('bladmineerders-fngl-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true);
 
 	// Makes threads in comments. Original from _s
 	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -134,9 +138,9 @@ function bladmineerders_fngl_scripts() {
 	// 2024-05-21 disabled for performance reasons 
 
 }
-add_action( 'wp_enqueue_scripts', 'bladmineerders_fngl_scripts' );
+add_action('wp_enqueue_scripts', 'bladmineerders_fngl_scripts');
 
-/* Add functions from directory "inc" */ 
+/* Add functions from directory "inc" */
 require get_template_directory() . '/inc/block-editor-disable.php';         // Remove block editor
 require get_template_directory() . '/inc/comments-disable.php';             // Remove comments
 require get_template_directory() . '/inc/cpts.php';                         // Custom Post Types

@@ -12,9 +12,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<?php wp_head(); ?>
 </head>
 
@@ -26,7 +23,7 @@
 	<header id="masthead" class="header-area">
 
 	<div class="site-branding">
-			<img class="header-area-full-image" src="<?php echo get_template_directory_uri() ?>/images/bladmineerders-header-image-v3c.png">
+			<img class="header-area-full-image" src="<?php echo get_template_directory_uri() ?>/assets/images/bladmineerders-header-image-v3c.png">
 			<?php
 			if ( is_front_page() && is_home() ) :
 				?>
