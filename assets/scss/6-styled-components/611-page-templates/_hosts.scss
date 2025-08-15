@@ -9,6 +9,8 @@
  *
  */
 
+@use "../../1-global-variables/media-queries" as mq;
+
 .page-template-host-genus {
     .entry-title {
         display: none;
@@ -26,7 +28,7 @@
     }
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .page-template-host-genus .entry-content {
         h1 {
             font-size: var(--font-size-big-desktop);

@@ -1,3 +1,5 @@
+@use "../1-global-variables/media-queries" as mq;
+
 body {
     min-height: 100vh;
     display: grid;
@@ -13,7 +15,7 @@ body {
     grid-template-rows: auto auto auto auto 1fr auto auto;
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     body {
         grid-template-columns: auto 800px auto;
         grid-template-areas:
@@ -28,7 +30,7 @@ body {
     }
 }
 
-@media screen and (min-width: $mq-large) {
+@media screen and (min-width: #{mq.$mq-large}) {
     body {
         grid-template-columns: auto 120px 800px 120px auto;
         grid-template-areas:

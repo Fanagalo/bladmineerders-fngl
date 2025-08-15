@@ -1,6 +1,8 @@
 /* hides full width elements in smaller viewports */
 
-@media screen and (max-width: $mq-large) {
+@use "../1-global-variables/media-queries" as mq;
+
+@media screen and (max-width: #{mq.$mq-large}) {
     .header-area-full,
     .language-search-full,
     .breadcrumb-full,

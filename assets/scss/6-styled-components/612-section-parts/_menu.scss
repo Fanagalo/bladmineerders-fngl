@@ -1,3 +1,5 @@
+@use "../../1-global-variables/media-queries" as mq;
+
 .nav-area-full {
     background-color: var(--nav-area-full-bg);
 }
@@ -53,11 +55,11 @@
 ### Menu mobile
 
 Consider different media-query with "only"
-@media only screen and (max-width: $mq-medium) {
+@media only screen and (max-width: #{mq.$mq-medium}) {
 
 --------------------------------------------------------------*/
 
-@media screen and (max-width: $mq-medium) {
+@media screen and (max-width: #{mq.$mq-medium}) {
     .menu-toggle {
         position: absolute;
         top: 0;
@@ -127,7 +129,7 @@ Consider different media-query with "only"
 ### Menu desktop
 --------------------------------------------------------------*/
 
-@media only screen and (min-width: $mq-medium) {
+@media only screen and (min-width: #{mq.$mq-medium}) {
     .menu-toggle,
     .sub-menu-toggle {
         display: none;

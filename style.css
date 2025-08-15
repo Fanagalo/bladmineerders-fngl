@@ -4,7 +4,7 @@
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme built from fngl_s-core 0.75 
- Version: 1.0.12
+ Version: 1.1.0
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -37,6 +37,7 @@
   --menu-border: #9a5;
   --language-search-bg-color: #a8a7a0;
   /* main content and comments */
+  --main-area-full-bg: transparent;
   --main-area-full-bg: transparent;
   --main-area-bg: #fff;
   --comments-area-bg: #eee;
@@ -707,6 +708,24 @@ input[type=search] {
   border-radius: 0;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 h1,
 h2,
 h3,
@@ -897,6 +916,24 @@ table {
   width: 100%;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 body {
   min-height: 100vh;
   display: grid;
@@ -916,6 +953,24 @@ body {
     grid-template-areas: " . header  header  header . " " . language-search language-search language-search . " " . nav nav nav . " " . breadcrumb breadcrumb breadcrumb . " " . main    main    main   . " " . moddate moddate moddate . " " . sidebar sidebar sidebar . " " . footer  footer  footer . ";
   }
 }
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 aside {
   display: grid;
   gap: 1rem 1rem;
@@ -937,6 +992,24 @@ aside section {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 .main-area-full {
   background-color: var(--main-area-full-bg);
 }
@@ -967,7 +1040,7 @@ aside section {
 }
 
 /*
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: 800px) {
     .page-content,
     .entry-content,
     .entry-summary {
@@ -1126,6 +1199,24 @@ p:empty {
   display: block;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* pagination with function the_post_navigation(); */
 .nav-links {
   background-color: transparent;
@@ -1376,6 +1467,24 @@ dl.reference {
   z-index: 2;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* 
 * category-faq.php 
 * category-news.php 
@@ -1419,6 +1528,24 @@ dl.reference {
   margin: 0 0 1.6875rem 0;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* located on 
  * - errata-table.php
  * - host-genus.php
@@ -1471,6 +1598,24 @@ dl.reference {
   margin: 0.2em auto;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* headings with scientific and author name in one tag */
 /* h1 em is the actual title */
 .page-template-parasite-species .entry-content h1 {
@@ -1622,6 +1767,24 @@ p.references {
   max-width: var(--text-max-width);
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 .footer-area-full {
   background-color: var(--footer-area-full-bg);
 }
@@ -1689,6 +1852,24 @@ p.references {
     text-align: right;
   }
 }
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 .header-area-full {
   background-color: var(--header-area-full-bg);
 }
@@ -1751,6 +1932,24 @@ p.references {
     height: 150px;
   }
 }
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 .language-search-full {
   background-color: var(--language-search-bg-color);
 }
@@ -1826,6 +2025,24 @@ p.references {
     display: none;
   }
 }
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 .nav-area-full {
   background-color: var(--nav-area-full-bg);
 }
@@ -1875,7 +2092,7 @@ p.references {
 ### Menu mobile
 
 Consider different media-query with "only"
-@media only screen and (max-width: $mq-medium) {
+@media only screen and (max-width: 800px) {
 
 --------------------------------------------------------------*/
 @media screen and (max-width: 800px) {
@@ -2074,6 +2291,24 @@ Consider different media-query with "only"
   grid-template-columns: 32% 32% 32%;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /*
  * This CSS is used for the Determination table on: 
  * - host-genus-determination.php
@@ -2270,6 +2505,24 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   width: 12%;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* legenda of determination table */
 .table-legend {
   max-width: var(--container-max-width);
@@ -2398,6 +2651,24 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   height: 12px;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* letterbox links to alphabet anchors */
 .letterbox2 {
   display: flex;
@@ -2674,6 +2945,24 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   margin-right: auto;
 }
 
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
 /* hides full width elements in smaller viewports */
 @media screen and (max-width: 1040px) {
   .header-area-full,

@@ -1,3 +1,5 @@
+@use "../../1-global-variables/media-queries" as mq;
+
 .footer-area-full {
     background-color: var(--footer-area-full-bg);
 }
@@ -8,7 +10,7 @@
     padding: 4rem 1rem 2rem 1rem;
     width: 100%;
     display: grid;
-    column-gap: .5rem;
+    column-gap: 0.5rem;
     row-gap: 2rem;
     align-items: start;
 }
@@ -53,7 +55,7 @@
     width: auto;
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .footer-area {
         grid-template-columns: auto 260px 240px;
         justify-content: space-between;
