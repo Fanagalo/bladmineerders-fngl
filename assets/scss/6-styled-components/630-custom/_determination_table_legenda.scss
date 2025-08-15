@@ -1,5 +1,7 @@
 /* legenda of determination table */
 
+@use "../../1-global-variables/media-queries" as mq;
+
 .table-legend {
     max-width: var(--container-max-width);
     margin-left: auto;
@@ -25,7 +27,7 @@
     margin-bottom: -0.5em;
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .table-legend-column {
         width: 31.3%;
         float: left;

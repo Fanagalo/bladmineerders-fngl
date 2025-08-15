@@ -1,5 +1,7 @@
 /* letterbox links to alphabet anchors */
 
+@use "../../1-global-variables/media-queries" as mq;
+
 .letterbox2 {
     display: flex;
     flex-direction: row;
@@ -14,7 +16,7 @@
     padding: 0.3rem;
 }
 
-.letterbox2+.letterbox2 {
+.letterbox2 + .letterbox2 {
     margin-top: 5rem;
 }
 
@@ -42,10 +44,10 @@
     background-color: #fff;
     color: #333;
     font-size: 200%;
-    line-height: .6;
+    line-height: 0.6;
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .letterbox2 {
         height: 3.5rem;
     }

@@ -1,6 +1,8 @@
 /* headings with scientific and author name in one tag */
 /* h1 em is the actual title */
 
+@use "../../1-global-variables/media-queries" as mq;
+
 .page-template-parasite-species {
     .entry-content {
         h1 {
@@ -17,7 +19,7 @@
     }
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .page-template-parasite-species {
         .entry-content {
             h1 {

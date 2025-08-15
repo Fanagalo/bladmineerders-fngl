@@ -1,3 +1,5 @@
+@use "../../1-global-variables/media-queries" as mq;
+
 .language-search-full {
     background-color: var(--language-search-bg-color);
 }
@@ -15,7 +17,7 @@
     grid-template-areas: "language" "search";
 }
 
-@media only screen and (min-width: $mq-medium) {
+@media only screen and (min-width: #{mq.$mq-medium}) {
     .language-search-area {
         height: 36px;
         background-color: var(--language-search-bg-color);
@@ -65,7 +67,7 @@
     outline: 0;
 }
 
-@media only screen and (min-width: $mq-medium) {
+@media only screen and (min-width: #{mq.$mq-medium}) {
     .search-form-top {
         text-align: right;
         margin-right: 1rem;

@@ -1,0 +1,90 @@
+/*!
+ Theme Name: Bladmineerders FNGL
+ Theme URI: http://fanagalo.nl
+ Author: Jaap Wiering
+ Author URI: http://fanagalo.nl
+ Description: Bladmineerders theme built from fngl_s-core 0.75 
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ Text Domain: bladmineerders-fngl
+*/
+
+/*
+  Theme coding based on Underscores
+  Inspired by Sami Keijonen wcnordic2019-master theme https://github.com/samikeijonen/wcnordic-2019
+  Structure based on ITCSS
+*/
+
+/*
+  The setup is based on the fngl_s-core theme (version 0.79) but without the documentation 
+*/
+
+@charset "UTF-8";
+
+@forward "1-global-variables/media-queries";
+@forward "1-global-variables/colors";
+@forward "1-global-variables/fonts";
+@forward "1-global-variables/max-width";
+@forward "1-global-variables/typography";
+
+@forward "3-resets/normalize";
+@forward "3-resets/box-sizing";
+
+@forward "4-html-elements/page";
+@forward "4-html-elements/blockquote";
+@forward "4-html-elements/buttons";
+@forward "4-html-elements/forms";
+@forward "4-html-elements/headings";
+@forward "4-html-elements/hr";
+@forward "4-html-elements/links";
+@forward "4-html-elements/lists";
+@forward "4-html-elements/media";
+@forward "4-html-elements/misc";
+@forward "4-html-elements/paragraph";
+@forward "4-html-elements/pre-code";
+@forward "4-html-elements/tables";
+
+@forward "5-structure-objects/wireframes";
+@forward "5-structure-objects/sidebar-structure";
+
+@forward "6-styled-components/601-general-components/entry";
+@forward "6-styled-components/601-general-components/gallery";
+@forward "6-styled-components/601-general-components/pagination";
+@forward "6-styled-components/601-general-components/wp-media";
+
+@forward "6-styled-components/602-widgets/widget-general";
+@forward "6-styled-components/602-widgets/widget-nav-menu";
+
+@forward "6-styled-components/611-page-templates/archive";
+@forward "6-styled-components/611-page-templates/archive-glossary";
+@forward "6-styled-components/611-page-templates/archive-reference";
+@forward "6-styled-components/611-page-templates/categories";
+@forward "6-styled-components/611-page-templates/hosts";
+@forward "6-styled-components/611-page-templates/parasite";
+@forward "6-styled-components/611-page-templates/search";
+
+@forward "6-styled-components/612-section-parts/comments";
+@forward "6-styled-components/612-section-parts/footer";
+@forward "6-styled-components/612-section-parts/header";
+@forward "6-styled-components/612-section-parts/language-search";
+@forward "6-styled-components/612-section-parts/menu";
+@forward "6-styled-components/612-section-parts/sidebar";
+
+@forward "6-styled-components/630-custom/caption";
+@forward "6-styled-components/630-custom/columns";
+@forward "6-styled-components/630-custom/determination_table";
+@forward "6-styled-components/630-custom/determination_table_legenda";
+@forward "6-styled-components/630-custom/edit-link";
+@forward "6-styled-components/630-custom/lower-taxa-tree";
+@forward "6-styled-components/630-custom/letterbox";
+@forward "6-styled-components/630-custom/little-history";
+@forward "6-styled-components/630-custom/modification-date";
+@forward "6-styled-components/630-custom/names-block";
+@forward "6-styled-components/630-custom/panel";
+
+@forward "6-styled-components/650-vendor/breadcrumb";
+
+@forward "7-overrides/accessibility";
+@forward "7-overrides/alignments";
+@forward "7-overrides/hide-full-elements";
+@forward "7-overrides/hide-obsolete";

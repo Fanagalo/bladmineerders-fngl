@@ -3,6 +3,8 @@
 * category-news.php 
 */
 
+@use "../../1-global-variables/media-queries" as mq;
+
 .faq-article h2 {
     margin: 3rem 0 0 0;
     font-size: var(--font-size-medium);
@@ -21,7 +23,7 @@
     font-size: var(--font-size-title);
 }
 
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .news-article h2 {
         font-size: var(--font-size-title-desktop);
     }

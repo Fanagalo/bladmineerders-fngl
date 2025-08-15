@@ -1,3 +1,5 @@
+@use "../../1-global-variables/media-queries" as mq;
+
 .main-area-full {
     background-color: var(--main-area-full-bg);
 }
@@ -28,7 +30,7 @@
 }
 
 /*
-@media screen and (min-width: $mq-medium) {
+@media screen and (min-width: #{mq.$mq-medium}) {
     .page-content,
     .entry-content,
     .entry-summary {
@@ -57,7 +59,7 @@
     max-width: var(--text-max-width);
 }
 
-@media screen and (max-width: $mq-medium) {
+@media screen and (max-width: #{mq.$mq-medium}) {
     .entry-content,
     .page main article,
     .single main article {
