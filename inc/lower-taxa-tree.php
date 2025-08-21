@@ -20,6 +20,9 @@ function fngl_template_lower_taxa_tree($depth,$templates) {
         return;
     }
 
+
+    /* transient cache disabled */
+/*
     $cache_key = 'fngl_taxa_tree_' . md5(serialize($templates) . $depth . $current_page);
     $cached_result = get_transient($cache_key);
 
@@ -27,7 +30,7 @@ function fngl_template_lower_taxa_tree($depth,$templates) {
         echo $cached_result;
         return;
     }
-
+*/
     global $wpdb;
 
     $sql = "
@@ -58,9 +61,11 @@ function fngl_template_lower_taxa_tree($depth,$templates) {
     $output = walk_page_tree( $children, $depth, $current_page, $r );
     $post_output = '</ul>';
     $final_output = $pre_output . $output . $post_output;
-   
+
+    /* transient cache disabled */
+/*
     // Cache for 1 hour
     set_transient($cache_key, $final_output, HOUR_IN_SECONDS);
-
+*/
     echo $final_output;    
 }
