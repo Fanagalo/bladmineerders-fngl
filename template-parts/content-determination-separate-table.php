@@ -217,8 +217,10 @@
 					'young larva'     => 'jonge larve',
 				);
 				$stage = strtr($stage, $stage_trans_nl);
+				$lang_suffix = "/?lang=nl";
 			} else {
 				$stage;
+				$lang_suffix = "";
 			}
 
 			/* replace 1 with camera SVG image */
@@ -234,7 +236,7 @@
 			echo '<td>' . $row->tax_top . '</td>';
 			echo '<td>' . $row->tax_middle . '</td>';
 			echo '<td>' . $row->tax_family . '</td>';
-			echo '<td><a href="' . get_site_url() . '/' . $row->parasite_slug . '">' . $row->parasite . '</a></td>';
+			echo '<td><a href="' . get_site_url() . '/' . $row->parasite_slug . $lang_suffix . '">' . $row->parasite . '</a></td>';
 			echo '<td>' . $parasite_with_image . '</td>';
 			echo '<td>' . $row->genera_number . '</td>';
 			echo '<td>' . $row->species_number . '</td>';
