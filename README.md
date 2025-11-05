@@ -1,46 +1,44 @@
-# bladmineerders
+# bladmineerders-fngl theme
 
-Versie 3.0 van https://bladmineerders.nl
+Version 3 of https://bladmineerders.nl
 
-Current theme version 1.03
+Continuous improvement of the website. Custom functionality is added within the theme. 
 
-## Doelen
+## Goals
 
--   invoer vereenvoudigen
--   overzicht backend vergroten
--   informatie architectuur frontend verbeteren
--   performance verbeteren
+-   simplify input
+-   enhance overview of backend
+-   improve information architecture
+-   improve performance, reduce CPU seconds
 
 ## Features
 
--   Custom Post Types
-    -   hosts
-    -   parasites
-    -   references
-    -   glossary
-    -   relations
--   relaties tussen hosts en parasites
-    -   aparte database tabel
-    -   gebruik van ACF
-    -   gebruik van wpDataTables
-    -   links met Post Object (geen URL)
--   overzicht van hosts en verschillende determinaties verbeteren
--   vernacular names als apart veld
-    -   opbouw NL en EN lijst met hosts vanuit database
--   heeft soort een plaatje?
+-   Custom Post Types for:
+    - [ ]  hosts
+    - [ ]  parasites
+    - [x]  references
+    - [x]  glossary
+    -   ~~relations~~
+-   hosts parasites relations
+    - [x]   separate database table for relations
+    - [x]  image per host species
+    - no use of ~~ACF~~, ~~wpDataTables~~, ~~links to Post Object (geen URL)~~
+-   [ ] enhance overview for hosts and determination methods (digitomous, table)
+    -   [ ]harmonica options
+-   [x] host names (synonyms, translations, vernacular names) as separate fields
+    - [ ]   opbouw NL en EN lijst met hosts vanuit database
 
 ## Backlog
 
--   Google Analytics 4
--   structured data (kan pas als ACF goed werkt)
--   verspreidingskaart koppelen aan PESI (?)
+- [ ]  analytics, statistics, ~~Google Analytics 4~~
+  - [x]  option via SiteGround backend
+-  [ ] structured data
+-  [ ] links distribution data with PESI
 
-## Versies
+## Versions
 
-**2001** start van bladmineerders.nl in HTML
-
-**2007** gebruik van CSS
-
-**2017** ombouw naar WordPress, theme gebaseerd op Stone
-
-**2020** theme gebaseerd op fngl_s-core
+- **2024** host relations in serarate custom table
+- **2020** theme based on fngl_s-core
+- **2017** conversion to WordPress, theme based on Stone
+- **2007** use of CSS
+- **2001** start of bladmineerders.nl as static HTML site
