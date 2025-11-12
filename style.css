@@ -4,7 +4,7 @@
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -218,7 +218,9 @@
 
 :root {
   /* basic typography */
-  --font-sans: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  --font-sans: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
   --font-mono: "Consolas", Courier, monospace;
   /* font size */
   --font-size-small: 0.75rem;
@@ -714,7 +716,7 @@ input[type=search] {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -922,7 +924,7 @@ table {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -959,7 +961,7 @@ body {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -998,7 +1000,7 @@ aside section {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1205,7 +1207,7 @@ p:empty {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1473,7 +1475,7 @@ dl.reference {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1534,7 +1536,7 @@ dl.reference {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1604,7 +1606,7 @@ dl.reference {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1773,7 +1775,7 @@ p.references {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1858,7 +1860,7 @@ p.references {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -1938,7 +1940,7 @@ p.references {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -2031,7 +2033,7 @@ p.references {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -2297,7 +2299,7 @@ Consider different media-query with "only"
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -2511,7 +2513,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -2657,7 +2659,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
@@ -2951,7 +2953,7 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
  Author: Jaap Wiering
  Author URI: http://fanagalo.nl
  Description: Bladmineerders theme 
- Version: 3.1.6
+ Version: 3.1.8
  License: GNU General Public License v2 or later
  Text Domain: bladmineerders-fngl
 */
