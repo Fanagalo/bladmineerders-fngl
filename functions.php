@@ -91,6 +91,7 @@ add_action('wp_enqueue_scripts', 'bladmineerders_fngl_scripts');
 /* Add functions from directory "inc" */
 require get_template_directory() . '/inc/block-editor-disable.php';         // Remove block editor
 require get_template_directory() . '/inc/comments-disable.php';             // Remove comments
+require get_template_directory() . '/inc/category-tag-pages.php';           // Categories and Tags on Pages
 require get_template_directory() . '/inc/cpts.php';                         // Custom Post Types
 require get_template_directory() . '/inc/custom-header.php';                // Custom Header
 require get_template_directory() . '/inc/template-lower-taxa-tree.php';     // Function for lower taxa tree for hosts and parasites based on templates
