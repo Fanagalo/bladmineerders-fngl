@@ -167,6 +167,7 @@
 					'borer'            => 'boorder',
 					'canker'           => 'kanker',
 					'down'             => 'dons',
+					'endophytic '      => 'endophytisch',
 					'film'             => 'overtrek',
 					'free'             => 'vrij',
 					'gall'             => 'gal',
