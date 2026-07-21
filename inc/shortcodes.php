@@ -29,6 +29,47 @@ add_shortcode('statistics_posts_by_type', 'fngl_statistics_posts_by_type_shortco
 
 
 /**
+ * Shortcode to show number of published posts with a specified template, 
+ * used for site statistics
+ * Usage [statistics_posts_by_template template="abc.php"]
+ * 
+ * @since bladmineerders-fngl version 3.2.1
+ * @param string       a post_template
+ * @return string      HTML code with a class
+ */
+
+function statistics_posts_by_template_shortcode($atts)
+{
+    $atts = shortcode_atts(array(
+        'template' => 'abc.php', 
+    ), $atts, 'count_template');
+
+    $template_name = $atts['template'];
+
+    global $wpdb;
+    $query = $wpdb->prepare(
+        "SELECT COUNT(*) as total
+        FROM {$wpdb->posts} as p
+        JOIN {$wpdb->postmeta} as m ON p.ID = m.post_id
+        WHERE p.post_status = 'publish'
+        AND m.meta_value = %s",
+        $template_name
+    );
+
+    $published_posts = $wpdb->get_var($query);
+
+    if (qtranxf_getLanguage() == 'nl') {
+        $formatted_published_posts = number_format($published_posts, 0, ',', '.');
+    } else {
+        $formatted_published_posts = number_format($published_posts, 0, '.', ',');
+    }
+
+    return '<span class="published-posts-number">' . $formatted_published_posts . '</span>';
+}
+add_shortcode('statistics_posts_by_template', 'statistics_posts_by_template_shortcode');
+
+
+/**
  * Shortcode to show number of images in wp_posts table, 
  * with offset for images that are not in the database; 
  * used for site statistics.
