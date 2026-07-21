@@ -30,16 +30,17 @@ get_header();
 	<script src="https://cdn.datatables.net/2.3.8/js/dataTables.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#ErrataTable').DataTable({
-				paging: false,
-				info: false,
-				"language": {
-					"search": "Search",
-				}
-			})
+		new DataTable('#ErrataTable', {
+			paging: false,
+			info: false,
+			"language": {
+				"search": "Filter",
+			}
 		});
 	</script>
+
+
+
 	<p>&nbsp;</p>
 	<div class="table-legend">
 
